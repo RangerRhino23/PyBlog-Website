@@ -1,6 +1,6 @@
 body {
-  background-color: tan;
-  background-image: linear-gradient(tan 0%, black 15%);
+  background-color: rgba(239, 91, 36, 255);
+  background-image: linear-gradient(white 0%, rgba(239, 91, 36, 255) 10%, black 90%);
   color: white;
   font-family: 'Verdana', sans-serif;
   text-align: center;
@@ -50,7 +50,7 @@ h2 {
 }
 
 .menu li {
-  float: left;
+  float: right;
 }
 
 .menu li a {
@@ -62,5 +62,5 @@ h2 {
 }
 
 .menu li a:hover {
-  background-color: #444;
+  background-color: rgb(52, 52, 52);
 }
