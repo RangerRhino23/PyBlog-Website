@@ -4,13 +4,6 @@
     <title>Home | PyBlog</title>
     <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
     <link rel="icon" type="image/x-icon" href="icon.png">
-    <script>
-      window.onload = function() {
-        document.getElementById("blog-template-click").addEventListener("click", function() {
-          window.location.href = "blogs/blog-template.html";
-        });
-      };
-    </script>
     <style>
       .img-preset {
         width: 350px;
@@ -26,7 +19,7 @@
         object-fit: cover;
       }
 
-      .paragraph {
+      p {
             color: whitesmoke;
             width: 500px;
             margin: auto;
@@ -50,27 +43,20 @@
 
     <!-- About PyBlog -->
     <h2 id="about-pyblog">About PyBlog</h2>
-    <div class="paragraph">
+    <div>
       <p><b>
-        PyBlog is a Python Blog Website created by RangerRhino23. There are many different stories and projects you can read about and create! To get started, click on one of the
+        PyBlog is a Python Blog Website created by RangerRhino23. There are many different stories and projects you can read about and create!<br> To get started, click on one of the
         blogs below!
       </b></p>
     </div>
+    <hr size="7" width="550" style="border-radius: 5px;" color="#333333">
 
     <!-- Blog Template -->
-    <h3 id="blog-template">Blog Template</h3>
+    <h3 id="test-blog">Test Blog</h3>
     <div class="blog-link">
-      <img id="blog-template-click" src="icon.png" class="blog-img">
+      <a href="blogs/test-blog.html"><img src="icon.png" class="blog-img"></a>
       <p><b>
-        Test Blog Template
-      </b></p>
-    </div>
-    <!-- Blog Template -->
-    <h3 id="blog-template">Blog Template</h3>
-    <div class="blog-link">
-      <img id="blog-template-click" src="icon.png" class="blog-img">
-      <p><b>
-        Test Blog Template
+        Simple blog showing potential blogs!
       </b></p>
     </div>
     <br><br><br><br><br><br><br><br><br><br><br><br><br>
