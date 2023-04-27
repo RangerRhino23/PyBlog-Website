@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog Template | PyBlog</title>
+    <link rel="stylesheet" type="text/css" href="../style.css" media="screen" />
+    <link rel="icon" type="image/x-icon" href="../icon_rounded.png">
+    <style>
+      .img-preset {
+        width: 250px;
+        height: 350px;
+        border-radius: 5px;
+        object-fit: cover;
+      }
+
+      .paragraph {
+            color: whitesmoke;
+            width: 500px;
+            margin: auto;
+            font-size: larger;
+        }
+    </style>
+  </head>
+  <header>
+    <ul class="menu">
+      <li><img id="enter-hunt" style="margin-left: 6px; margin-right: 6px; margin-top: 5px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="../icon.png"></li>
+      <li><a href="../home">Home</a></li>
+  </ul>
+  </header>
+  <body>
+    <h1>Blog Template</h1>
+
+    <h2>Blog will go here!</h2>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </body>
+  <footer style="margin-top: 50px; margin-bottom: 20px">
+    <a id="backtotopbtn" class="button" style="background-color: black; color: white">Back to Top</a>
+    <script>
+      // Get the button element
+      var scrollToTopBtn = document.getElementById("backtotopbtn");
+  
+      // Show or hide the button based on scroll position
+      window.onscroll = function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          scrollToTopBtn.style.display = "block";
+        } else {
+          scrollToTopBtn.style.display = "none";
+        }
+      };
+  
+      // Function to scroll to top with smooth animation
+      function scrollToTop() {
+        var currentPosition = document.documentElement.scrollTop || document.body.scrollTop;
+        if (currentPosition > 0) {
+          window.requestAnimationFrame(scrollToTop);
+          window.scrollTo(0, currentPosition - currentPosition / 20);
+        }
+      }
+  
+      // Add click event listener to the button
+      scrollToTopBtn.addEventListener("click", scrollToTop);
+    </script>
+  </footer>
+</html>
