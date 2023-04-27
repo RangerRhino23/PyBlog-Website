@@ -1,0 +1,66 @@
+body {
+  background-color: tan;
+  background-image: linear-gradient(tan 0%, black 15%);
+  color: white;
+  font-family: 'Verdana', sans-serif;
+  text-align: center;
+}
+
+h1 {
+  color: rgb(119, 102, 79);
+  margin-top: 50px;
+}
+
+h2 {
+  color: white;
+  margin-top: 50px;
+  font-size: 25px
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.button {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  text-decoration: none;
+  margin: 10px;
+  font-size: 18px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px #9b9b9b;
+}
+
+.button:hover {
+  background-color: gray;
+  color: white;
+}
+
+.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #555;
+  border-radius: 40px;
+}
+
+.menu li {
+  float: left;
+}
+
+.menu li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.menu li a:hover {
+  background-color: #444;
+}

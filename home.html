@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home | RangerRhino23</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <link rel="icon" type="image/x-icon" href="icon.ico">
+    <script>
+      window.onload = function() {
+        document.getElementById("enter-hunt").addEventListener("click", function() {
+          window.location.href = "the-hunt.html";
+        });
+      };
+    </script>
+    <style>
+      .img-preset {
+        width: 250px;
+        height: 350px;
+        border-radius: 5px;
+        object-fit: cover;
+      }
+
+      .paragraph {
+            color: whitesmoke;
+            width: 500px;
+            margin: auto;
+            font-size: larger;
+        }
+
+        body {
+          background-color: tan;
+          background-image: linear-gradient(tan 0%, black 35%);
+          color: white;
+          font-family: 'Verdana', sans-serif;
+          text-align: center;
+        }
+    </style>
+  </head>
+  <header>
+    <ul class="menu">
+      <li><img id="enter-hunt" style="margin-left: 6px; margin-right: 6px; margin-top: 5px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="icon.png" alt="Clickable Image"></li>
+      <li><a href="#">Home</a></li>
+      <li><a href="#about-myself">About Myself</a></li>
+      <li><a href="#programming-life">Programming Life</a></li>
+      <li><a href="#contact-me">Contact Me</a></li>
+      <li><a href="portfolio">Portfolio</a></li>
+      <li><a href="games">Games</a></li>
+  </ul>
+  </header>
+  <body>
+    <h1>RangerRhino23</h1>
+
+    <!--ABOUT MYSELF-->
+    <h2 id="about-myself">About Myself</h2>
+    <div class="paragraph">
+      <p><b>
+        Hello! My name is Ryan Dahlke but many know me online as RangerRhino23. I am a Content Creator as well as a Computer Programming Developer.
+        I enjoy programming in Python as well as HTML, CSS, and Javascript. I enjoy participating in different Python Game Jams
+        as well as working on different projects with other Python Developers. I also sometimes make Minecraft content with friends on youtube.
+        Outside of my online life, I am involved in a few different groups including Boy Scouts, Order of the Arrow, and different school sports. Here are a just
+        a few pictures of different activities I participate in outside of programming and content creation.
+      </b></p>
+    </div>
+    <img src="pictures/home-page/m16.JPG" class="img-preset" alt="Ryan Dahlke shooting an M16 Rifle" />
+    <img src="pictures/home-page/highjump.JPG" class="img-preset" alt="Ryan Dahlke at his first middle school Track Meet"/>
+
+    <!--PROGRAMMING PROJECTS-->
+    <h2 id="programming-life">Programming Life</h2>
+    <div class="paragraph">
+      <p><b>
+        Although my programming carrer has just begun, I have done a bunch of different things involving programming. I started to learn about computer programming in
+        the fall of 2021. In math class, there was a math problem involving a spinner and different colors the spinner could land on. The math teacher breifly said something
+        about the problem but skipped over it cause it was a very complicated problem to solve. After class, I had asked him if a computer simulation could figure out the answer
+        to the problem and he agreed that a simulation could solve it so he had me write a simulation to solve the problem. This introduced me into Python, a simple programming
+        language, and since then, I have built countless projects using Python. <a href="portfolio" target="_blank">Click Here</a> to see my portfoilo
+        filled with tons of the best projects I've created
+      </b></p>
+    </div>
+    <img src="pictures/home-page/spinner-code.png" style="width: 550px;height: 350px;border-radius: 5px;object-fit: cover;" alt="Code from the Spinner Problem"/>
+
+    <!--CONTACT ME-->
+    <h2 id="contact-me">Contact Me</h2>
+    <div class="paragraph">
+      <p><b>
+        If you have any questions or feeback of any projects or would like to collaborate with me on any projects, feel free to contact me using one of my socials! I can't link my
+        Discord account so here it is: RangerRhino#4484
+      </b></p>
+    </div>
+    <a class="button" style="background-color: black; color: white" href="mailto:RangerRhino23@outlook.com" target="_blank">Email Me!</a>
+    <a class="button" style="background-color: black; color: white" href="https://github.com/RangerRhino23" target="_blank">Github</a>
+    <a class="button" style="background-color: black; color: white" href="https://youtube.com/@RangerRhino23" target="_blank">YouTube</a>
+  </body>
+  <footer style="margin-top: 50px; margin-bottom: 20px">
+    <a id="backtotopbtn" class="button" style="background-color: black; color: white">Back to Top</a>
+    <script>
+      // Get the button element
+      var scrollToTopBtn = document.getElementById("backtotopbtn");
+  
+      // Show or hide the button based on scroll position
+      window.onscroll = function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          scrollToTopBtn.style.display = "block";
+        } else {
+          scrollToTopBtn.style.display = "none";
+        }
+      };
+  
+      // Function to scroll to top with smooth animation
+      function scrollToTop() {
+        var currentPosition = document.documentElement.scrollTop || document.body.scrollTop;
+        if (currentPosition > 0) {
+          window.requestAnimationFrame(scrollToTop);
+          window.scrollTo(0, currentPosition - currentPosition / 20);
+        }
+      }
+  
+      // Add click event listener to the button
+      scrollToTopBtn.addEventListener("click", scrollToTop);
+    </script>
+  </footer>
+</html>
