@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Python Introduction | PyBlog</title>
+    <link rel="stylesheet" type="text/css" href="../style.css" media="screen" />
+    <link rel="icon" type="image/x-icon" href="../icon_rounded.png">
+    <style>
+      .img-preset {
+        width: 340px;
+        height: 100px;
+        border-radius: 5px;
+        object-fit: cover;
+      }
+
+      p {
+            color: whitesmoke;
+            width: 500px;
+            margin: auto;
+            font-size: larger;
+        }
+    </style>
+  </head>
+  <header>
+    <ul class="menu">
+      <li><img id="enter-hunt" style="margin-left: 6px; margin-right: 6px; margin-top: 5px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="../icon.png"></li>
+      <li><a href="../home">Home</a></li>
+  </ul>
+  </header>
+  <body>
+    <br><br>
+    <img src="Python-Introduction-Files/python_logo.png" class="img-preset">
+    <h1 class="paragraph">Python: An Intorduction into the world of Python</h1>
+    <h2>What is Python?</h2>
+    <p><b>
+      Python is a high-level, interpreted programming language that is popular for its readability and ease of use. It was first released in 1991 and has since become one of the
+      most widely used programming languages in the world. Python is known for its simple syntax, which makes it easy for beginners to learn and use. It is also used in a wide
+      range of applications, including web development, data science, machine learning, and more. With its extensive libraries and support for multiple programming paradigms, 
+      Python is a versatile language that can be used for a variety of tasks.
+    </b></p>
+
+    <br>
+    <h2>What can Python be used for?</h2>
+    <p><b>
+      Python is a versatile programming language that can be used for a wide range of tasks, including data analysis, web development, machine learning, scientific computing, 
+      automation, and more. Its simple syntax and large community make it an ideal language for beginners and professionals alike. Python is often used for tasks such as building 
+      web applications, creating data visualizations, working with databases, and automating repetitive tasks. Additionally, Python has a vast collection of libraries and 
+      frameworks, such as NumPy, Pandas, Django, and Flask, which make it easy to solve complex problems with minimal coding effort.
+    </b></p>
+    <br><br><br>
+    <p>Created by <a href="../authors/RangerRhino23">RangerRhino23</a></p>
+    <br><br>
+    <a class="button" href="../home">Back To Home</a>
+  </body>
+  <footer style="margin-top: 50px; margin-bottom: 20px">
+    <a id="backtotopbtn" class="button" style="background-color: black; color: white">Back to Top</a>
+    <script>
+      // Get the button element
+      var scrollToTopBtn = document.getElementById("backtotopbtn");
+  
+      // Show or hide the button based on scroll position
+      window.onscroll = function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          scrollToTopBtn.style.display = "block";
+        } else {
+          scrollToTopBtn.style.display = "none";
+        }
+      };
+  
+      // Function to scroll to top with smooth animation
+      function scrollToTop() {
+        var currentPosition = document.documentElement.scrollTop || document.body.scrollTop;
+        if (currentPosition > 0) {
+          window.requestAnimationFrame(scrollToTop);
+          window.scrollTo(0, currentPosition - currentPosition / 20);
+        }
+      }
+  
+      // Add click event listener to the button
+      scrollToTopBtn.addEventListener("click", scrollToTop);
+    </script>
+  </footer>
+</html>
