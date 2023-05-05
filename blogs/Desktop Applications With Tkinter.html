@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Desktop Apps with Tkinter | PyBlog</title>
+    <link rel="stylesheet" type="text/css" href="../style.css" media="screen" />
+    <link rel="icon" type="image/x-icon" href="../icon_rounded.png">
+    <style>
+      .img-preset {
+        width: 250px;
+        height: 350px;
+        border-radius: 5px;
+        object-fit: cover;
+      }
+
+      p {
+            color: whitesmoke;
+            width: 500px;
+            margin: auto;
+            font-size: larger;
+        }
+
+        code {
+          display: block;
+          background-color: gray;
+          font-family: "Courier New", Courier, monospace;
+          padding: 5px;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          border: 1px solid rgb(75, 75, 75);
+        }
+
+        pre {
+          display: block;
+          background-color: gray;
+          font-family: "Courier New", Courier, monospace;
+          padding: 5px;
+          width: 200px;
+          text-align: center;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          border: 1px solid rgb(75, 75, 75);
+        }
+    </style>
+  </head>
+  <header>
+    <ul class="menu">
+      <li><img id="enter-hunt" style="margin-left: 6px; margin-right: 6px; margin-top: 5px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="../icon.png"></li>
+      <li><a href="../home">Home</a></li>
+  </ul>
+  </header>
+  <body>
+    <h1>Desktop Apps with Tkinter!</h1>
+    <p><b>
+      Desktop applications can be an incredibly useful tool for a variety of purposes, from creating custom data visualizations to building applications that automate repetitive tasks. 
+      One of the most popular ways to build desktop applications is with the Python programming language, and one of the most commonly used libraries for building desktop applications in Python is Tkinter.
+    </b></p>
+
+    <h2>Getting Started with Tkinter</h2>
+    <p><b>
+      To get started with Tkinter, you'll need to make sure that you have Python installed on your computer. You can download Python from the official website: https://www.python.org/downloads/
+
+      Once you have Python installed, you'll need to install Tkinter. Tkinter is included with most Python installations, but if you don't have it installed, you can install it using pip, the Python 
+      package manager. To install Tkinter, open a terminal or command prompt and enter the following command: <code>pip install tkinter</code> Once you have Tkinter installed, you're ready to start building your desktop application!
+    </b></p>
+
+    <h2>Creating a basic user interface</h2>
+    <p><b>
+      The first step in building a desktop application with Tkinter is to create a user interface. To create a user interface, you'll use Tkinter's built-in widgets, which are the visual elements that make up your application's interface.
+      Let's start by creating a basic window. In your Python script, import the Tkinter module and create a new window using the Tk() constructor:
+      <code>
+        import tkinter as tk <br>
+
+        root = tk.Tk() <br>
+        
+        root.mainloop()
+      </code>
+      This will create a new window, but it won't have any content yet. To add content to your window, you'll need to add widgets. Let's add a label widget to the window:
+      <code>
+        import tkinter as tk <br>
+        <br>
+        root = tk.Tk() <br>
+        <br>
+        label = tk.Label(root, text="Hello, world!") <br>
+        label.pack() <br>
+        <br>
+        root.mainloop() <br>
+      </code>
+    </b></p>
+
+    <br>
+    <p>Created by <a href="../authors/RangerRhino23">Rangerrhino23</a></p>
+    <br><br><br>
+    <a class="button" href="../home">Back To Home</a>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </body>
+  <footer style="margin-top: 50px; margin-bottom: 20px">
+    <a id="backtotopbtn" class="button" style="background-color: black; color: white">Back to Top</a>
+    <script>
+      // Get the button element
+      var scrollToTopBtn = document.getElementById("backtotopbtn");
+  
+      // Show or hide the button based on scroll position
+      window.onscroll = function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          scrollToTopBtn.style.display = "block";
+        } else {
+          scrollToTopBtn.style.display = "none";
+        }
+      };
+  
+      // Function to scroll to top with smooth animation
+      function scrollToTop() {
+        var currentPosition = document.documentElement.scrollTop || document.body.scrollTop;
+        if (currentPosition > 0) {
+          window.requestAnimationFrame(scrollToTop);
+          window.scrollTo(0, currentPosition - currentPosition / 20);
+        }
+      }
+  
+      // Add click event listener to the button
+      scrollToTopBtn.addEventListener("click", scrollToTop);
+    </script>
+  </footer>
+</html>
