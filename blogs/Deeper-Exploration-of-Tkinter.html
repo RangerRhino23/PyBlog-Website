@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Deeper Exploration of Tkinter | PyBlog</title>
+    <link rel="stylesheet" type="text/css" href="../style.css" media="screen" />
+    <link rel="icon" type="image/x-icon" href="../icon_rounded.png">
+    <style>
+      .img-preset {
+        width: 250px;
+        height: 350px;
+        border-radius: 5px;
+        object-fit: cover;
+      }
+
+      .paragraph {
+            color: whitesmoke;
+            width: 500px;
+            margin: auto;
+            font-size: larger;
+        }
+        pre {
+            background-color: #000000;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 0;
+        }
+
+        code {
+            display: block;
+            font-size: 14px;
+            line-height: 1.5;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            color: #333;
+        }
+        .copy-button {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #383838;
+            background-image: url("../copy.png");
+            color: #fff;
+            background-size: 36px;
+            background-position: center;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .copy-button:before {
+            font-family: "FontAwesome";
+            font-size: 20px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .copy-button:hover:before {
+            content: "Copy code";
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            color: #fff;
+            top: -30px;
+            left: -10px;
+            white-space: nowrap;
+        }
+        .copy-button.clicked:before {
+            content: "Copied text";
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            color: #fff;
+            top: -30px;
+            left: -10px;
+            white-space: nowrap;
+        }
+        table {
+            background-color: #909090;
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+            th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #565656;
+        }
+
+            th {
+            background-color: #333;
+            color: #ffffff;
+        }
+        td:not(:first-child) {
+            border-left: 1px solid #565656;
+        }
+    </style>
+  </head>
+  <header>
+    <ul class="menu">
+      <li><img id="enter-hunt" style="margin-left: 6px; margin-right: 6px; margin-top: 5px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="../icon.png"></li>
+      <li><a href="../home">Home</a></li>
+      <li><a href="../blogs/Desktop-Applications-With-Tkinter.html">Previous blog</a></li>
+  </ul>
+  </header>
+  <body>
+    <h1>A Deeper Exploration of Tkinter</h1>
+    <p style="text-align: left; color: #892c0b;">Written by Bailey</p>
+    <h2>Quick recap.</h2>
+    <p>
+        From what we saw in <a href="../blogs/Desktop-Applications-With-Tkinter.html">this blog</a>
+        you would've created a label, a button and a function for the button when clicked.<br>
+        In this blog we go over so better functions for placement. 
+    </p>
+    <h3>using .grid</h3>
+    <p>Using grid can allow you to more accuractly place buttons and
+        labels. Using the grid function is fairly simple and takes only 2 required args 
+        (arguments) which are "column" and "row" which you can infer what they do.
+        <br><pre><code id="code-block" style="color: white; text-align: left">import tkinter as tk
+
+def button_click():
+    print("Button clicked!")
+
+root = tk.Tk()
+
+label = tk.Label(root, text="Hello, world!")
+label.grid(column=0,row=0)
+
+button = tk.Button(root,text="Click me!", command=button_click)
+button.grid(column=0,row=1)
+
+root.mainloop()
+
+</code><div class="copy-button" onclick="copyCode()"></div></pre>
+    <br>this code will do the exact same as the code which is in the
+    previous blog but uses a grid system which can make putting buttons and
+    labels, like aforementioned, more accuractly
+    </p>
+    <h4>
+        Changing Label Text
+    </h4>
+    <p>
+        You can change the text on a label using the .config
+        function, this can also allow you to change the column and or row
+        on which the label is placed on
+    </p><pre><code id="code-block" style="color: white; text-align: left">def button_click():
+    label.config(text="You've changed me!")</code>
+    <div class="copy-button" onclick="copyCode()"></div></pre>
+    <p>
+        Here we have modified the "button_click()" function so when the button is clicked
+        its changes the text of the label to "You've changed me". 
+    </p>
+    <h3>What we've covered:</h3>
+    <p>
+        <table>
+            <thead>
+              <tr>
+                <th>Function</th>
+                <th>Functionality</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>.row</td>
+                <td>Can be used to place labels on a grid</td>
+              </tr>
+              <tr>
+                <td>.config</td>
+                <td>Can be used to change things like the text of a label</td>
+              </tr>
+            </tbody>
+          </table>
+          
+    </p>
+    <h2>
+        In Conclusion:
+    </h2>
+    <p>
+        We've learnt quite a few essential functions that are apart of tkinter, using grid and config to change the
+        position and text of a label and now you have a better understanding of how to 
+        create applications with tkinter.
+    </p>
+    <br><br><br>
+
+<script>
+const button = document.querySelector('.copy-button');
+
+button.addEventListener('click', () => {
+    button.classList.add('clicked');
+    setTimeout(() => {
+    button.classList.remove('clicked');
+    }, 2000); // Reset back to "Copy text" after 2 seconds
+});
+</script>
+<script>
+function copyCode() {
+  var codeBlock = document.getElementById("code-block");
+  var range = document.createRange();
+  range.selectNode(codeBlock);
+  window.getSelection().removeAllRanges();
+  window.getSelection().addRange(range);
+  document.execCommand("copy");
+  window.getSelection().removeAllRanges();
+  alert("Code copied to clipboard!");
+}
+</script>
+</body>
+  <footer style="margin-top: 50px; margin-bottom: 20px">
+    <a id="backtotopbtn" class="button" style="background-color: black; color: white; cursor: pointer">Back to Top</a>
+    :P
+    <script>
+      // Get the button element
+      var scrollToTopBtn = document.getElementById("backtotopbtn");
+  
+      // Show or hide the button based on scroll position
+      window.onscroll = function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          scrollToTopBtn.style.display = "block";
+        } else {
+          scrollToTopBtn.style.display = "none";
+        }
+      };
+  
+      // Function to scroll to top with smooth animation
+      function scrollToTop() {
+        var currentPosition = document.documentElement.scrollTop || document.body.scrollTop;
+        if (currentPosition > 0) {
+          window.requestAnimationFrame(scrollToTop);
+          window.scrollTo(0, currentPosition - currentPosition / 20);
+        }
+      }
+  
+      // Add click event listener to the button
+      scrollToTopBtn.addEventListener("click", scrollToTop);
+    </script>
+  </footer>
+</html>
