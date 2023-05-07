@@ -12,7 +12,7 @@
         object-fit: cover;
       }
 
-      .paragraph {
+      p {
             color: whitesmoke;
             width: 500px;
             margin: auto;
@@ -23,6 +23,9 @@
             border: 1px solid #ccc;
             padding: 10px;
             margin: 0;
+            width: auto;
+            text-align: left;
+            display: inline-block;
         }
 
         code {
@@ -107,18 +110,17 @@
   </header>
   <body>
     <h1>A Deeper Exploration of Tkinter</h1>
-    <p style="text-align: left; color: #892c0b;">Written by Bailey</p>
     <h2>Quick recap.</h2>
     <p>
         From what we saw in <a href="../blogs/Desktop-Applications-With-Tkinter.html">this blog</a>
         you would've created a label, a button and a function for the button when clicked.<br>
         In this blog we go over so better functions for placement. 
     </p>
-    <h3>using .grid</h3>
+    <h3>Using .grid</h3>
     <p>Using grid can allow you to more accuractly place buttons and
         labels. Using the grid function is fairly simple and takes only 2 required args 
         (arguments) which are "column" and "row" which you can infer what they do.
-        <br><pre><code id="code-block" style="color: white; text-align: left">import tkinter as tk
+        <br><br><pre><code id="code-block" style="color: white;">import tkinter as tk
 
 def button_click():
     print("Button clicked!")
@@ -134,7 +136,8 @@ button.grid(column=0,row=1)
 root.mainloop()
 
 </code><div class="copy-button" onclick="copyCode()"></div></pre>
-    <br>this code will do the exact same as the code which is in the
+    </p><p><br>
+    this code will do the exact same as the code which is in the
     previous blog but uses a grid system which can make putting buttons and
     labels, like aforementioned, more accuractly
     </p>
@@ -145,10 +148,10 @@ root.mainloop()
         You can change the text on a label using the .config
         function, this can also allow you to change the column and or row
         on which the label is placed on
-    </p><pre><code id="code-block" style="color: white; text-align: left">def button_click():
+    </p><br><pre><code id="code-block" style="color: white;">def button_click():
     label.config(text="You've changed me!")</code>
     <div class="copy-button" onclick="copyCode()"></div></pre>
-    <p>
+    <p><br>
         Here we have modified the "button_click()" function so when the button is clicked
         its changes the text of the label to "You've changed me". 
     </p>
@@ -182,6 +185,7 @@ root.mainloop()
         position and text of a label and now you have a better understanding of how to 
         create applications with tkinter.
     </p>
+    <p>Created by <a href="../authors/ItsBailey">ItsBailey</a></p>
     <br><br><br>
 
 <script>
