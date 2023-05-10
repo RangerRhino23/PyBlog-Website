@@ -73,7 +73,7 @@
             white-space: nowrap;
         }
         .copy-button.clicked:before {
-            content: "Copied text";
+            content: "Copied code";
             font-family: Arial, sans-serif;
             font-size: 12px;
             color: #fff;
@@ -127,15 +127,15 @@
     <p>
       If you're using Linux, you can install Python using your distribution's package manager. For example, on Ubuntu or Debian, you can run the following command in the terminal:
     </p>
-    <pre><code id="code-block" style="color: white;">sudo apt-get install python3
-    </code><div class="copy-button" onclick="copyCode()"></div></pre>
+    <pre id="code-block-1"><code  style="color: white;">sudo apt-get install python3
+    </code><div class="copy-button" onclick="copyCode('code-block-1')"></div></pre>
 
     <h2>Step 3: Verify Your installation</h2>
     <p>
       Once you've installed Python, you can verify that it's working by opening a command prompt (Windows) or terminal (macOS/Linux) and running the following command:
     </p>
-      <pre><code id="code-block" style="color: white;">python --version
-      </code><div class="copy-button" onclick="copyCode()"></div></pre>
+      <pre id="code-block-2"><code  style="color: white;">python --version
+      </code><div class="copy-button" onclick="copyCode('code-block-2')"></div></pre>
     <p>
       This should print out the version of Python that you just installed. If you see an error message, make sure that you followed the installation instructions correctly and try again.
     </p>
@@ -150,32 +150,71 @@
     <p>Created by <a href="../authors/RangerRhino23">RangerRhino23</a></p>
     <br><br><br>
     <a class="button" href="../home">Back To Home</a>
+  <script>
+  function copyCode(elementId) {
+    var codeBlock = document.getElementById(elementId);
+    var range = document.createRange();
+    range.selectNode(codeBlock);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();
+    
+    var button = document.querySelector('[onclick="copyCode(\'' + elementId + '\')"]');
+    button.classList.add('clicked');
+    setTimeout(function() {
+      button.classList.remove('clicked');
+    }, 2000);
+  }
+  
+</script>
   </body>
   <footer style="margin-top: 50px; margin-bottom: 20px">
-    <a id="backtotopbtn" class="button" style="background-color: black; color: white">Back to Top</a>
+    <a id="backtotopbtn" class="button" style="background-color: black; color: white; cursor: pointer">Back to Top</a>
     <script>
-      // Get the button element
       var scrollToTopBtn = document.getElementById("backtotopbtn");
-  
-      // Show or hide the button based on scroll position
+
+      var isScrolling = false;
+      
+      var scrollPosition = 0;
+      
       window.onscroll = function() {
+        if (isScrolling) {
+          return;
+        }
+      
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
           scrollToTopBtn.style.display = "block";
         } else {
           scrollToTopBtn.style.display = "none";
         }
       };
-  
-      // Function to scroll to top with smooth animation
+      
       function scrollToTop() {
-        var currentPosition = document.documentElement.scrollTop || document.body.scrollTop;
-        if (currentPosition > 0) {
-          window.requestAnimationFrame(scrollToTop);
-          window.scrollTo(0, currentPosition - currentPosition / 20);
+        if (isScrolling) {
+          return;
+        }
+      
+        isScrolling = true;
+        scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+      
+        scrollToTopAnimation();
+      }
+      
+      function scrollToTopAnimation() {
+        if (scrollPosition > 0) {
+          window.scrollTo(0, scrollPosition - scrollPosition / 20);
+          scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+          if (scrollPosition > 0) {
+            window.requestAnimationFrame(scrollToTopAnimation);
+          } else {
+            isScrolling = false;
+          }
+        } else {
+          isScrolling = false;
         }
       }
-  
-      // Add click event listener to the button
+      
       scrollToTopBtn.addEventListener("click", scrollToTop);
     </script>
   </footer>
