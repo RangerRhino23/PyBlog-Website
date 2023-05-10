@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Installing Python | PyBlog</title>
+    <link rel="stylesheet" type="text/css" href="../style.css" media="screen" />
+    <link rel="icon" type="image/x-icon" href="../icon_rounded.png">
+    <style>
+      .img-preset {
+        width: auto;
+        height: auto;
+        border-radius: 5px;
+        object-fit: cover;
+        scale: 0.95;
+      }
+
+      p {
+            color: whitesmoke;
+            width: 500px;
+            margin: auto;
+            font-size: larger;
+        }
+
+        pre {
+            background-color: #000000;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 0;
+            width: auto;
+            text-align: left;
+            display: inline-block;
+        }
+
+        code {
+            display: block;
+            font-size: 14px;
+            line-height: 1.5;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            color: #333;
+        }
+        .copy-button {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #383838;
+            background-image: url("../copy.png");
+            color: #fff;
+            background-size: 36px;
+            background-position: center;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .copy-button:before {
+            font-family: "FontAwesome";
+            font-size: 20px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .copy-button:hover:before {
+            content: "Copy code";
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            color: #fff;
+            top: -30px;
+            left: -10px;
+            white-space: nowrap;
+        }
+        .copy-button.clicked:before {
+            content: "Copied text";
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            color: #fff;
+            top: -30px;
+            left: -10px;
+            white-space: nowrap;
+        }
+    </style>
+  </head>
+  <header>
+    <ul class="menu">
+      <li><img id="enter-hunt" style="margin-left: 6px; margin-right: 6px; margin-top: 5px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="../icon.png"></li>
+      <li><a href="../home">Home</a></li>
+  </ul>
+  </header>
+  <body>
+    <br><br>
+    <img src="Python-Introduction-Files\python_logo.png" class="img-preset">
+    <h1>Installing Python</h1>
+    <p>
+      Python is a popular programming language that is used for a variety of tasks including 
+      web development, data analysis, and artificial intelligence. If you're interested in 
+      learning Python or using it for a project, you'll need to download and install it on your computer. 
+      In this blog post, we'll walk you through the steps for downloading and installing Python on Windows, macOS, and Linux.
+    </p>
+    
+    <h2>Step 1: Download Python</h2>
+    <p>
+      To download Python, go to the official Python website at <a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>. You'll see two different versions 
+      of Python available for download: Python 2 and Python 3. Python 2 is an older version of the language that is still used by some 
+      legacy applications, but it is no longer actively developed. For most purposes, you'll want to download Python 3. <br><br>
+      Once you're on the downloads page, scroll down until you see the section labeled "Python Releases for Windows/macOS/Linux." Click on the link for the version of Python you 
+      want to download. For example, if you want to download Python 3.10.0, click on the link that says "Download Python 3.10.0."
+    </p>
+
+    <h2>Step 2: Install Python</h2>
+    <h3>Windows</h3>
+    <p>
+      If you're using Windows, double-click on the downloaded file to begin the installation process. The installer will guide you through the steps for installing Python 
+      on your computer. Make sure to select the option to add Python to your system path, which will make it easier to run Python from the command line.
+    </p>
+
+    <h3>MacOS</h3>
+    <p>
+      If you're using macOS, double-click on the downloaded file to begin the installation process. Follow the prompts to install Python on your computer. By default, 
+      macOS comes with a version of Python pre-installed, but it may not be the latest version. Installing a newer version of Python will not replace the system Python, 
+      but it will be available for you to use in your own projects.
+    </p>
+
+    <h3>Linux</h3>
+    <p>
+      If you're using Linux, you can install Python using your distribution's package manager. For example, on Ubuntu or Debian, you can run the following command in the terminal:
+    </p>
+    <pre><code id="code-block" style="color: white;">sudo apt-get install python3
+    </code><div class="copy-button" onclick="copyCode()"></div></pre>
+
+    <h2>Step 3: Verify Your installation</h2>
+    <p>
+      Once you've installed Python, you can verify that it's working by opening a command prompt (Windows) or terminal (macOS/Linux) and running the following command:
+    </p>
+      <pre><code id="code-block" style="color: white;">python --version
+      </code><div class="copy-button" onclick="copyCode()"></div></pre>
+    <p>
+      This should print out the version of Python that you just installed. If you see an error message, make sure that you followed the installation instructions correctly and try again.
+    </p>
+
+    <h2>Conclusion</h2>
+    <p>
+      Downloading and installing Python is a relatively simple process, and it's the first step to using Python for your own projects. Once you have Python installed, you can start 
+      learning the language, experimenting with code, and building your own applications.
+    </p>
+
+    <br><br>
+    <p>Created by <a href="../authors/RangerRhino23">RangerRhino23</a></p>
+    <br><br><br>
+    <a class="button" href="../home">Back To Home</a>
+  </body>
+  <footer style="margin-top: 50px; margin-bottom: 20px">
+    <a id="backtotopbtn" class="button" style="background-color: black; color: white">Back to Top</a>
+    <script>
+      // Get the button element
+      var scrollToTopBtn = document.getElementById("backtotopbtn");
+  
+      // Show or hide the button based on scroll position
+      window.onscroll = function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          scrollToTopBtn.style.display = "block";
+        } else {
+          scrollToTopBtn.style.display = "none";
+        }
+      };
+  
+      // Function to scroll to top with smooth animation
+      function scrollToTop() {
+        var currentPosition = document.documentElement.scrollTop || document.body.scrollTop;
+        if (currentPosition > 0) {
+          window.requestAnimationFrame(scrollToTop);
+          window.scrollTo(0, currentPosition - currentPosition / 20);
+        }
+      }
+  
+      // Add click event listener to the button
+      scrollToTopBtn.addEventListener("click", scrollToTop);
+    </script>
+  </footer>
+</html>
