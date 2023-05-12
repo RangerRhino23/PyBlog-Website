@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   
     backToTopBtn.addEventListener("click", function() {
-      scrollToTop(1000); // Adjust scrolling speed (in milliseconds)
+      scrollToTop(1000);
     });
   
     function scrollToTop(scrollDuration) {
