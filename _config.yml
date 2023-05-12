@@ -1,0 +1,11 @@
+# _config.yml
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      cache_control: "public, max-age=2592000"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
