@@ -7,3 +7,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 
 RewriteRule ^(.*)$ %1.html [NC,L]
+
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?pyblog.ddns.net [NC]
+RewriteRule \.(jpg|jpeg|png|gif|css)$ - [NC,F,L]
