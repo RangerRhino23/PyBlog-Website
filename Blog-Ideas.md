@@ -1,7 +1,7 @@
 Potential Blogs:
 * Web Development with Flask
 
-* How to build a chatbot using Python. Under development - Bailey
+* How to build a chatbot using Python. Done
 
 * Introduction to Ursina
 

@@ -133,51 +133,7 @@
   </body>
   <footer style="margin-top: 50px; margin-bottom: 20px">
     <a id="backtotopbtn" class="button" style="background-color: black; color: white; cursor: pointer;"">Back to Top</a>
-    <script>
-      var scrollToTopBtn = document.getElementById("backtotopbtn");
-
-      var isScrolling = false;
-      
-      var scrollPosition = 0;
-      
-      window.onscroll = function() {
-        if (isScrolling) {
-          return;
-        }
-      
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-          scrollToTopBtn.style.display = "block";
-        } else {
-          scrollToTopBtn.style.display = "none";
-        }
-      };
-      
-      function scrollToTop() {
-        if (isScrolling) {
-          return;
-        }
-      
-        isScrolling = true;
-        scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
-      
-        scrollToTopAnimation();
-      }
-      
-      function scrollToTopAnimation() {
-        if (scrollPosition > 0) {
-          window.scrollTo(0, scrollPosition - scrollPosition / 20);
-          scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
-          if (scrollPosition > 0) {
-            window.requestAnimationFrame(scrollToTopAnimation);
-          } else {
-            isScrolling = false;
-          }
-        } else {
-          isScrolling = false;
-        }
-      }
-      
-      scrollToTopBtn.addEventListener("click", scrollToTop);
+    <script src="Scroll.js">
     </script>
   </footer>
 </html>
