@@ -13,46 +13,64 @@
         border-radius: 5px;
         object-fit: cover;
       }
-
+    
       .blog-img {
         width: auto;
         height: 100px;
         border-radius: 5px;
         object-fit: cover;
       }
-
+    
       p {
-            color: white;
-            width: 500px;
-            margin: auto;
-            font-size: larger;
+        color: white;
+        width: 500px;
+        margin: auto;
+        font-size: larger;
+      }
+    
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+      }
+    
+      .grid-item {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+    
+      .grid-item p {
+        color: black;
+        width: 500px;
+        margin: auto;
+        font-size: larger;
+      }
+    
+      .slide-in {
+        animation: slide-in 0.5s ease forwards;
+      }
+    
+      @keyframes slide-in {
+        from {
+          opacity: 0;
+          transform: translateY(50%);
         }
-
-        .grid-container {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
-
-        .grid-container {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          grid-gap: 20px;
-        }
-
-        .grid-item {
-          background-color: #fff;
-          padding: 20px;
-          border-radius: 5px;
-          box-shadow: 0 5px 10px rgba(0,0,0,0.5);
-        }
-
-        .grid-item p {
-          color: black;
-          width: 500px;
-          margin: auto;
-          font-size: larger;
-        }
+      }
     </style>
+    
   </head>
   <header>
     <ul class="menu">
@@ -138,8 +156,47 @@
 
   </body>
   <footer style="margin-top: 50px; margin-bottom: 20px">
-    <a id="backtotopbtn" class="button" style="background-color: black; color: white; cursor: pointer;"">Back to Top</a>
+    <a id="backtotopbtn" class="button" style="background-color: black; color: white; cursor: pointer;">Back to Top</a>
     <script src="Scroll.js">
     </script>
+  <!--Proceedual loading-->
+    <script>
+      function handleIntersection(entries, observer) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("slide-in");
+            observer.unobserve(entry.target);
+          }
+        });
+      }
+    
+      const gridItems = document.querySelectorAll(".grid-item");
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.2,
+      };
+    
+      const itemObserver = new IntersectionObserver(handleIntersection, observerOptions);
+    
+      gridItems.forEach((item) => {
+        itemObserver.observe(item);
+      });
+    </script>
+    
+<!--
+  load all at once
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const gridItems = document.querySelectorAll(".grid-item");
+        gridItems.forEach(function(item, index) {
+          setTimeout(function() {
+            item.classList.add("slide-in");
+          }, index * 200);
+        });
+      });
+      </script>
+--> 
+      
   </footer>
 </html>
