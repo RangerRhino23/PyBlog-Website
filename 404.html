@@ -62,6 +62,48 @@
           background-color: #444;
         }
     </style>
+    <script>
+      const lowercasePaths = [
+        '/home',
+        '/about-authors',
+        '/blogs',
+        '/blogs/creating-a-website-with-flask',
+        '/authors/itsbailey',
+        '/authors/rangerrhino23',
+        '/blogs/deeper-exploration-of-tkinter',
+        '/blogs/desktop-applications-with-tkinter',
+        '/blogs/installing-python',
+        '/blogs/introduction-into-ursina',
+        '/blogs/making-a-chatbot-with-python',
+        '/blogs/python-introduction'
+      ];
+    
+      const uppercasePaths = [
+        '/Home',
+        '/About-Authors',
+        '/Blogs',
+        '/Blogs/Creating-A-Website-With-Flask',
+        '/Authors/ItsBailey',
+        '/Authors/RangerRhino23',
+        '/Blogs/Deeper-Exploration-of-Tkinter',
+        '/Blogs/Desktop-Applications-With-Tkinter',
+        '/Blogs/Installing-Python',
+        '/Blogs/Introduction-Into-Ursina',
+        '/Blogs/Making-A-Chatbot-With-Python',
+        '/Blogs/Python-Introduction'
+      ];
+    
+      const currentPage = window.location.pathname.toLowerCase();
+    
+      const index = lowercasePaths.indexOf(currentPage);
+    
+      if (index !== -1) {
+        const redirectPath = uppercasePaths[index];
+        window.location.replace(redirectPath);
+      }
+    </script>
+    
+    
   </head>
 <header>
   <ul class="menu">
