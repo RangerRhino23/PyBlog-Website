@@ -159,9 +159,32 @@ app.run('localhost', 5000)
       "test.html"
     </p>
   <br>
-  <pre><code id="code-block-3" style="color: white;">This is HTML
-  </code><div class="copy-button" onclick="copyCode('code-block-3')"></div></pre>
-    <br><br><br>
+  <pre><code id="code-block-4" style="color: white;">&lt;!DOCTYPE html&gt;
+&lt;html lang="en">&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    This is HTML
+&lt;/body&gt;
+&lt;/html&gt;</code>                                       <div class="copy-button" onclick="copyCode('code-block-4')"></div></pre>
+    <br><br><P>
+      Using that code you can create a proper HTML layout that a web browser will be able to render 
+      fully. And now we are going to make some modifactions to the python file to allow for HTML files to be used.
+    </P><br><br>
+    <pre><code id="code-block-5" style="color: white;">from flask import Flask, render_template
+app = Flask(__name__, static_folder="static", template_folder="HTML")
+    </code>                                     <div class="copy-button" onclick="copyCode('code-block-5')"></div></pre>
+    <br><br>
+    <p>
+      In this modified version of the code it allows us to use the "render_template" that
+      comes with flask. We are also settings a directory of our HTML files which will be called "HTML"
+      so make sure to create a folder called "HTML" for flask to register the HTML files.
+    </p>
+<br><br><br>
     <p>Created by <a href="../authors/ItsBailey">ItsBailey</a></p>
     with the help of <a href="../authors/RangerRhino23">RangerRhino23</a>
     <br><br><br><br><br><br><br><br><br>
