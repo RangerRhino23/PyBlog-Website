@@ -1,5 +1,5 @@
 Potential Blogs:
-* Web Development with Flask
+* Web Development with Flask. Done
 
 * How to build a chatbot using Python. Done
 
