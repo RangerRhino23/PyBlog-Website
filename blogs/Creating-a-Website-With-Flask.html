@@ -182,9 +182,37 @@ app = Flask(__name__, static_folder="static", template_folder="HTML")
     <p>
       In this modified version of the code it allows us to use the "render_template" that
       comes with flask. We are also settings a directory of our HTML files which will be called "HTML"
-      so make sure to create a folder called "HTML" for flask to register the HTML files.
-    </p>
-<br><br><br>
+      so make sure to create a folder called "HTML" for flask to register the HTML files. We can now implement
+      the HTML into flask so it can render it with the following code:
+    <br><br></p>
+    <pre><code id="code-block-6" style="color: white;">@app.route("/")
+      def index():
+          return render_template('test.html')
+          </code>                         <div class="copy-button" onclick="copyCode('code-block-6')"></div></pre>
+          <br><br>
+          <p>
+            So now when we run flask on the index page "/" it will render the "test.html" file 
+            and display it on your localhost.
+          </p>
+          <br>
+          <h1>In conclusion</h1>
+          <p>
+            Python's web framework, flask is a very powerful tool that can allow for server-sided 
+            websites which can allow you to use services such as PHP to send and make requets but flask
+            is good just for hosting a simple and easy website on your localhost network (Portforwarding can open it
+            publicly). It is very good for beginners and even advanced users.
+
+            But that is flask and we hope you enjoyed this blog!
+          </p><br>
+          <h3>FaQ</h3>
+          <p>
+            &bullet; Localhost can only be run within your network<br>
+            &bullet; Flask is for python only but can render .html files<br>
+            &bullet; The "5000" is the port number and can be anything from 1-65535<br>
+            &bullet; If your flask fails change the port number<br>
+            &bullet; Portforwarding can allow others to connect to your flask website.
+          </p>
+          <br><br><br>
     <p>Created by <a href="../authors/ItsBailey">ItsBailey</a></p>
     with the help of <a href="../authors/RangerRhino23">RangerRhino23</a>
     <br><br><br><br><br><br><br><br><br>
