@@ -85,21 +85,21 @@
   </head>
   <header>
     <ul class="menu">
-      <li><img id="enter-hunt" style="margin-left: 6px; margin-right: 6px; margin-top: 5px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="../icon.png"></li>
+      <li><img style="margin-left: 6px; margin-right: 6px; margin-top: 5px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="../icon.png"></li>
       <li><a href="../home">Home</a></li>
   </ul>
   </header>
   <body>
     <br><br>
     <!--Optional image placement-->
-    <img src="Flask-stuff/Flask.png" class="img-preset">
+    <img src="Flask-stuff/Flask.png" style="zoom:0.6;" class="img-preset">
     <h1>Creating web applications with python flask.</h1><br>
     <p>
       In this blog post we will be making a website with python and flask.
       and successfully running it a localhost.
     </p>
-    <h2>What is flask?
-    </h2>
+
+    <h2>What is flask?</h2>
     <p>
         Flask is a web framework for Python that allows you to develop web applications easily.
         It is a microframework that doesn’t include an ORM (Object Relational Manager) or such features.
@@ -107,9 +107,45 @@
         and modules to develop web applications like a blog (like this one), wiki,
         or even a commercial website.
     </p>
-    <br><br><br>
-    <pre><code id="code-block-1" style="color: white;">CODE
+
+    <h2>Getting Started</h2>
+    <p>
+      To get started with Flask, you will first need to install the Flask Library. To do this run the following command in a terminal:
+    </p> 
+    <br>
+    <pre><code id="code-block-1" style="color: white;">pip install Flask
     </code><div class="copy-button" onclick="copyCode('code-block-1')"></div></pre>
+    <br><br>
+    <p>This will install all of the required stuff need to start working with Flask!</p>
+
+    <h2>Building your first Website with Flask</h2>
+    <p>
+      Now that you have gotten Flask installed, you will need to make a project folder to store the python file as well as other files you will use later on.
+      Once you have your folder created, open in your code editor or IDE. In that folder, create a new file and name it 'main.py'. Make sure you have the .py on the end.
+      In the newly created file put the following code:
+    </p>
+    <br>
+    <pre><code id="code-block-1" style="color: white;">from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return 'This is my first website!'
+
+app.run('localhost', 5000)
+    </code><div class="copy-button" onclick="copyCode('code-block-1')"></div></pre>
+    <br><br>
+    <p>
+      Running the code above will create a 'website' on the url 'http://localhost:5000'. (To run the file, open file explorer and double click on the file and it should
+      open a terminal running the file) Now go to your web browser and in your url search bar, put:
+    </p>
+    <br>
+    <pre><code id="code-block-1" style="color: white;">http://localhost:5000
+    </code><div class="copy-button" onclick="copyCode('code-block-1')"></div></pre>
+    <br><br>
+    <p>If you did everything correctly, the webpage should look like this!</p><br>
+    <img src="Flask-stuff/first-website-result.png" class="img-preset">
 
 
     <br><br><br>
