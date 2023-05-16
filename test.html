@@ -1,0 +1,69 @@
+
+<div class="grid-container">
+   <div class="grid-item" onclick="window.location.href='Blogs/Python-Introduction'" style="cursor: pointer;">
+     <img src="Blogs/home-page-images/Python-Introduction.jpg" class="blog-img">
+     <p><b>
+       What is Python?
+     </b></p>
+   </div>
+   <div class="grid-item" onclick="window.location.href='Blogs/Desktop-Applications-With-Tkinter'" style="cursor: pointer;">
+     <img src="Blogs/home-page-images/Desktop-Tkinter.jpg" class="blog-img">
+     <p><b>
+       Building Desktop Applications With Tkinter
+     </b></p>
+   </div>
+   <div class="grid-item" onclick="window.location.href='Blogs/Deeper-Exploration-of-Tkinter'" style="cursor: pointer;">
+     <img src="Blogs/home-page-images/Deeper-Exploration-Tkinter.png" class="blog-img">
+     <p><b>
+       Deeper Exploration of Tkinter
+     </b></p>
+   </div>
+   <div class="grid-item" onclick="window.location.href='Blogs/Introduction-Into-Ursina'" style="cursor: pointer;">
+     <img src="Blogs/home-page-images/Introduction-Into-Ursina.png" class="blog-img">
+     <p><b>
+       Introduction Into Ursina Engine
+     </b></p>
+   </div>
+   <div class="grid-item" onclick="window.location.href='Blogs/Making-a-Chatbot-With-Python'" style="cursor: pointer;">
+     <img src="Blogs/home-page-images/Making-Chatbot-With-Python.png" class="blog-img">
+     <p><b>
+       Making a Chatbot With Python
+     </b></p>
+   </div>
+   <div class="grid-item" onclick="window.location.href='Blogs/Creating-a-Website-With-Flask'" style="cursor: pointer;">
+     <img src="Blogs/Flask-stuff/Flask.png" class="blog-img">
+     <p><b>
+       Making a website with flask
+     </b></p>
+   </div>
+ </div>
+ 
+ <div class="grid-container-2" id="gridContainer2" style="display: none;">
+   <div class="grid-item" onclick="window.location.href='Blogs/New-Blog-1'" style="cursor: pointer;">
+     <img src="Blogs/home-page-images/Making-Chatbot-With-Python.png" class="blog-img">
+     <p><b>
+       New Blog 1
+     </b></p>
+   </div>
+   <div class="grid-item" onclick="window.location.href='Blogs/New-Blog-2'" style="cursor: pointer;">
+     <img src="Blogs/home-page-images/Deeper-Exploration-Tkinter.png" class="blog-img">
+     <p><b>
+       New Blog 2
+     </b></p>
+   </div>
+ </div>
+ <button onclick="toggleElements()">Toggle Elements</button>
+<script>
+function toggleElements() {
+  var gridContainer = document.querySelector('.grid-container'); // Get the grid-container
+  var gridContainer2 = document.getElementById('gridContainer2'); // Get the second grid-container
+  if (gridContainer.style.display != 'none') {
+   gridContainer.style.display = 'none';
+   gridContainer2.style.display = 'block';
+  } else {
+   gridContainer.style.display = 'block';
+   gridContainer2.style.display = 'none';
+  }
+}
+
+</script> 
