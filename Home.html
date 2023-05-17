@@ -82,7 +82,7 @@
       <li><a href="Authors/" class="hover-underline-animation">Authors</a></li>
   </ul>
   </header>
- 
+
   <body>
     <br><br><br>
     <img src="icon.png" class="img-preset"/>
@@ -205,8 +205,8 @@
         itemObserver.observe(item);
       });
       function toggleElements() {
-  var gridContainer = document.getElementById('gridContainer1'); // Get the grid-container
-  var gridContainer2 = document.getElementById('gridContainer2'); // Get the second grid-container
+  var gridContainer = document.getElementById('gridContainer1');
+  var gridContainer2 = document.getElementById('gridContainer2');
   if (gridContainer.style.display != 'none') {
    gridContainer.style.display = 'none';
    gridContainer2.style.display = 'grid';
@@ -215,22 +215,6 @@
    gridContainer2.style.display = 'none';
   }
 }
-    </script>
-    
-<!--
-  load all at once
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        const gridItems = document.querySelectorAll(".grid-item");
-        gridItems.forEach(function(item, index) {
-          setTimeout(function() {
-            item.classList.add("slide-in");
-          }, index * 200);
-        });
-      });
-      </script>
---> 
-  <script>
     
   </script>
   </footer>
