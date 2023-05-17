@@ -85,14 +85,20 @@
 
   <body>
     <script>
-      if(/Android/i.test(navigator.userAgent)) {
-        console.log("On android");
-      } else if(/webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        console.log("Not supported");
-      } else {
-        console.log("On desktop");
+      function isMobileDevice() {
+        const userAgent = navigator.userAgent.toLowerCase();
+        const mobileKeywords = ['android', 'webos', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone'];
+    
+        return mobileKeywords.some(keyword => userAgent.includes(keyword));
       }
-      </script>
+    
+      if (isMobileDevice()) {
+        console.log('Mobile device');
+      } else {
+        console.log('Desktop device');
+      }
+    
+    </script>
     <br><br><br>
     <img src="icon.png" class="img-preset"/>
 
