@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage | pyblog</title>
-    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="style-mobile.css" media="screen" />
     <link rel="icon" type="image/x-icon" href="icon.png">
     <style>
       .img-preset {
@@ -73,16 +73,40 @@
     </style>
 </head>
 <header>
-    <ul class="menu">
-      <li><img style="margin-left: 6px; margin-right: 6px; margin-top: 5px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="icon.png"></li>
-      <li><a href="#" class="hover-underline-animation">Home</a></li>
-      <li><a href="#about-pyblog" class="hover-underline-animation">About PyBlog</a></li>
-      <li><a href="Authors/" class="hover-underline-animation">Authors</a></li>
-  </ul>
+  <div id="side-menu">
+		<div class="menu-item"><a href="">Home</a></div>
+		<div class="menu-item"><a href="">About Pyblog</a></div>
+		<div class="menu-item"><a href="">Fun Blogs</a></div>
+		<div class="menu-item"><a href="">Helpful Blogs</a></div>
+    <div class="menu-item"><a href="Authors/index">Authors</a></div>
+	</div>
+	<div id="menu-toggle" style="font-size: x-large">&#9776;</div>
+	<script>
+		var menuToggle = document.getElementById("menu-toggle");
+		var sideMenu = document.getElementById("side-menu");
+		
+		menuToggle.addEventListener("click", function() {
+			sideMenu.classList.toggle("active");
+		});
+	</script>
+  <p style="float: center; display: inline;">PyBlog</p>
+  <a href=""><img style="float: right; margin-right: 16px; margin-top: 12px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="icon.png"></a>
   </header>
 <body>
     <br><br><br><br>
-    <h1>This is the homepage for the mobile version of pyblog</h1><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <h1>This is the homepage for the mobile version of pyblog</h1>
+  
+  
+  
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+
+
 </body>
 <footer style="margin-top: 50px; margin-bottom: 20px">
     <a id="backtotopbtn" class="button" style="background-color: black; color: white; cursor: pointer;">Back to Top</a>
