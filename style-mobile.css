@@ -12,7 +12,7 @@ header {
 
 body {
   background-color: rgba(239, 91, 36, 255);
-  background-image: linear-gradient(white 0px 5px,var(--gray) 5px 75px, white 75px 71px, var(--orange) 10%, black 90%);
+  background-image: linear-gradient(var(--gray) 0px 75px, white 75px 71px, var(--orange) 10%, black 90%);
   color: white;
   font-family: 'Verdana', sans-serif;
   text-align: center;
@@ -86,7 +86,7 @@ h2 {
 	position: fixed;
 	top: 75px;
 	left: -75%;
-	height: 200px;
+	height: 300px;
 	transition: all 0.3s ease-in-out;
 	z-index: 999;
 }
@@ -94,6 +94,7 @@ h2 {
 #side-menu.active {
 	left: 0;
     border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
 }
 
 #menu-toggle {
@@ -112,7 +113,7 @@ h2 {
 }
 
 .menu-item {
-	padding: 10px;
+	padding: 20px;
 	border-bottom: 1px solid #555;
 	cursor: pointer;
     border-top-right-radius: 30px;
