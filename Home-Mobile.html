@@ -1,1 +1,127 @@
-THIS IS A MOBILE HTML FILE TO TEST IF THE CODE WORKED, RYAN (Can i call you that, it seems easier) TELL ME IF IT WORKS
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage | pyblog</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <link rel="icon" type="image/x-icon" href="icon.png">
+    <style>
+      .img-preset {
+        width: 350px;
+        height: 100px;
+        border-radius: 5px;
+        object-fit: cover;
+      }
+    
+      .blog-img {
+        width: auto;
+        height: 100px;
+        border-radius: 5px;
+        object-fit: cover;
+      }
+    
+      p {
+        color: white;
+        width: 500px;
+        margin: auto;
+        font-size: larger;
+      }
+    
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+      }
+    
+      .grid-item {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+    
+      .grid-item p {
+        color: black;
+        width: 500px;
+        margin: auto;
+        font-size: larger;
+      }
+    
+      .slide-in {
+        animation: slide-in 0.5s ease forwards;
+      }
+    
+      @keyframes slide-in {
+        from {
+          opacity: 0;
+          transform: translateY(50%);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+</head>
+<header>
+    <ul class="menu">
+      <li><img style="margin-left: 6px; margin-right: 6px; margin-top: 5px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="icon.png"></li>
+      <li><a href="#" class="hover-underline-animation">Home</a></li>
+      <li><a href="#about-pyblog" class="hover-underline-animation">About PyBlog</a></li>
+      <li><a href="Authors/" class="hover-underline-animation">Authors</a></li>
+  </ul>
+  </header>
+<body>
+    <br><br><br><br>
+    <h1>This is the homepage for the mobile version of pyblog</h1><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+<footer style="margin-top: 50px; margin-bottom: 20px">
+    <a id="backtotopbtn" class="button" style="background-color: black; color: white; cursor: pointer;">Back to Top</a>
+    <script src="Scroll.js">
+    </script>
+  <!--Proceedual loading-->
+    <script>
+      function handleIntersection(entries, observer) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("slide-in");
+            observer.unobserve(entry.target);
+          }
+        });
+      }
+    
+      const gridItems = document.querySelectorAll(".grid-item");
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.2,
+      };
+    
+      const itemObserver = new IntersectionObserver(handleIntersection, observerOptions);
+    
+      gridItems.forEach((item) => {
+        itemObserver.observe(item);
+      });
+      function toggleElements() {
+  var gridContainer = document.getElementById('gridContainer1');
+  var gridContainer2 = document.getElementById('gridContainer2');
+  if (gridContainer.style.display != 'none') {
+   gridContainer.style.display = 'none';
+   gridContainer2.style.display = 'grid';
+  } else {
+   gridContainer.style.display = 'grid';
+   gridContainer2.style.display = 'none';
+  }
+}
+    
+  </script></footer>
+</html>
