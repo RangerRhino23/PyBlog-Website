@@ -15,13 +15,6 @@
         object-fit: cover;
       }
     
-      .blog-img {
-        width: auto;
-        height: 100px;
-        border-radius: 5px;
-        object-fit: cover;
-      }
-    
       p {
         color: white;
         width: 500px;
@@ -31,29 +24,37 @@
     
       .grid-container {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-      }
-    
-      .grid-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         grid-gap: 20px;
       }
     
       .grid-item {
         background-color: #fff;
-        padding: 20px;
+        padding: 0px;
         border-radius: 5px;
+        width: 90%;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
         opacity: 0;
         transition: opacity 0.3s ease;
+        cursor: pointer;
+        margin-left: 5%;
+      }
+
+      .grid-item img {
+        width: 100%;
+        height: 100px;
+        border-radius: 5px;
+        overflow: hidden;
+        object-fit: contain;
+        margin-top: 5px;
       }
     
       .grid-item p {
         color: black;
-        width: 500px;
+        width: 100%;
         margin: auto;
         font-size: larger;
+        padding-bottom: 10px;
       }
     
       .slide-in {
@@ -93,18 +94,96 @@
   <a href=""><img style="float: right; margin-right: 16px; margin-top: 12px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="icon.png"></a>
   </header>
 <body>
-    <br><br><br><br>
-    <h1>This is the homepage for the mobile version of pyblog</h1>
-  
-  
-  
-    <br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br>
+  <br><br>
+  <img src="icon.png" class="img-preset"/>
+
+  <!-- About PyBlog -->
+  <h2 id="about-pyblog">About PyBlog</h2>
+    <p class="paragraph">
+      PyBlog is a Python Blog Website created by RangerRhino23 as a fun small programming project. There are many different stories and projects you can read about and create!<br> To get started, click on one of the
+      blogs below!
+    </p>
+    <br>
+
+  <h2 id="fun-blogs">Fun Blogs</h2>
+  <hr size="15" width=100% style="border-radius: 5px;" color="#333333">
+  <br>
+
+  <!-- Fun Blogs -->
+  <div class="grid-container" id="gridContainer1" style = "display: grid;">
+    <div class="grid-item" onclick="window.location.href='Blogs/Python-Introduction'">
+      <img src="Blogs/home-page-images/Python-Introduction.jpg">
+      <p><b>
+        What is Python?
+      </b></p>
+    </div>
+    <div class="grid-item" onclick="window.location.href='Blogs/Desktop-Applications-With-Tkinter'">
+      <img src="Blogs/home-page-images/Desktop-Tkinter.jpg">
+      <p><b>
+        Building Desktop Applications With Tkinter
+      </b></p>
+    </div>
+    <div class="grid-item" onclick="window.location.href='Blogs/Deeper-Exploration-of-Tkinter'">
+      <img src="Blogs/home-page-images/Deeper-Exploration-Tkinter.png">
+      <p><b>
+        Deeper Exploration of Tkinter
+      </b></p>
+    </div>
+    <div class="grid-item" onclick="window.location.href='Blogs/Introduction-Into-Ursina'">
+      <img src="Blogs/home-page-images/Introduction-Into-Ursina.png">
+      <p><b>
+        Introduction Into Ursina Engine
+      </b></p>
+    </div>
+    <div class="grid-item" onclick="window.location.href='Blogs/Making-a-Chatbot-With-Python'">
+      <img src="Blogs/home-page-images/Making-Chatbot-With-Python.png">
+      <p><b>
+        Making a Chatbot With Python
+      </b></p>
+    </div>
+    <div class="grid-item" onclick="window.location.href='Blogs/Creating-a-Website-With-Flask'">
+      <img src="Blogs/Flask-stuff/Flask.png">
+      <p><b>
+        Making a website with flask
+      </b></p>
+    </div>
+  </div><br>
+  <div class="grid-container" id="gridContainer2" style="display: none;">
+    <div class="grid-item" onclick="window.location.href='Blogs/New-Blog-1'">
+      <img src="sad.png">
+      <p><b>
+        Blog doesn't exist yet
+      </b></p>
+    </div>
+    <div class="grid-item" onclick="window.location.href='Blogs/New-Blog-2'">
+     <img src="sad.png">
+     <p><b>
+      Blog doesn't exist yet
+     </b></p>
+   </div>
+   <div class="grid-item" onclick="window.location.href='Blogs/New-Blog-2'">
+     <img src="sad.png">
+     <p><b>
+       Blog doesn't exist yet
+     </b></p>
+   </div>
+  </div><br>
+  <button onclick="toggleElements()" class="button" style="padding: 10px; padding-left: 20%; padding-right: 20%; cursor: pointer;">&gt;</button>
+
+  <br><br><br><br>
+    <h2 id="helpful-Blogs">Helpful Blogs</h2>
+    <hr size="15" width=100% style="border-radius: 5px;" color="#333333">
+    <br>
+    <!-- Helpful Blogs-->
+    <div class="grid-container">
+      <div class="grid-item" onclick="window.location.href='Blogs/Installing-Python'" style="cursor: pointer;">
+        <img src="Blogs/Python-Introduction-Files/python_logo.png">
+        <p><b>
+          Installing Python
+        </b></p>
+      </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
 
 
 </body>
