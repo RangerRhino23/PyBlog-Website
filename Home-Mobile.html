@@ -93,6 +93,20 @@
   <a href=""><img style="float: right; margin-right: 16px; margin-top: 12px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="icon.png"></a>
   </header>
 <body>
+  <script>
+    function isMobileDevice() {
+      const userAgent = navigator.userAgent.toLowerCase();
+      const mobileKeywords = ['android', 'webos', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone'];
+  
+      return mobileKeywords.some(keyword => userAgent.includes(keyword));
+    }
+  
+    if (isMobileDevice()) {
+    } else {
+      window.location.replace("https://pyblog.ddns.net/Home")
+    }
+  
+  </script>
     <br><br><br><br>
     <h1>This is the homepage for the mobile version of pyblog</h1>
   
