@@ -4,115 +4,14 @@
     <title>Making a chatbot with python | PyBlog</title>
     <link rel="stylesheet" type="text/css" href="../style.css" media="screen" />
     <link rel="icon" type="image/x-icon" href="../icon_rounded.png">
-    <style>
-      .img-preset {
-        width: 250px;
-        height: 350px;
-        border-radius: 5px;
-        object-fit: cover;
-      }
-
-      p {
-            color: whitesmoke;
-            width: 500px;
-            margin: auto;
-            font-size: larger;
-        }
-        pre {
-            background-color: #000000;
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin: 0;
-            width: auto;
-            text-align: left;
-            display: inline-block;
-        }
-
-        code {
-            display: block;
-            font-size: 14px;
-            line-height: 1.5;
-            overflow-x: auto;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            color: #333;
-        }
-        .copy-button {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: #383838;
-            background-image: url("../copy.png");
-            color: #fff;
-            background-size: 36px;
-            background-position: center;
-            text-align: center;
-            line-height: 40px;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .copy-button:before {
-            font-family: "FontAwesome";
-            font-size: 20px;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-        }
-
-        .copy-button:hover:before {
-            content: "Copy code";
-            font-family: Arial, sans-serif;
-            font-size: 12px;
-            color: #fff;
-            top: -30px;
-            left: -10px;
-            white-space: nowrap;
-        }
-        .copy-button.clicked:before {
-            content: "Copied code";
-            font-family: Arial, sans-serif;
-            font-size: 12px;
-            color: #fff;
-            top: -30px;
-            left: -10px;
-            white-space: nowrap;
-        }
-        table {
-            background-color: #909090;
-            border-collapse: collapse;
-            width: auto;
-            display: inline-block;
-            margin-top: 20px;
-        }
-
-            th, td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #565656;
-        }
-
-            th {
-            background-color: #333;
-            color: #ffffff;
-        }
-        td:not(:first-child) {
-            border-left: 1px solid #565656;
-        }
-        .center {
-            margin: auto;
-          }
-          
-    </style>
   </head>
-  <header>
-    <ul class="menu">
-      <li><img style="margin-left: 6px; margin-right: 6px; margin-top: 5px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="../icon.png"></li>
-      <li><a href="../Home" class="hover-underline-animation">Home</a></li>
-  </ul>
-  </header>
   <body>
+    <header>
+      <div class="menu">
+        <a href="../Home"><img style="margin-left: 6px; margin-right: 6px; margin-top: 5px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="../icon.png"></a>
+        <a href="../Home" class="hover-underline-animation">Home</a>
+    </div>
+    </header>
     <br><br>
     <h1 class="paragraph">Chatbots: How to make them in python</h1>
     <h2>What is a chatbot?</h2>
@@ -123,13 +22,13 @@
     <br>
         <li>Install the OpenAI Python package by running the following command in your terminal:</li><br>
         <pre><code id="code-block-1" style="color: white;">pip install openai</code>
-        <div class="copy-button" onclick="copyCode('code-block-1')"></div></pre><br><br>
+        <div class="copy-button" onclick="copyCode('code-block-1')">Copy</div></pre><br><br>
         <li>Import the OpenAI library in your Python script:</li><br>
         <pre><code id="code-block-2" style="color: white;">import openai</code>
-    <div class="copy-button" onclick="copyCode('code-block-2')"></div></pre><br><br>
+    <div class="copy-button" onclick="copyCode('code-block-2')">Copy</div></pre><br><br>
         <li>Set up your OpenAI API credentials by providing your API key:</li><br>
         <pre><code id="code-block-3" style="color: white;">openai.api_key = 'YOUR_API_KEY'</code>
-               <div class="copy-button" onclick="copyCode('code-block-3')"></div></pre>
+               <div class="copy-button" onclick="copyCode('code-block-3')">Copy</div></pre>
                <br><br>You can find your openAI key <a href="https://platform.openai.com/account/api-keys">here</a>
                it should look like this:<br><br> 
                <img class="center" src="Making-a-chatbot-stuff/API_keys.png" width="500px"><br> 
@@ -146,13 +45,13 @@
     )
     return response.choices[0].text.strip()
 
-                    <div class="copy-button" onclick="copyCode('code-block-4')"></div></code></pre><br><br>
+                    <div class="copy-button" onclick="copyCode('code-block-4')">Copy</div></code></pre><br><br>
         <li>Call the chatbot function and provide a user message to get a response:</li><br>
         <pre><code id="code-block-5" style="color: white;">while True:
     user_message = input("Enter input: ")
     bot_response = chat_with_bot(user_message)
     print(bot_response)</code>
-                        <div class="copy-button" onclick="copyCode('code-block-5')"></div></pre>
+                        <div class="copy-button" onclick="copyCode('code-block-5')">Copy</div></pre>
     
     <h2>What the code should look like</h2>
     <p>
@@ -180,7 +79,7 @@ while True:
     bot_response = chat_with_bot(user_message)
     print(bot_response)
 
-                     <div class="copy-button" onclick="copyCode('code-block-6')"></div></code></pre>
+                     <div class="copy-button" onclick="copyCode('code-block-6')">Copy</div></code></pre>
 
     <h1>Final words:</h1>
     <p>
@@ -210,7 +109,7 @@ while True:
 </script>
   </body>
   <footer style="margin-top: 50px; margin-bottom: 20px">
-    <a id="backtotopbtn" class="button" style="background-color: black; color: white; cursor: pointer;">Back to Top</a>
+    <a id="backtotopbtn" class="top">Back to Top</a>
     <script src="../Scroll.js">
     </script>
     <!DOCTYPE html>

@@ -4,109 +4,12 @@
     <title>Deeper Exploration of Tkinter | PyBlog</title>
     <link rel="stylesheet" type="text/css" href="../style.css" media="screen" />
     <link rel="icon" type="image/x-icon" href="../icon_rounded.png">
-    <style>
-      .img-preset {
-        width: 250px;
-        height: 350px;
-        border-radius: 5px;
-        object-fit: cover;
-      }
-
-      p {
-            color: whitesmoke;
-            width: 500px;
-            margin: auto;
-            font-size: larger;
-        }
-        pre {
-            background-color: #000000;
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin: 0;
-            width: auto;
-            text-align: left;
-            display: inline-block;
-        }
-
-        code {
-            display: block;
-            font-size: 14px;
-            line-height: 1.5;
-            overflow-x: auto;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            color: #333;
-        }
-        .copy-button {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: #383838;
-            background-image: url("../copy.png");
-            color: #fff;
-            background-size: 36px;
-            background-position: center;
-            text-align: center;
-            line-height: 40px;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .copy-button:before {
-            font-family: "FontAwesome";
-            font-size: 20px;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-        }
-
-        .copy-button:hover:before {
-            content: "Copy code";
-            font-family: Arial, sans-serif;
-            font-size: 12px;
-            color: #fff;
-            top: -30px;
-            left: -10px;
-            white-space: nowrap;
-        }
-        .copy-button.clicked:before {
-            content: "Copied code";
-            font-family: Arial, sans-serif;
-            font-size: 12px;
-            color: #fff;
-            top: -30px;
-            left: -10px;
-            white-space: nowrap;
-        }
-        table {
-            background-color: #909090;
-            border-collapse: collapse;
-            width: auto;
-            display: inline-block;
-            margin-top: 20px;
-        }
-
-            th, td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #565656;
-        }
-
-            th {
-            background-color: #333;
-            color: #ffffff;
-        }
-        td:not(:first-child) {
-            border-left: 1px solid #565656;
-        }
-    </style>
   </head>
   <header>
-    <ul class="menu">
-      <li><img style="margin-left: 6px; margin-right: 6px; margin-top: 5px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="../icon.png"></li>
-      <li><a href="../Home" class="hover-underline-animation">Home</a></li>
-      <li><a href="../Blogs/Desktop-Applications-With-Tkinter.html" class="hover-underline-animation">Previous blog</a></li>
+    <div class="menu">
+      <a href="../Home"><img style="margin-left: 6px; margin-right: 6px; margin-top: 5px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="../icon.png"></a>
+      <a href="../Home" class="hover-underline-animation">Home</a></li>
+      <a href="../Blogs/Desktop-Applications-With-Tkinter.html" class="hover-underline-animation">Previous blog</a></li>
   </ul>
   </header>
   <body>
@@ -121,7 +24,7 @@
     <p>Using grid can allow you to more accuractly place buttons and
         labels. Using the grid function is fairly simple and takes only 2 required args 
         (arguments) which are "column" and "row" which you can infer what they do.
-        <br><br><pre><code id="code-block-1" style="color: white;">import tkinter as tk
+        <br><br><pre><code id="code-block-1">import tkinter as tk
 
 def button_click():
     print("Button clicked!")
@@ -136,7 +39,7 @@ button.grid(column=0,row=1)
 
 root.mainloop()
 
-</code><div class="copy-button" onclick="copyCode('code-block-1')"></div></pre>
+</code><div class="copy-button" onclick="copyCode('code-block-1')">Copy</div></pre>
     </p><p><br>
     this code will do the exact same as the code which is in the
     previous blog but uses a grid system which can make putting buttons and
@@ -149,9 +52,9 @@ root.mainloop()
         You can change the text on a label using the .config
         function, this can also allow you to change the column and or row
         on which the label is placed on
-    </p><br><pre><code id="code-block-2" style="color: white;">def button_click():
+    </p><br><pre><code id="code-block-2" >def button_click():
     label.config(text="You've changed me!")</code>
-    <div class="copy-button" onclick="copyCode('code-block-2')"></div></pre>
+    <div class="copy-button" onclick="copyCode('code-block-2')">Copy</div></pre>
     <p><br>
         Here we have modified the "button_click()" function so when the button is clicked
         its changes the text of the label to "You've changed me". 
