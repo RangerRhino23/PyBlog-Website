@@ -1,131 +1,59 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Creating a web application with flask | PyBlog</title>
-    <link rel="stylesheet" type="text/css" href="../style.css" media="screen" />
-    <link rel="icon" type="image/x-icon" href="../icon_rounded.png">
-    <style>
-      .img-preset {
-        width: auto;
-        height: auto;
-        border-radius: 5px;
-        object-fit: cover;
-        scale: 0.95;
-      }
 
-      p {
-            color: whitesmoke;
-            width: 500px;
-            margin: auto;
-            font-size: larger;
-        }
+<head>
+  <title>Creating a web application with flask | PyBlog</title>
+  <link rel="stylesheet" type="text/css" href="../style.css" media="screen" />
+  <link rel="icon" type="image/x-icon" href="../icon_rounded.png">
+</head>
+<header>
+  <div class="menu">
+    <a href="../Home"><img src="../icon.png"></a>
+    <a href="../Home" class="hover-underline-animation">Home</a>
+  </div>
+</header>
 
-        pre {
-            background-color: #000000;
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin: 0;
-            width: auto;
-            text-align: left;
-            display: inline-block;
-        }
+<body>
+  <br><br>
+  <!--Optional image placement-->
+  <img src="Flask-stuff/Flask.png" style="zoom:0.6;" class="img-preset">
+  <h1>Creating web applications with python flask.</h1><br>
+  <p>
+    In this blog post we will be making a website with python and flask.
+    and successfully running it a localhost.
+  </p>
 
-        code {
-            display: block;
-            font-size: 14px;
-            line-height: 1.5;
-            overflow-x: auto;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            color: #333;
-        }
-        .copy-button {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: #383838;
-            background-image: url("../copy.png");
-            color: #fff;
-            background-size: 36px;
-            background-position: center;
-            text-align: center;
-            line-height: 40px;
-            cursor: pointer;
-            position: relative;
-        }
+  <h2>What is flask?</h2>
+  <p>
+    Flask is a web framework for Python that allows you to develop web applications easily.
+    It is a microframework that doesn’t include an ORM (Object Relational Manager) or such features.
+    Flask provides only the essential components like routing, request handling, sessions, and so on. It provides you
+    with libraries, tools,
+    and modules to develop web applications like a blog (like this one), wiki,
+    or even a commercial website.
+  </p>
 
-        .copy-button:before {
-            font-family: "FontAwesome";
-            font-size: 20px;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-        }
+  <h2>Getting Started</h2>
+  <p>
+    To get started with Flask, you will first need to install the Flask Library. To do this run the following command in
+    a terminal:
+  </p>
+  <br>
+  <pre><code id="code-block-1">pip install Flask
+    </code>       <div class="copy-button" onclick="copyCode('code-block-1')">Copy</div></pre>
+  <br><br>
+  <p>This will install all of the required stuff need to start working with Flask!</p>
 
-        .copy-button:hover:before {
-            content: "Copy code";
-            font-family: Arial, sans-serif;
-            font-size: 12px;
-            color: #fff;
-            top: -30px;
-            left: -10px;
-            white-space: nowrap;
-        }
-        .copy-button.clicked:before {
-            content: "Copied code";
-            font-family: Arial, sans-serif;
-            font-size: 12px;
-            color: #fff;
-            top: -30px;
-            left: -10px;
-            white-space: nowrap;
-        }
-    </style>
-  </head>
-  <header>
-    <ul class="menu">
-      <li><img style="margin-left: 6px; margin-right: 6px; margin-top: 5px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="../icon.png"></li>
-      <li><a href="../Home" class="hover-underline-animation">Home</a></li>
-  </ul>
-  </header>
-  <body>
-    <br><br>
-    <!--Optional image placement-->
-    <img src="Flask-stuff/Flask.png" style="zoom:0.6;" class="img-preset">
-    <h1>Creating web applications with python flask.</h1><br>
-    <p>
-      In this blog post we will be making a website with python and flask.
-      and successfully running it a localhost.
-    </p>
-
-    <h2>What is flask?</h2>
-    <p>
-        Flask is a web framework for Python that allows you to develop web applications easily.
-        It is a microframework that doesn’t include an ORM (Object Relational Manager) or such features.
-        Flask provides only the essential components like routing, request handling, sessions, and so on. It provides you with libraries, tools,
-        and modules to develop web applications like a blog (like this one), wiki,
-        or even a commercial website.
-    </p>
-
-    <h2>Getting Started</h2>
-    <p>
-      To get started with Flask, you will first need to install the Flask Library. To do this run the following command in a terminal:
-    </p> 
-    <br>
-    <pre><code id="code-block-1" style="color: white;">pip install Flask
-    </code>       <div class="copy-button" onclick="copyCode('code-block-1')"></div></pre>
-    <br><br>
-    <p>This will install all of the required stuff need to start working with Flask!</p>
-
-    <h2>Building your first Website with Flask</h2>
-    <p>
-      Now that you have gotten Flask installed, you will need to make a project folder to store the python file as well as other files you will use later on.
-      Once you have your folder created, open in your code editor or IDE. In that folder, create a new file and name it 'main.py'. Make sure you have the .py on the end.
-      In the newly created file put the following code:
-    </p>
-    <br>
-    <pre><code id="code-block-2" style="color: white;">from flask import Flask
+  <h2>Building your first Website with Flask</h2>
+  <p>
+    Now that you have gotten Flask installed, you will need to make a project folder to store the python file as well as
+    other files you will use later on.
+    Once you have your folder created, open in your code editor or IDE. In that folder, create a new file and name it
+    'main.py'. Make sure you have the .py on the end.
+    In the newly created file put the following code:
+  </p>
+  <br>
+  <pre><code id="code-block-2">from flask import Flask
 
 app = Flask(__name__)
 
@@ -134,32 +62,33 @@ def index():
     return 'This is my first website!'
 
 app.run('localhost', 5000)
-    </code>                   <div class="copy-button" onclick="copyCode('code-block-2')"></div></pre>
-    <br><br>
-    <p>
-      Running the code above will create a 'website' on the url 'http://localhost:5000'. (To run the file, open file explorer and double click on the file and it should
-      open a terminal running the file) Now go to your web browser and in your url search bar, put:
-    </p>
-    <br>
-    <pre><code id="code-block-3" style="color: white;">http://localhost:5000
-    </code>         <div class="copy-button" onclick="copyCode('code-block-3')"></div></pre>
-    <br><br>
-    <p>If you did everything correctly, the webpage should look like this!</p><br>
-    <img src="Flask-stuff/first-website-result.png" class="img-preset">
-    <br>
-    <p>
-      Now you're thinking, how do you create proper websites with it because just adding
-      text surely is that great. And you'd be right it isnt that great so to compensate flask allows
-      you to use html files to display the website which is also why its known as a server sided module
-      which means you can also use PHP and other server sided stuff.
-    </p>
-    <h2>Creating a HTML file</h2>
-    <p>
-      You can create a html file and call it whatever you'd like. In this blog we will be calling it:
-      "test.html"
-    </p>
+    </code>                   <div class="copy-button" onclick="copyCode('code-block-2')">Copy</div></pre>
+  <br><br>
+  <p>
+    Running the code above will create a 'website' on the url 'http://localhost:5000'. (To run the file, open file
+    explorer and double click on the file and it should
+    open a terminal running the file) Now go to your web browser and in your url search bar, put:
+  </p>
   <br>
-  <pre><code id="code-block-4" style="color: white;">&lt;!DOCTYPE html&gt;
+  <pre><code id="code-block-3">http://localhost:5000
+    </code>         <div class="copy-button" onclick="copyCode('code-block-3')">Copy</div></pre>
+  <br><br>
+  <p>If you did everything correctly, the webpage should look like this!</p><br>
+  <img src="Flask-stuff/first-website-result.png" class="img-preset">
+  <br>
+  <p>
+    Now you're thinking, how do you create proper websites with it because just adding
+    text surely is that great. And you'd be right it isnt that great so to compensate flask allows
+    you to use html files to display the website which is also why its known as a server sided module
+    which means you can also use PHP and other server sided stuff.
+  </p>
+  <h2>Creating a HTML file</h2>
+  <p>
+    You can create a html file and call it whatever you'd like. In this blog we will be calling it:
+    "test.html"
+  </p>
+  <br>
+  <pre><code id="code-block-4">&lt;!DOCTYPE html&gt;
 &lt;html lang="en">&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
@@ -168,77 +97,80 @@ app.run('localhost', 5000)
     &lt;title&gt;Title&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    This is HTML
+    This is HTML 
 &lt;/body&gt;
-&lt;/html&gt;</code>                                       <div class="copy-button" onclick="copyCode('code-block-4')"></div></pre>
-    <br><br><P>
-      Using that code you can create a proper HTML layout that a web browser will be able to render 
-      fully. And now we are going to make some modifactions to the python file to allow for HTML files to be used.
-    </P><br><br>
-    <pre><code id="code-block-5" style="color: white;">from flask import Flask, render_template
+&lt;/html&gt;</code>                                       <div class="copy-button" onclick="copyCode('code-block-4')">Copy</div></pre>
+  <br><br>
+  <P>
+    Using that code you can create a proper HTML layout that a web browser will be able to render
+    fully. And now we are going to make some modifactions to the python file to allow for HTML files to be used.
+  </P><br><br>
+  <pre><code id="code-block-5">from flask import Flask, render_template
 app = Flask(__name__, static_folder="static", template_folder="HTML")
-    </code>                                     <div class="copy-button" onclick="copyCode('code-block-5')"></div></pre>
+    </code>                                     <div class="copy-button" onclick="copyCode('code-block-5')">Copy</div></pre>
+  <br><br>
+  <p>
+    In this modified version of the code it allows us to use the "render_template" that
+    comes with flask. We are also settings a directory of our HTML files which will be called "HTML"
+    so make sure to create a folder called "HTML" for flask to register the HTML files. We can now implement
+    the HTML into flask so it can render it with the following code:
     <br><br>
-    <p>
-      In this modified version of the code it allows us to use the "render_template" that
-      comes with flask. We are also settings a directory of our HTML files which will be called "HTML"
-      so make sure to create a folder called "HTML" for flask to register the HTML files. We can now implement
-      the HTML into flask so it can render it with the following code:
-    <br><br></p>
-    <pre><code id="code-block-6" style="color: white;">@app.route("/")
+  </p>
+  <pre><code id="code-block-6">@app.route("/")
       def index():
           return render_template('test.html')
-          </code>                         <div class="copy-button" onclick="copyCode('code-block-6')"></div></pre>
-          <br><br>
-          <p>
-            So now when we run flask on the index page "/" it will render the "test.html" file 
-            and display it on your localhost.
-          </p>
-          <br>
-          <h1>In conclusion</h1>
-          <p>
-            Python's web framework, flask is a very powerful tool that can allow for server-sided 
-            websites which can allow you to use services such as PHP to send and make requets but flask
-            is good just for hosting a simple and easy website on your localhost network (Portforwarding can open it
-            publicly). It is very good for beginners and even advanced users.
+          </code>                         <div class="copy-button" onclick="copyCode('code-block-6')">Copy</div></pre>
+  <br><br>
+  <p>
+    So now when we run flask on the index page "/" it will render the "test.html" file
+    and display it on your localhost.
+  </p>
+  <br>
+  <h1>In conclusion</h1>
+  <p>
+    Python's web framework, flask is a very powerful tool that can allow for server-sided
+    websites which can allow you to use services such as PHP to send and make requets but flask
+    is good just for hosting a simple and easy website on your localhost network (Portforwarding can open it
+    publicly). It is very good for beginners and even advanced users.
 
-            But that is flask and we hope you enjoyed this blog!
-          </p><br>
-          <h3>FaQ</h3>
-          <p>
-            &bullet; Localhost can only be run within your network<br>
-            &bullet; Flask is for python only but can render .html files<br>
-            &bullet; The "5000" is the port number and can be anything from 1-65535<br>
-            &bullet; If your flask fails change the port number<br>
-            &bullet; Portforwarding can allow others to connect to your flask website.
-          </p>
-          <br><br><br>
-    <p>Created by <a href="../authors/ItsBailey">ItsBailey</a></p>
-    with the help of <a href="../authors/RangerRhino23">RangerRhino23</a>
-    <br><br><br><br><br><br><br><br><br>
-    <a class="button" href="../Home">Back To Home</a>
-<script>
-  function copyCode(elementId) {
-    var codeBlock = document.getElementById(elementId);
-    var range = document.createRange();
-    range.selectNode(codeBlock);
-    window.getSelection().removeAllRanges();
-    window.getSelection().addRange(range);
-    document.execCommand("copy");
-    window.getSelection().removeAllRanges();
-    
-    var button = document.querySelector('[onclick="copyCode(\'' + elementId + '\')"]');
-    button.classList.add('clicked');
-    setTimeout(function() {
-      button.classList.remove('clicked');
-    }, 2000);
-  }
-  
-</script>
-  </body>
-  <footer style="margin-top: 50px; margin-bottom: 20px">
-    <a id="backtotopbtn" class="button" style="background-color: black; color: white; cursor: pointer; padding-left: 20%; padding-right: 20%;">Back to Top</a>
-    <script src="../Scroll.js">
-    </script>
-  </footer>
+    But that is flask and we hope you enjoyed this blog!
+  </p><br>
+  <h3>FaQ</h3>
+  <p>
+    &bullet; Localhost can only be run within your network<br>
+    &bullet; Flask is for python only but can render .html files<br>
+    &bullet; The "5000" is the port number and can be anything from 1-65535<br>
+    &bullet; If your flask fails change the port number<br>
+    &bullet; Portforwarding can allow others to connect to your flask website.
+  </p>
+  <br><br><br>
+  <p>Created by <a href="../authors/ItsBailey">ItsBailey</a></p>
+  with the help of <a href="../authors/RangerRhino23">RangerRhino23</a>
+  <br><br><br><br><br><br><br><br><br>
+  <a class="button" href="../Home">Back To Home</a>
+  <script>
+    function copyCode(elementId) {
+      var codeBlock = document.getElementById(elementId);
+      var range = document.createRange();
+      range.selectNode(codeBlock);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+      document.execCommand("copy");
+      window.getSelection().removeAllRanges();
+
+      var button = document.querySelector('[onclick="copyCode(\'' + elementId + '\')"]');
+      button.classList.add('clicked');
+      setTimeout(function () {
+        button.classList.remove('clicked');
+      }, 2000);
+    }
+
+  </script>
+</body>
+<footer style="margin-top: 50px; margin-bottom: 20px">
+  <a id="backtotopbtn" class="top">Back to Top</a>
+  <script src="../Scroll.js">
+  </script>
+</footer>
+
 </html>
