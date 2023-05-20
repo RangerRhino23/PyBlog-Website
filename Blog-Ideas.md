@@ -1,11 +1,11 @@
 Potential Blogs:
-* Web Development with Flask. Done
+* Web Development with Flask - DONE
 
-* How to build a chatbot using Python. Done
+* How to build a chatbot using Python - DONE
 
 * Introduction to Ursina
 
-    Building a simple game in Ursina
+    Building a simple game in Ursina - DONE
 
     Building (game of your choice)
 
