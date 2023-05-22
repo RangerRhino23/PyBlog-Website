@@ -26,9 +26,9 @@
 <script>
     // Sample blog post data (replace with your actual data)
 const blogPosts = [
-  { title: "Blog Post 1", content: "Lorem ipsum dolor sit amet..." },
-  { title: "Blog Post 2", content: "Consectetur adipiscing elit..." },
-  { title: "Blog Post 3", content: "Sed do eiusmod tempor incididunt..." },
+  { title: "Blog Post 1", content: "Lorem ipsum dolor sit amet...", link: "https://google.com" },
+  { title: "Blog Post 2", content: "Consectetur adipiscing elit...", link: "https://bing.com" },
+  { title: "Blog Post 3", content: "Sed do eiusmod tempor incididunt...", link: "https://discord.com" },
 ];
 
 const searchInput = document.getElementById('searchInput');
@@ -59,7 +59,19 @@ function displaySearchResults(posts) {
 
   posts.forEach(post => {
     const postElement = document.createElement('div');
-    postElement.innerHTML = `<h3>${post.title}</h3><p>${post.content}</p>`;
+    const titleElement = document.createElement('h3');
+    const contentElement = document.createElement('p');
+    
+    // Create a clickable link for the blog title
+    const linkElement = document.createElement('a');
+    linkElement.href = post.link; // Replace 'link' with the actual URL of the blog post
+    linkElement.textContent = post.title;
+    
+    titleElement.appendChild(linkElement);
+    contentElement.textContent = post.content;
+
+    postElement.appendChild(titleElement);
+    postElement.appendChild(contentElement);
     searchResults.appendChild(postElement);
   });
 }
