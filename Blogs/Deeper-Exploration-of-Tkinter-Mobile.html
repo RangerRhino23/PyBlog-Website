@@ -1,24 +1,50 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deeper Exploration of Tkinter | PyBlog</title>
-    <link rel="stylesheet" type="text/css" href="../style.css" media="screen" />
-    <link rel="icon" type="image/x-icon" href="../icon_rounded.png">
+    <link rel="stylesheet" type="text/css" href="../style-mobile.css" media="screen" />
+    <link rel="icon" type="image/x-icon" href="../icon.png">
     <style>
+
       .img-preset {
-        width: 250px;
-        height: 350px;
+        width: 340px;
+        height: auto;
         border-radius: 5px;
         object-fit: cover;
       }
 
       p {
             color: whitesmoke;
-            width: 500px;
+            width: 75%;
             margin: auto;
             font-size: larger;
         }
-        pre {
+      
+      a {
+            width: 75%;
+            word-wrap: break-word;
+            margin: auto;
+        }
+    
+      .slide-in {
+        animation: slide-in 0.5s ease forwards;
+      }
+    
+      @keyframes slide-in {
+        from {
+          opacity: 0;
+          transform: translateY(50%);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      pre {
             background-color: #000000;
             border: 1px solid #ccc;
             padding: 10px;
@@ -79,6 +105,7 @@
             left: -10px;
             white-space: nowrap;
         }
+
         table {
             background-color: #909090;
             border-collapse: collapse;
@@ -101,31 +128,43 @@
             border-left: 1px solid #565656;
         }
     </style>
-  </head>
-  <header>
-    <ul class="menu">
-      <li><img style="margin-left: 6px; margin-right: 6px; margin-top: 5px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="../icon.png"></li>
-      <li><a href="../Home" class="hover-underline-animation">Home</a></li>
-      <li><a href="../Blogs/Desktop-Applications-With-Tkinter.html" class="hover-underline-animation">Previous blog</a></li>
-  </ul>
+</head>
+<header>
+  <div id="side-menu" style="height: 120px;">
+		<div class="menu-item"><a href="../Home">Home</a></div>
+    <div class="menu-item"><a href="../Authors/ItsBailey">Author</a></div>
+	</div>
+	<div id="menu-toggle" style="font-size: x-large">&#9776;</div>
+	<script>
+		var menuToggle = document.getElementById("menu-toggle");
+		var sideMenu = document.getElementById("side-menu");
+		
+		menuToggle.addEventListener("click", function() {
+			sideMenu.classList.toggle("active");
+		});
+	</script>
+  <p style="float: center; display: inline;">PyBlog</p>
+  <a href=""><img style="float: right; margin-right: 16px; margin-top: 12px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="../icon.png"></a>
   </header>
-  <body>
-    <script>
-      function isMobileDevice() {
-        const userAgent = navigator.userAgent.toLowerCase();
-        const mobileKeywords = ['android', 'webos', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone'];
-    
-        return mobileKeywords.some(keyword => userAgent.includes(keyword));
-      }
-    
-      if (isMobileDevice()) {
-        window.location.replace("https://pyblog.ddns.net/Blogs/Deeper-Exploration-of-Tkinter-Mobile")
-      } else {
-        ;
-      }
-    </script>
-    <br><br>
-    <h1>A Deeper Exploration of Tkinter</h1>
+<body>
+  <script>
+    function isMobileDevice() {
+      const userAgent = navigator.userAgent.toLowerCase();
+      const mobileKeywords = ['android', 'webos', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone'];
+  
+      return mobileKeywords.some(keyword => userAgent.includes(keyword));
+    }
+  
+    if (isMobileDevice()) {
+      ;
+    } else {
+      window.location.replace("https://pyblog.ddns.net/Blogs/Deeper-Exploration-of-Tkinter")
+    }
+  
+  </script>
+
+  <!-- MAIN STUFF-->
+  <h1>A Deeper Exploration of Tkinter</h1>
     <h3>Difficulty: Beginner</h3>
 
 
@@ -204,10 +243,12 @@ root.mainloop()
         position and text of a label and now you have a better understanding of how to 
         create applications with tkinter.
     </p>
+    <div style="margin-top:40px;"></div>
     <p>Created by <a href="../authors/ItsBailey">ItsBailey</a></p>
     <br><br><br>
-
-<script>
+  <a class="button" href="../Home">Back To Home</a>
+  <div style="margin-top:30px;"></div>
+  <script>
   function copyCode(elementId) {
     var codeBlock = document.getElementById(elementId);
     var range = document.createRange();
@@ -226,10 +267,4 @@ root.mainloop()
   
 </script>
 </body>
-  <footer style="margin-top: 50px; margin-bottom: 20px">
-    <a id="backtotopbtn" class="button" style="background-color: black; color: white; cursor: pointer; padding-left: 20%; padding-right: 20%;">Back to Top</a>
-    :P
-    <script src="../Scroll.js">
-    </script>
-  </footer>
 </html>
