@@ -97,6 +97,14 @@ h2 {
     border-top-right-radius: 30px;
 }
 
+#side-menu.unactive {
+  top: 75px;
+	left: -75%;
+	height: 300px;
+	transition: all 0.3s ease-in-out;
+	z-index: 999;
+}
+
 #menu-toggle {
 	background-color: #333;
 	color: #fff;

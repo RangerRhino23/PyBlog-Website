@@ -76,10 +76,10 @@
 <header>
   <div id="side-menu">
 		<div class="menu-item"><a href="">Home</a></div>
-		<div class="menu-item"><a href="">About Pyblog</a></div>
-		<div class="menu-item"><a href="">Fun Blogs</a></div>
-		<div class="menu-item"><a href="">Helpful Blogs</a></div>
-    <div class="menu-item"><a href="">Authors</a></div>
+		<div class="menu-item"><a id="about-pyblog-button">About Pyblog</a></div>
+		<div class="menu-item"><a id="fun-blogs-button">Fun Blogs</a></div>
+		<div class="menu-item"><a id="helpful-blogs-button">Helpful Blogs</a></div>
+    <div class="menu-item"><a href="Authors/index">Authors</a></div>
 	</div>
 	<div id="menu-toggle" style="font-size: x-large">&#9776;</div>
 	<script>
@@ -88,6 +88,33 @@
 		
 		menuToggle.addEventListener("click", function() {
 			sideMenu.classList.toggle("active");
+		});
+	</script>
+  <script>
+		var AboutPyblogToggle = document.getElementById("about-pyblog-button");
+		var sideMenu = document.getElementById("side-menu");
+		
+		AboutPyblogToggle.addEventListener("click", function() {
+			sideMenu.classList.toggle("active");
+      window.location.href = '#about-pyblog';
+		});
+	</script>
+  <script>
+		var FunBlogsToggle = document.getElementById("fun-blogs-button");
+		var sideMenu = document.getElementById("side-menu");
+		
+		FunBlogsToggle.addEventListener("click", function() {
+			sideMenu.classList.toggle("active");
+      window.location.href = '#fun-blogs';
+		});
+	</script>
+  <script>
+		var HelpfulBlogsToggle = document.getElementById("helpful-blogs-button");
+		var sideMenu = document.getElementById("side-menu");
+		
+		HelpfulBlogsToggle.addEventListener("click", function() {
+			sideMenu.classList.toggle("active");
+      window.location.href = '#helpful-blogs';
 		});
 	</script>
   <p style="float: center; display: inline;">PyBlog</p>
@@ -105,7 +132,7 @@
     if (isMobileDevice()) {
       ;
     } else {
-      window.location.replace("https://pyblog.ddns.net/Home")
+      // window.location.replace("https://pyblog.ddns.net/Home")
     }
   
   </script>
@@ -206,7 +233,7 @@
   <button onclick="toggleElements()" class="button" style="padding: 10px; padding-left: 20%; padding-right: 20%; cursor: pointer;">&gt;</button>
 
   <br><br><br><br>
-    <h2 id="helpful-Blogs">Helpful Blogs</h2>
+    <h2 id="helpful-blogs">Helpful Blogs</h2>
     <hr size="15" width=100% style="border-radius: 5px;" color="#333333">
     <br>
     <!-- Helpful Blogs-->
