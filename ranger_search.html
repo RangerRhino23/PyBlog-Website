@@ -12,7 +12,40 @@
     #searchResults {
         margin-top: 10px;
     }
-
+      .img-preset {
+        width: 350px;
+        height: 100px;
+        border-radius: 5px;
+        object-fit: cover;
+      }
+    
+      .blog-img {
+        width: auto;
+        height: 100px;
+        border-radius: 5px;
+        object-fit: cover;
+      }
+    
+      p {
+        color: white;
+        width: 500px;
+        margin: auto;
+        font-size: larger;
+      }
+      .slide-in {
+        animation: slide-in 0.5s ease forwards;
+      }
+    
+      @keyframes slide-in {
+        from {
+          opacity: 0;
+          transform: translateY(50%);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 </style>
 
 <html>
@@ -25,11 +58,25 @@
 
 <script>
     // Sample blog post data (replace with your actual data)
-const blogPosts = [
-  { title: "Blog Post 1", content: "Lorem ipsum dolor sit amet...", link: "https://google.com" },
-  { title: "Blog Post 2", content: "Consectetur adipiscing elit...", link: "https://bing.com" },
-  { title: "Blog Post 3", content: "Sed do eiusmod tempor incididunt...", link: "https://discord.com" },
-];
+    const blogPosts = [
+    { 
+      title: "Ursina", 
+      content: `
+        <div class="grid-item" onclick="window.location.href='Blogs/Introduction-Into-Ursina'" style="cursor: pointer;">
+          <img src="Blogs/home-page-images/Introduction-Into-Ursina.png" class="blog-img">
+          <p><b>Introduction Into Ursina Engine</b></p>
+        </div>`
+    },
+    { 
+      title: "Blog Post 2", 
+      content: `
+        <div class="grid-item" onclick="window.location.href='Blogs/Another-Blog-Post'" style="cursor: pointer;">
+          <img src="Blogs/home-page-images/Another-Blog-Post.png" class="blog-img">
+          <p><b>Another Blog Post</b></p>
+        </div>`
+    },
+  ];
+  
 
 const searchInput = document.getElementById('searchInput');
 const searchButton = document.getElementById('searchButton');
@@ -59,21 +106,13 @@ function displaySearchResults(posts) {
 
   posts.forEach(post => {
     const postElement = document.createElement('div');
-    const titleElement = document.createElement('h3');
-    const contentElement = document.createElement('p');
-    
-    // Create a clickable link for the blog title
-    const linkElement = document.createElement('a');
-    linkElement.href = post.link; // Replace 'link' with the actual URL of the blog post
-    linkElement.textContent = post.title;
-    
-    titleElement.appendChild(linkElement);
-    contentElement.textContent = post.content;
-
-    postElement.appendChild(titleElement);
-    postElement.appendChild(contentElement);
+    postElement.innerHTML = `
+      <h3>${post.title}</h3>
+      ${post.content}
+    `;
     searchResults.appendChild(postElement);
   });
 }
+
 
 </script>
