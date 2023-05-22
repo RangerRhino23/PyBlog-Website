@@ -9,7 +9,7 @@ Potential Blogs:
 
     Building (game of your choice)
 
-* How to setup Visual Studio Code - Ryan working on
+* How to setup Visual Studio Code - DONE
 
 * Installing modules and using them correctly.
 
