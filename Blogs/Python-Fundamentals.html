@@ -111,6 +111,21 @@
   </ul>
   </header>
   <body>
+    <script>
+      function isMobileDevice() {
+        const userAgent = navigator.userAgent.toLowerCase();
+        const mobileKeywords = ['android', 'webos', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone'];
+    
+        return mobileKeywords.some(keyword => userAgent.includes(keyword));
+      }
+    
+      if (isMobileDevice()) {
+        window.location.replace("https://pyblog.ddns.net/Blogs/Python-Fundamentals-Mobile")
+      } else {
+        ;
+      }
+    
+    </script>
     <br><br>
     <img src="home-page-images/Python-Fundamentals.png" style="width: 30%;">
     <h1>Creating Simulations With Python</h1>
