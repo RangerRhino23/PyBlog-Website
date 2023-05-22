@@ -1,0 +1,80 @@
+<!--Work in progress-->
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search Bar</title>
+  <script>
+    function search() {
+      var input = document.getElementById("searchInput").value; // Get the search input value
+      var buttons = document.getElementsByClassName("button"); // Get all elements with the class "button"
+      var bestMatch = null;
+      var bestMatchScore = 0;
+
+      // Loop through each button and compare the search input with their class
+      for (var i = 0; i < buttons.length; i++) {
+        var button = buttons[i];
+        var buttonClass = button.className;
+
+        // Calculate a matching score based on the order of matching characters
+        var score = calculateMatchingScore(input, buttonClass);
+
+        // Update the best match if the current score is higher
+        if (score > bestMatchScore) {
+          bestMatch = button;
+          bestMatchScore = score;
+        }
+      }
+
+      if (bestMatch) {
+        alert("Best match: " + bestMatch.textContent);
+      } else {
+        alert("No matching button found.");
+      }
+    }
+
+    function calculateMatchingScore(input, buttonClass) {
+      var inputLowerCase = input.toLowerCase();
+      var buttonClassLowerCase = buttonClass.toLowerCase();
+      var score = 0;
+      var previousIndex = -1;
+
+      // Loop through each character of the input
+      for (var i = 0; i < inputLowerCase.length; i++) {
+        var inputChar = inputLowerCase[i];
+        var index = buttonClassLowerCase.indexOf(inputChar);
+
+        // Increment the score if the character is found in the button class and the order is correct
+        if (index > -1 && index > previousIndex) {
+          score++;
+          buttonClassLowerCase = buttonClassLowerCase.substring(0, index) +
+            buttonClassLowerCase.substring(index + 1); // Remove the matched character from the button class string
+          previousIndex = index;
+        }
+      }
+
+      return score;
+    }
+  </script>
+</head>
+<body>
+  <input type="text" id="searchInput" placeholder="Search for button class">
+  <button onclick="search()">Search</button>
+
+  <br><br>
+
+  <button class="button">Button 1</button>
+  <button class="button">Button 2</button>
+  <button class="button">Another Button</button>
+  <button class="button">Different Button</button>
+</body>
+</html>

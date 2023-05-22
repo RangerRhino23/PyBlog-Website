@@ -4,7 +4,7 @@ defaults:
   - scope:
       path: ""
     values:
-      cache_control: "public, max-age=2592000"
+      cache_control: "public, max-age=800"
 
 exclude:
   - Gemfile
