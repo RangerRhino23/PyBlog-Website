@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under development</title>
+</head>
+<body>
+    <style>
+        .img-preset {
+          width: auto;
+          height: auto;
+          border-radius: 5px;
+          object-fit: cover;
+          scale: 0.95;
+        }
+  
+        p {
+              color: whitesmoke;
+              width: 500px;
+              margin: auto;
+              font-size: larger;
+          }
+  
+          pre {
+              background-color: #000000;
+              border: 1px solid #ccc;
+              padding: 10px;
+              margin: 0;
+              width: auto;
+              max-width: 60%;
+              text-align: left;
+              display: inline-block;
+          }
+  
+          code {
+              display: block;
+              font-size: 14px;
+              line-height: 1.5;
+              overflow-x: auto;
+              white-space: pre-wrap;
+              word-wrap: break-word;
+              color: #333;
+          }
+          .copy-button {
+              display: inline-block;
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              background-color: #383838;
+              background-image: url("../copy.png");
+              color: #fff;
+              background-size: 36px;
+              background-position: center;
+              text-align: center;
+              line-height: 40px;
+              cursor: pointer;
+              position: relative;
+          }
+  
+          .copy-button:before {
+              font-family: "FontAwesome";
+              font-size: 20px;
+              position: absolute;
+              top: 10px;
+              left: 10px;
+          }
+  
+          .copy-button:hover:before {
+              content: "Copy code";
+              font-family: Arial, sans-serif;
+              font-size: 12px;
+              color: #fff;
+              top: -30px;
+              left: -10px;
+              white-space: nowrap;
+          }
+          .copy-button.clicked:before {
+              content: "Copied code";
+              font-family: Arial, sans-serif;
+              font-size: 12px;
+              color: #fff;
+              top: -30px;
+              left: -10px;
+              white-space: nowrap;
+          }
+      </style>
+    Sorry this blog is under development at the moment however you can just copy the whole client script.<br><br>
+    <pre><code id="code-block-1" style="color: white;">import socket
+import threading
+
+class ChatClient:
+    def __init__(self, host, port):
+        self.host = host
+        self.port = port
+        self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+    def start(self):
+        try:
+            self.client_socket.connect((self.host, self.port))
+            print("Connected to the chatroom.")
+
+            receive_thread = threading.Thread(target=self.receive_messages)
+            receive_thread.start()
+
+            while True:
+                message = input()
+                if message == "/exit":
+                    break
+                self.send_message(message)
+
+        except ConnectionRefusedError:
+            print("Unable to connect to the chatroom.")
+
+        finally:
+            self.client_socket.close()
+            print("Disconnected from the chatroom.")
+
+    def receive_messages(self):
+        while True:
+            try:
+                message = self.client_socket.recv(1024).decode('utf-8')
+                if message:
+                    print(message)
+            except ConnectionResetError:
+                break
+
+    def send_message(self, message):
+        try:
+            self.client_socket.send(message.encode('utf-8'))
+        except ConnectionResetError:
+            print("Disconnected from the chatroom.")
+
+if __name__ == '__main__':
+    chat_client = ChatClient('localhost', 8000)
+    chat_client.start()
+    
+            </code>                             <div class="copy-button" onclick="copyCode('code-block-1')"></div></pre>
+
+    <script>
+  function copyCode(elementId) {
+    var codeBlock = document.getElementById(elementId);
+    var range = document.createRange();
+    range.selectNode(codeBlock);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();
+    
+    var button = document.querySelector('[onclick="copyCode(\'' + elementId + '\')"]');
+    button.classList.add('clicked');
+    setTimeout(function() {
+      button.classList.remove('clicked');
+    }, 2000);
+  }
+  
+</script>
+
+</body>
+</html>

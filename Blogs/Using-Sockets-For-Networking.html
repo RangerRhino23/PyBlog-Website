@@ -92,7 +92,6 @@
   </header>
   <body>
     <br><br>
-    <!--Optional image placement-->
     <!--<img src="home-page-images\Introduction-Into-Ursina.png" class="img-preset">-->
     <h1>Using Python and Sockets to Create a Chatroom.</h1>
     <h3>Difficulty: Intermediate</h3>
@@ -100,16 +99,107 @@
     <h2>Introduction</h2>
     <br><p>
       In this blog we will be covering how to make a chatroom using python and its
-      built-in module "socket".<br><br> First off you'll want to import the module
+      built-in module "socket" (and other modules).<br><br> First off you'll want to import the module
       into the python script. But first double-check you have it installed by running
-      "pip install socket" then you can import it 
+      "pip install socket" then you can import it aswell as the other module needed.
     </p><br>
 
     <pre><code id="code-block-1" style="color: white;">import socket
-    </code>     <div class="copy-button" onclick="copyCode('code-block-1')"></div></pre>
-    <br><br><P>Using this import statement you have now successfully import the socket module
+import threading
+    </code>      <div class="copy-button" onclick="copyCode('code-block-1')"></div></pre>
+    <br><br><P>Using these import statements you have now successfully imported the socket module and the threading module
         and we can continue onto the next step of creating a chatroom with python.
     </P>
+    <br><br>
+    <h2>Creating the server script</h2>
+    <p>
+      To create the server script we will need what we imported from before and to add some
+      new code to it so we can create the connection. We will be using OOP (Object-oriented programming)
+      to build the chatroom. First off we can make the chatroom class by saying this in our code:
+    </p><br>
+    <pre><code id="code-block-2" style="color: white;">class Chatroom:
+    def __init__(self, host, port):
+          </code>                  <div class="copy-button" onclick="copyCode('code-block-2')"></div></pre>
+          <br><br><p>
+            With this we have successfully initialized the chatroom and can add some code to the class.
+          </p><br><br>
+          <pre><code id="code-block-3" style="color: white;">class Chatroom:
+    def __init__(self, host, port):
+        self.host = host
+        self.port = port
+        self.server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.clients = []
+
+    def start(self):
+        self.server_socket.bind((self.host, self.port))
+        self.server_socket.listen(5)
+        print(f"Chatroom started on {self.host}:{self.port}")
+
+        while True:
+            client_socket, client_address = self.server_socket.accept()
+            print(f"New connection from {client_address[0]}:{client_address[1]}")
+
+            client_thread = threading.Thread(target=self.handle_client, args=(client_socket,))
+            client_thread.start()
+                  </code>                               <div class="copy-button" onclick="copyCode('code-block-3')"></div></pre>
+    <br><br>
+    <p>
+      This code builds on the class we initialized before and now it can accept arguments
+      and assign them properly to the start function and the threads. Now we are going
+      to add a function to handle the client connection, broadcasting the message and handling 
+      the client disconnecting. We can achieve this by adding a few more functions to the
+      chatroom class.
+    </p><br><br>
+    <pre><code id="code-block-4" style="color: white;">def handle_client(self, client_socket):
+  self.clients.append(client_socket)
+
+  while True:
+      try:
+          message = client_socket.recv(1024).decode('utf-8')
+          if message:
+              print(f"Message received: {message}")
+
+              # Broadcast the message to all clients
+              self.broadcast(message, client_socket)
+          else:
+              # Remove the client if no message received
+              self.remove_client(client_socket)
+              break
+      except ConnectionResetError:
+          self.remove_client(client_socket)
+          break
+
+def broadcast(self, message, sender_socket):
+  for client_socket in self.clients:
+      if client_socket != sender_socket:
+          try:
+              client_socket.send(message.encode('utf-8'))
+          except:
+              self.remove_client(client_socket)
+
+def remove_client(self, client_socket):
+  if client_socket in self.clients:
+      self.clients.remove(client_socket)
+      client_socket.close()
+      print("A client has disconnected.")
+            </code>                             <div class="copy-button" onclick="copyCode('code-block-4')"></div></pre>
+    <br><br>
+    <p>
+      So now our class has the ability to host a server which clients can connect to to send
+      and recieve messages so now we just need to add the code to call the class so it can run properly.</p>
+      <br><br><pre><code id="code-block-5" style="color: white;">if __name__ == '__main__':
+    chatroom = Chatroom('localhost', 8000)
+    chatroom.start()
+              </code>                     <div class="copy-button" onclick="copyCode('code-block-5')"></div></pre>
+    <h2>In conclusion</h2>
+    <p>
+      From what we can see creating an application with sockets can be quite difficult
+      but allows you to create multiplayer games and software like reddit if you wanted.
+      You can see how to create the client script <a href="../Blogs/Using-Sockets-For-Networking-2.html">Here</a>.
+        And now we have a script that can allow multiple clients to connect to the server and
+        speak to one another. However this is limited by your localhost and if you wish for
+        people outside your network you will need to port forward your IP. Anways, thank you for
+        reading this blog and have an amazing day!
     <div style="margin-top:200px;"></div>
     <p>Created by <a href="../authors/ItsBailey">ItsBailey</a></p>
     <div style="margin-top:40px;"></div>
