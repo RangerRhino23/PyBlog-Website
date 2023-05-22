@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Creating Simulations With Python | PyBlog</title>
+    <link rel="stylesheet" type="text/css" href="../style.css" media="screen" />
+    <link rel="icon" type="image/x-icon" href="../icon_rounded.png">
+    <style>
+      .img-preset {
+        width: 250px;
+        height: 350px;
+        border-radius: 5px;
+        object-fit: cover;
+      }
+
+      p {
+            color: whitesmoke;
+            width: 500px;
+            margin: auto;
+            font-size: larger;
+        }
+        pre {
+            background-color: #000000;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 0;
+            width: auto;
+            text-align: left;
+            display: inline-block;
+            max-width: 60%;
+        }
+
+        code {
+            display: block;
+            font-size: 14px;
+            line-height: 1.5;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            color: #333;
+        }
+        .copy-button {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #383838;
+            background-image: url("../copy.png");
+            color: #fff;
+            background-size: 36px;
+            background-position: center;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .copy-button:before {
+            font-family: "FontAwesome";
+            font-size: 20px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .copy-button:hover:before {
+            content: "Copy code";
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            color: #fff;
+            top: -30px;
+            left: -10px;
+            white-space: nowrap;
+        }
+        .copy-button.clicked:before {
+            content: "Copied code";
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            color: #fff;
+            top: -30px;
+            left: -10px;
+            white-space: nowrap;
+        }
+        table {
+            background-color: #909090;
+            border-collapse: collapse;
+            width: auto;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+            th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #565656;
+        }
+
+            th {
+            background-color: #333;
+            color: #ffffff;
+        }
+        td:not(:first-child) {
+            border-left: 1px solid #565656;
+        }
+    </style>
+  </head>
+  <header>
+    <ul class="menu">
+      <li><img style="margin-left: 6px; margin-right: 6px; margin-top: 5px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="../icon.png"></li>
+      <li><a href="../Home" class="hover-underline-animation">Home</a></li>
+  </ul>
+  </header>
+  <body>
+    <br><br>
+    <img src="home-page-images/Creating-Simulations.png" style="width: 30%;">
+    <h1>Creating Simulations With Python</h1>
+    <h3>Difficulty: Intermediate</h3>
+
+    <h2>Introduction</h2>
+    <p>
+      Simulations play a crucial role in various fields, from physics and biology to finance and game development. Whether your're a beginner looking to dive into the
+      relm of computer simulations or an experienced programmer seeking to enhance your understanding, simulations are just for you. In this blog, I will show you how
+      to make a simple human population simulation with tips on how to improve on it.
+    </p>
+
+    <h2>Setting Up Project Folder</h2>
+    <p>
+      The first thing when creating any Python project is creating a project folder. In this blog I am assuming you have already installed Python and have a decent
+      knowledge about Python. If you don't click <a href="Installing-Python">here</a> for a Python Installation guide and <a href="Python-Introduction.html">here</a> 
+      for a Python Introduction. To create a project folder, navigate to the place you store all of your project files. Create a new folder and name it what ever you
+      want. I would recommend naming it "Simulations" or something close to that. After you create your project folder, open that folder in your desired editor or IDE.
+    </p>
+
+    <h2>Installing Required Libraries</h2>
+    <p>
+      Building a simulation requires other libraries to make it easier. <i>Matplotlit</i> and <i>Numpy</i> are two third-party libraires that make visualizing the data
+      really easy. To install these libraires follow these steps:
+      1. Open a terminal (Some IDE's support adding libraires in their IDE)
+      2. Run these two following commands:
+    </p>
+    <br><br><pre><code id="code-block-1" style="color: white;">pip install matplotlib   
+    </code><div class="copy-button" onclick="copyCode('code-block-1')"></div></pre>
+    <br><br>
+    <br><br><pre><code id="code-block-2" style="color: white;">pip install numpy   
+    </code><div class="copy-button" onclick="copyCode('code-block-2')"></div></pre>
+    <br><br>
+    <p>
+      Once those are installed you can close the terminal and you are now ready to start coding!
+    </p>
+
+    <h2>Setting Up Variables</h2>
+    <p>
+      In this simulation, you are going to use variables to control the simulation. This will allow you to change the outcomes and change events in the simulation.
+      In your project folder, start by creating a new file and naming it "main.py". Now inside that Python file, type the following code:
+    </p>
+    <br><br><pre><code id="code-block-3" style="color: white;">import random
+import numpy as np
+import matplotlib.pyplot as plt
+import csv
+
+#Starting Variables (DEFAULTS at the end of script)
+startingPop = 500
+yearLimit = 200
+foodYeild = 1
+foodStorage = 0
+startingFood = 0
+minWorkAge = 8
+maxWorkAge = 80
+minReproductionAge = 18
+maxReproductionAge = 35
+minDeathAge = 60
+maxDeathAge = 85
+plagues = True
+plagueChance = 20
+plagueDeathChance = 20
+#Visual Numbers
+showYearlyPopulation = False
+showYearlyFoodYeild = False
+showYearlyReproduction = False
+showYearlyDeath = False
+showPlaugeDeath = False
+pauseYearlyCycle = False
+#DO NOT CHANGE
+peopleDictionary = []
+GENDERS = ['male','female']
+plot_y = []
+years = 1
+    </code><div class="copy-button" onclick="copyCode('code-block-3')"></div></pre>
+    <br><br>
+    <p>
+      This code creates a bunch of variables that will make changing the simulations numbers easier and faster.
+    </p>
+
+    <h2>Creating Event Functions and Person Class</h2>
+    <p>
+      Now that we have variables created, we need to make Event Functions for our simulation. These include harvest, reproduction, etc. Inside the Python file,
+      type the following code below the variables:
+    </p>
+    <br><br><pre><code id="code-block-4" style="color: white;">#Person Template
+class Person():
+    def __init__(self, age):
+        self.gender = random.choice(GENDERS)
+        self.age = age
+
+#Harvests food for each worker every year cycle
+def harvest():
+    global foodStorage
+    workers = len([p for p in peopleDictionary if minWorkAge <= p.age <= maxWorkAge])
+    food_return = workers * foodYeild
+    foodStorage += food_return
+    return food_return
+
+
+#Adds to the population
+def reproduction():
+    births = len([p for p in peopleDictionary if p.gender == 'female' if minReproductionAge <= p.age <= maxReproductionAge if random.randint(0,5)==1])
+    for i in range(births):
+        peopleDictionary.append(Person(0))
+    return births
+
+#Kills older ages
+def death():
+    deaths = 0
+    for person in peopleDictionary:
+        if person.age >= random.randint(minDeathAge,maxDeathAge):
+            peopleDictionary.remove(person)
+            deaths += 1
+    return deaths
+
+#Randomly has a chance of killing people in a plague
+def plague():
+    deaths = 0
+    for person in peopleDictionary:
+        if random.randint(0,plagueDeathChance)==1:
+            peopleDictionary.remove(person)
+            deaths += 1
+    return deaths
+    </code><div class="copy-button" onclick="copyCode('code-block-4')"></div></pre>
+    <br><br>
+    <p>
+      These are all of the Event Functions that we will call in our simulation cycle.
+    </p>
+
+    <h2>Creating Simulation Cycle</h2>
+    <p>
+      To have a simluation work, we will need to have a Cycle Function that is called and continues to call its self until the simulation is done.
+      In the Python file, below the Event Functions, write the following code:
+    </p>
+    <br><br><pre><code id="code-block-5" style="color: white;">#Runs a year cycle
+def year(years):
+    #Runs a harvest
+    harvestYeild = harvest()
+    if showYearlyFoodYeild:
+        print(f'Harvest Yeild for Year {years}: {harvestYeild}')
+
+    #Runs reproduction
+    reproductionYeild = reproduction()
+    if showYearlyReproduction:
+        print(f'Reproduction Yeild for Year {years}: {reproductionYeild}')
+    
+    #Runs death
+    deaths = death()
+    if showYearlyDeath:
+        print(f'Deaths for Year {years}: {deaths}')
+
+    #Runs plauge event if enabled
+    if plagues:
+        if random.randint(0,plagueChance)==1:
+            deaths = plague()
+            if showPlaugeDeath:
+                print(f'Plague! {deaths} people died during year {years} due to a plague!')
+
+    #Ages everyone a year
+    ages = np.array([person.age for person in peopleDictionary])
+    np.add(ages, 1, out=ages)
+
+    #Gets the current population and stores it
+    population = len(peopleDictionary)
+    if showYearlyPopulation:
+        print(f'Population for year {years}:{population}')
+    plot_y.append(population)
+
+    #Executes if sim is over
+    if years >= yearLimit:
+        print('Simulation Done!')
+        x=range(0,years)
+        #Creates Plot
+        plt.title("Population in Human Simulation")
+        plt.xlabel("Years")
+        plt.ylabel("Population")
+        plt.fill_between(x, plot_y)
+        plt.show()
+        exit()
+    years += 1
+    if pauseYearlyCycle:
+        input('Press ENTER to continue... ')
+    year(years)
+    </code><div class="copy-button" onclick="copyCode('code-block-5')"></div></pre>
+    <br><br>
+    <p>
+      This code is a Cycle Function that calls itself as long as the simulation years isn't bigger than the <i>yearLimit</i> variable we defined earlier.
+      In this Cycle Function we can call all of the Event Functions to make the simulation experience different events.
+    </p>
+
+    <h2>Creating a Setup Function</h2>
+    <p>
+      Now that we have Variables, Event Functions, and a Cycle Function, we still don't have any way to setup everthing and start running the simulation.
+      In the python file below the Cycle Function, write the following code:
+    </p>
+    <br><br><pre><code id="code-block-6" style="color: white;">#Setups the sim
+def beginSim():
+    foodStorage = startingFood
+    for x in range(startingPop):
+        peopleDictionary.append(Person(random.randint(18,50)))
+    print("Starting Simulation...")
+    year(years)
+beginSim()
+    </code><div class="copy-button" onclick="copyCode('code-block-6')"></div></pre><br><br>
+    <p>
+      Thats it! That is all the code required to create a population simulation in Python! Try changing some of the variables at the beginning of the script
+      and see how it changes the outcome!
+    </p>
+
+    <h2>Expanding the Simulation</h2>
+    <p>
+      If you want a little challenge, try adding to the simulation. Try creating more Event Functions that do different things to the simulation.
+    </p>
+
+    <h2>Conclusion</h2>
+    <p>
+      In this blog, I showed you how to create a working population simulation and how to expand on the simulation if you choose to.
+    </p>
+    
+    
+    <div style="margin-top:80px;"></div>
+    <p>Created by <a href="../authors/RangerRhino23">RangerRhino23</a></p>
+    <div style="margin-top:30px;"></div>
+
+<script>
+  function copyCode(elementId) {
+    var codeBlock = document.getElementById(elementId);
+    var range = document.createRange();
+    range.selectNode(codeBlock);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();
+    
+    var button = document.querySelector('[onclick="copyCode(\'' + elementId + '\')"]');
+    button.classList.add('clicked');
+    setTimeout(function() {
+      button.classList.remove('clicked');
+    }, 2000);
+  }
+  
+</script>
+</body>
+  <footer style="margin-top: 50px; margin-bottom: 20px">
+    <a id="backtotopbtn" class="button" style="background-color: black; color: white; cursor: pointer; padding-left: 20%; padding-right: 20%;">Back to Top</a>
+    <script src="../Scroll.js">
+    </script>
+  </footer>
+</html>
