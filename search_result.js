@@ -6,7 +6,7 @@ const blogPosts = [
     { title: "Python Fundamentals", content: "Fundamentals, Python, Helpful, Beginner", link: "Blogs/Python-Fundamentals"},
     { title: "Making A Chatbot With Python", content: "Chatbot, AI, Python, Intermediate", link: "Blogs/Making-A-Chatbot-With-Python"},
     { title: "Machine Learning With Python", content: "Machine Learning, Python, Advanced, AI", link: "Blogs/Machine-Learning-With-Python"},
-    { title: "Introduction Into Ursina", content: "Ursina, Introduction, Beginner, Python, Game Development", link: "Blogs/Intorduction-Into-Ursina"},
+    { title: "Introduction Into Ursina", content: "Ursina, Introduction, Beginner, Python, Game Development", link: "Blogs/Introduction-Into-Ursina"},
     { title: "Installing Python", content: "Python, Beginner, Helpful", link: "Blogs/Installing-Python"},
     { title: "How To Use VS Code", content: "Beginner, Visual Studio Code, How To, Helpful", link: "Blogs/How-To-Use-VSCode"},
     { title: "Desktop Applications With Tkinter", content: "Desktop Apps, Tkinter, Python, Beginner", link: "Blogs/Desktop-Applications-With-Tkinter"},
