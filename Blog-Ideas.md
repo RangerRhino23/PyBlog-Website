@@ -9,10 +9,10 @@ Potential Blogs:
 
     Building (game of your choice)
 
-* How to setup Visual Studio Code
+* How to setup Visual Studio Code - Ryan working on
 
 * Installing modules and using them correctly.
 
 * simple python logic, for loops, while loops etc. - DONE
 
-* Making a chatroom with sockets/networking - Bailey working on
+* Making a chatroom with sockets/networking - DONE
