@@ -3,10 +3,16 @@ Potential Blogs:
 
 * How to build a chatbot using Python - DONE
 
-* Introduction to Ursina
+* Introduction to Ursina - Techinally DONE
 
     Building a simple game in Ursina - DONE
 
     Building (game of your choice)
 
 * How to setup Visual Studio Code
+
+* Installing modules and using them correctly.
+
+* simple pyython logic, for loops, while loops etc.
+
+* Making a chatroom with sockets/networking
