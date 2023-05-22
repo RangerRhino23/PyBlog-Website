@@ -1,33 +1,48 @@
 import socket
 import threading
 
-def receive_messages(client_socket):
-    while True:
-        message = client_socket.recv(1024).decode('utf-8')
-        print('Received:', message)
+class ChatClient:
+    def __init__(self, host, port):
+        self.host = host
+        self.port = port
+        self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-def start_client():
-    # Set up client socket
-    server_host = 'localhost'  # Change to the IP address or domain name of the chatroom server
-    server_port = 12345  # Change to the port number of the chatroom server
-    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    client_socket.connect((server_host, server_port))
-    print('Connected to the chatroom server')
+    def start(self):
+        try:
+            self.client_socket.connect((self.host, self.port))
+            print("Connected to the chatroom.")
 
-    # Start receiving messages in a separate thread
-    receive_thread = threading.Thread(target=receive_messages, args=(client_socket,))
-    receive_thread.start()
+            receive_thread = threading.Thread(target=self.receive_messages)
+            receive_thread.start()
 
-    # Send messages to the chatroom
-    while True:
-        message = input('Your message: ')
-        client_socket.send(message.encode('utf-8'))
-        if message.lower() == 'quit':
-            break
+            while True:
+                message = input()
+                if message == "/exit":
+                    break
+                self.send_message(message)
 
-    # Clean up
-    receive_thread.join()
-    client_socket.close()
-    print('Disconnected from the chatroom server')
+        except ConnectionRefusedError:
+            print("Unable to connect to the chatroom.")
 
-start_client()
+        finally:
+            self.client_socket.close()
+            print("Disconnected from the chatroom.")
+
+    def receive_messages(self):
+        while True:
+            try:
+                message = self.client_socket.recv(1024).decode('utf-8')
+                if message:
+                    print(message)
+            except ConnectionResetError:
+                break
+
+    def send_message(self, message):
+        try:
+            self.client_socket.send(message.encode('utf-8'))
+        except ConnectionResetError:
+            print("Disconnected from the chatroom.")
+
+if __name__ == '__main__':
+    chat_client = ChatClient('localhost', 8000)
+    chat_client.start()
