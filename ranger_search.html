@@ -1,0 +1,67 @@
+<style>
+    #searchInput {
+        width: 300px;
+        padding: 5px;
+    }
+
+    #searchButton {
+        padding: 5px 10px;
+        margin-left: 5px;
+    }
+
+    #searchResults {
+        margin-top: 10px;
+    }
+
+</style>
+
+<html>
+    <input type="text" id="searchInput" placeholder="Search...">
+    <button id="searchButton">Search</button>
+    
+    <div id="searchResults"></div>
+</html>
+
+
+<script>
+    // Sample blog post data (replace with your actual data)
+const blogPosts = [
+  { title: "Blog Post 1", content: "Lorem ipsum dolor sit amet..." },
+  { title: "Blog Post 2", content: "Consectetur adipiscing elit..." },
+  { title: "Blog Post 3", content: "Sed do eiusmod tempor incididunt..." },
+];
+
+const searchInput = document.getElementById('searchInput');
+const searchButton = document.getElementById('searchButton');
+const searchResults = document.getElementById('searchResults');
+
+searchButton.addEventListener('click', performSearch);
+
+function performSearch(event) {
+  event.preventDefault(); // Prevent form submission
+
+  const query = searchInput.value.toLowerCase();
+  const matchingPosts = blogPosts.filter(post =>
+    post.title.toLowerCase().includes(query) ||
+    post.content.toLowerCase().includes(query)
+  );
+
+  displaySearchResults(matchingPosts);
+}
+
+function displaySearchResults(posts) {
+  searchResults.innerHTML = '';
+
+  if (posts.length === 0) {
+    searchResults.innerHTML = 'No results found.';
+    return;
+  }
+
+  posts.forEach(post => {
+    const postElement = document.createElement('div');
+    postElement.innerHTML = `<h3>${post.title}</h3><p>${post.content}</p>`;
+    searchResults.appendChild(postElement);
+  });
+}
+
+</script>
