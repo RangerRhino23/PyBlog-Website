@@ -33,6 +33,6 @@ Potential Blogs:
 
 * Deeper ursina exploration (using panda3D)
 
-* The history of python
+* The history of python - DONE
 
-Total blogs completed: 10
+Total blogs completed: 11
