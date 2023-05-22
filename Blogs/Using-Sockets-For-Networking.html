@@ -91,8 +91,23 @@
   </ul>
   </header>
   <body>
+    <script>
+      function isMobileDevice() {
+        const userAgent = navigator.userAgent.toLowerCase();
+        const mobileKeywords = ['android', 'webos', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone'];
+    
+        return mobileKeywords.some(keyword => userAgent.includes(keyword));
+      }
+    
+      if (isMobileDevice()) {
+        window.location.replace("https://pyblog.ddns.net/Blogs/Using-Sockets-For-Networking-Mobile")
+      } else {
+        ;
+      }
+    
+    </script>
     <br><br>
-    <!--<img src="home-page-images\Introduction-Into-Ursina.png" class="img-preset">-->
+    <img src="home-page-images\Sockets.jpg" class="img-preset">
     <h1>Using Python and Sockets to Create a Chatroom.</h1>
     <h3>Difficulty: Intermediate</h3>
 
