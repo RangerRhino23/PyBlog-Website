@@ -1,80 +1,75 @@
-<!--Work in progress-->
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Search Bar</title>
-  <script>
-    function search() {
-      var input = document.getElementById("searchInput").value; // Get the search input value
-      var buttons = document.getElementsByClassName("button"); // Get all elements with the class "button"
-      var bestMatch = null;
-      var bestMatchScore = 0;
-
-      // Loop through each button and compare the search input with their class
-      for (var i = 0; i < buttons.length; i++) {
-        var button = buttons[i];
-        var buttonClass = button.className;
-
-        // Calculate a matching score based on the order of matching characters
-        var score = calculateMatchingScore(input, buttonClass);
-
-        // Update the best match if the current score is higher
-        if (score > bestMatchScore) {
-          bestMatch = button;
-          bestMatchScore = score;
-        }
-      }
-
-      if (bestMatch) {
-        alert("Best match: " + bestMatch.textContent);
-      } else {
-        alert("No matching button found.");
-      }
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+  <link rel="icon" type="image/x-icon" href="icon.png">
+  <title>Search Restuls | Pyblog</title>
+  <style>
+    .result-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    function calculateMatchingScore(input, buttonClass) {
-      var inputLowerCase = input.toLowerCase();
-      var buttonClassLowerCase = buttonClass.toLowerCase();
-      var score = 0;
-      var previousIndex = -1;
-
-      // Loop through each character of the input
-      for (var i = 0; i < inputLowerCase.length; i++) {
-        var inputChar = inputLowerCase[i];
-        var index = buttonClassLowerCase.indexOf(inputChar);
-
-        // Increment the score if the character is found in the button class and the order is correct
-        if (index > -1 && index > previousIndex) {
-          score++;
-          buttonClassLowerCase = buttonClassLowerCase.substring(0, index) +
-            buttonClassLowerCase.substring(index + 1); // Remove the matched character from the button class string
-          previousIndex = index;
-        }
-      }
-
-      return score;
+    .results {
+      max-width: 60%;
+      width: auto;
+      border: 4px solid #ccc;
+      border-radius: 40px;
+      font-size: 16px;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      padding-right: 60px;
+      padding-left: 20px;
     }
-  </script>
+
+    .results div {
+      text-align: left; 
+      margin-bottom: 40px;
+      padding: 10px;
+      border-radius: 20px;
+      /* background-color: var(--gray);
+      cursor: pointer; */
+    }
+
+    .results h3 {
+      color: whitesmoke;
+    }
+
+    .results a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .results a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
+<header>
+  <ul class="menu">
+    <li><img style="margin-left: 6px; margin-right: 6px; margin-top: 5px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="icon.png"></li>
+    <li><a href="Home" class="hover-underline-animation">Home</a></li>
+    <li><a href="Authors/" class="hover-underline-animation">Authors</a></li>
+    <li>
+      <form action="search.html" method="GET" class="search-bar">
+        <input type="text" name="query" placeholder="&#x1F50E;&#xFE0E; Search..." value="" required>
+        <button type="submit">Search</button>
+      </form>
+    </li>
+</ul>
+</header>
 <body>
-  <input type="text" id="searchInput" placeholder="Search for button class">
-  <button onclick="search()">Search</button>
+  <h1>Search Results</h1>
+  <br>
+  <div class="result-container">
+    <div id="searchResults" class="results"></div>
+  </div>
 
-  <br><br>
-
-  <button class="button">Button 1</button>
-  <button class="button">Button 2</button>
-  <button class="button">Another Button</button>
-  <button class="button">Different Button</button>
+  <div style="margin-top:35%;"></div>
+  <script src="search_result.js"></script>
 </body>
 </html>
