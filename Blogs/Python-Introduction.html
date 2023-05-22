@@ -27,6 +27,21 @@
   </ul>
   </header>
   <body>
+    <script>
+      function isMobileDevice() {
+        const userAgent = navigator.userAgent.toLowerCase();
+        const mobileKeywords = ['android', 'webos', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone'];
+    
+        return mobileKeywords.some(keyword => userAgent.includes(keyword));
+      }
+    
+      if (isMobileDevice()) {
+        window.location.replace("https://pyblog.ddns.net/Blogs/Python-Intorduction-Mobile")
+      } else {
+        ;
+      }
+    
+    </script>
     <br><br>
     <img src="Python-Introduction-Files/python_logo.png" class="img-preset">
     <h1 class="paragraph">Python: An Intorduction into the world of Python</h1>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Introduction | PyBlog</title>
+    <link rel="stylesheet" type="text/css" href="../style-mobile.css" media="screen" />
+    <link rel="icon" type="image/x-icon" href="../icon.png">
+    <style>
+
+      body {
+        max-width: 90%;
+      }
+
+      .img-preset {
+        width: 340px;
+        height: 100px;
+        border-radius: 5px;
+        object-fit: cover;
+      }
+
+      p {
+            color: whitesmoke;
+            width: 75%;
+            margin: auto;
+            font-size: larger;
+        }
+    
+      .slide-in {
+        animation: slide-in 0.5s ease forwards;
+      }
+    
+      @keyframes slide-in {
+        from {
+          opacity: 0;
+          transform: translateY(50%);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+</head>
+<header>
+  <div id="side-menu" style="height: 120px;">
+		<div class="menu-item"><a href="../Home">Home</a></div>
+    <div class="menu-item"><a href="../Authors/RangerRhino23.html">Author</a></div>
+	</div>
+	<div id="menu-toggle" style="font-size: x-large">&#9776;</div>
+	<script>
+		var menuToggle = document.getElementById("menu-toggle");
+		var sideMenu = document.getElementById("side-menu");
+		
+		menuToggle.addEventListener("click", function() {
+			sideMenu.classList.toggle("active");
+		});
+	</script>
+  <script>
+		var AboutPyblogToggle = document.getElementById("about-pyblog-button");
+		var sideMenu = document.getElementById("side-menu");
+		
+		AboutPyblogToggle.addEventListener("click", function() {
+			sideMenu.classList.toggle("active");
+      window.location.href = '#about-pyblog';
+		});
+	</script>
+  <script>
+		var FunBlogsToggle = document.getElementById("fun-blogs-button");
+		var sideMenu = document.getElementById("side-menu");
+		
+		FunBlogsToggle.addEventListener("click", function() {
+			sideMenu.classList.toggle("active");
+      window.location.href = '#fun-blogs';
+		});
+	</script>
+  <script>
+		var HelpfulBlogsToggle = document.getElementById("helpful-blogs-button");
+		var sideMenu = document.getElementById("side-menu");
+		
+		HelpfulBlogsToggle.addEventListener("click", function() {
+			sideMenu.classList.toggle("active");
+      window.location.href = '#helpful-blogs';
+		});
+	</script>
+  <p style="float: center; display: inline;">PyBlog</p>
+  <a href=""><img style="float: right; margin-right: 16px; margin-top: 12px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="../icon.png"></a>
+  </header>
+<body>
+  <script>
+    function isMobileDevice() {
+      const userAgent = navigator.userAgent.toLowerCase();
+      const mobileKeywords = ['android', 'webos', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone'];
+  
+      return mobileKeywords.some(keyword => userAgent.includes(keyword));
+    }
+  
+    if (isMobileDevice()) {
+      ;
+    } else {
+      window.location.replace("https://pyblog.ddns.net/Blogs/Python-Introduction")
+    }
+  
+  </script>
+
+  <!-- MAIN STUFF-->
+  <br><br>
+    <img src="Python-Introduction-Files/python_logo.png" class="img-preset">
+    <h1>Python: An Intorduction into the world of Python</h1>
+    <h3>Difficulty: Beginner</h3>
+
+    <h2>What is Python?</h2>
+    <p>
+      Python is a high-level, interpreted programming language that is popular for its readability and ease of use. It was first released in 1991 and has since become one of the
+      most widely used programming languages in the world. Python is known for its simple syntax, which makes it easy for beginners to learn and use. It is also used in a wide
+      range of applications, including web development, data science, machine learning, and more. With its extensive libraries and support for multiple programming paradigms, 
+      Python is a versatile language that can be used for a variety of tasks.
+    </p>
+
+    <br>
+    <h2>What can Python be used for?</h2>
+    <p>
+      Python is a versatile programming language that can be used for a wide range of tasks, including data analysis, web development, machine learning, scientific computing, 
+      automation, and more. Its simple syntax and large community make it an ideal language for beginners and professionals alike. Python is often used for tasks such as building 
+      web applications, creating data visualizations, working with databases, and automating repetitive tasks. Additionally, Python has a vast collection of libraries and 
+      frameworks, such as NumPy, Pandas, Django, and Flask, which make it easy to solve complex problems with minimal coding effort.
+    </p>
+    <br><br><br>
+    <p>Created by <a href="../authors/RangerRhino23">RangerRhino23</a></p>
+    <br><br>
+    <a class="button" href="../Home">Back To Home</a>
+</body>
+<footer style="margin-top: 50px; margin-bottom: 20px">
+  <a id="backtotopbtn" class="button" style="background-color: black; color: white; cursor: pointer; padding-left: 20%; padding-right: 20%;">Back to Top</a>
+    <script src="Scroll.js">
+    </script>
+  <!--Proceedual loading-->
+    <script>
+      function handleIntersection(entries, observer) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("slide-in");
+            observer.unobserve(entry.target);
+          }
+        });
+      }
+    
+      const gridItems = document.querySelectorAll(".grid-item");
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.2,
+      };
+    
+      const itemObserver = new IntersectionObserver(handleIntersection, observerOptions);
+    
+      gridItems.forEach((item) => {
+        itemObserver.observe(item);
+      });
+      function toggleElements() {
+  var gridContainer = document.getElementById('gridContainer1');
+  var gridContainer2 = document.getElementById('gridContainer2');
+  if (gridContainer.style.display != 'none') {
+   gridContainer.style.display = 'none';
+   gridContainer2.style.display = 'grid';
+  } else {
+   gridContainer.style.display = 'grid';
+   gridContainer2.style.display = 'none';
+  }
+}
+    
+  </script></footer>
+</html>
