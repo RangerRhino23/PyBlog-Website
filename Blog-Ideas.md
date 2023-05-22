@@ -13,6 +13,6 @@ Potential Blogs:
 
 * Installing modules and using them correctly.
 
-* simple pyython logic, for loops, while loops etc.
+* simple python logic, for loops, while loops etc. - DONE
 
-* Making a chatroom with sockets/networking
+* Making a chatroom with sockets/networking - Bailey working on
