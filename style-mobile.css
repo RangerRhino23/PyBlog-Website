@@ -22,6 +22,8 @@ h1 {
   color: whitesmoke;
   margin-top: 50px;
   float: center;
+  width: 95%;
+  word-wrap: break-word;
 }
 
 h2 {

@@ -1,26 +1,50 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Installing Python | PyBlog</title>
-    <link rel="stylesheet" type="text/css" href="../style.css" media="screen" />
-    <link rel="icon" type="image/x-icon" href="../icon_rounded.png">
+    <link rel="stylesheet" type="text/css" href="../style-mobile.css" media="screen" />
+    <link rel="icon" type="image/x-icon" href="../icon.png">
     <style>
+
       .img-preset {
-        width: auto;
-        height: auto;
+        width: 340px;
+        height: 100px;
         border-radius: 5px;
         object-fit: cover;
-        scale: 0.95;
       }
 
       p {
             color: whitesmoke;
-            width: 500px;
+            width: 75%;
             margin: auto;
             font-size: larger;
         }
+      
+      a {
+            width: 75%;
+            word-wrap: break-word;
+            margin: auto;
+        }
+    
+      .slide-in {
+        animation: slide-in 0.5s ease forwards;
+      }
+    
+      @keyframes slide-in {
+        from {
+          opacity: 0;
+          transform: translateY(50%);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-        pre {
+      pre {
             background-color: #000000;
             border: 1px solid #ccc;
             padding: 10px;
@@ -82,29 +106,43 @@
             white-space: nowrap;
         }
     </style>
-  </head>
-  <header>
-    <ul class="menu">
-      <li><img style="margin-left: 6px; margin-right: 6px; margin-top: 5px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="../icon.png"></li>
-      <li><a href="../Home" class="hover-underline-animation">Home</a></li>
-  </ul>
+</head>
+<header>
+  <div id="side-menu" style="height: 120px;">
+		<div class="menu-item"><a href="../Home">Home</a></div>
+    <div class="menu-item"><a href="../Authors/RangerRhino23.html">Author</a></div>
+	</div>
+	<div id="menu-toggle" style="font-size: x-large">&#9776;</div>
+	<script>
+		var menuToggle = document.getElementById("menu-toggle");
+		var sideMenu = document.getElementById("side-menu");
+		
+		menuToggle.addEventListener("click", function() {
+			sideMenu.classList.toggle("active");
+		});
+	</script>
+  <p style="float: center; display: inline;">PyBlog</p>
+  <a href=""><img style="float: right; margin-right: 16px; margin-top: 12px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="../icon.png"></a>
   </header>
-  <body>
-    <script>
-      function isMobileDevice() {
-        const userAgent = navigator.userAgent.toLowerCase();
-        const mobileKeywords = ['android', 'webos', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone'];
-    
-        return mobileKeywords.some(keyword => userAgent.includes(keyword));
-      }
-    
-      if (isMobileDevice()) {
-        window.location.replace("https://pyblog.ddns.net/Blogs/Installing-Python-Mobile")
-      } else {
-        ;
-      }
-    </script>
-    <br><br>
+<body>
+  <script>
+    function isMobileDevice() {
+      const userAgent = navigator.userAgent.toLowerCase();
+      const mobileKeywords = ['android', 'webos', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone'];
+  
+      return mobileKeywords.some(keyword => userAgent.includes(keyword));
+    }
+  
+    if (isMobileDevice()) {
+      ;
+    } else {
+      //window.location.replace("https://pyblog.ddns.net/Blogs/Installing-Python")
+    }
+  
+  </script>
+
+  <!-- MAIN STUFF-->
+  <br><br>
     <img src="Python-Introduction-Files\python_logo.png" class="img-preset">
     <h1>Installing Python</h1>
     <h3>Difficulty: Beginner</h3>
@@ -119,7 +157,7 @@
     
     <h2>Step 1: Download Python</h2>
     <p>
-      To download Python, go to the official Python website at <a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>. You'll see two different versions 
+      To download Python, go to the official Python website at <a class="link" href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>. You'll see two different versions 
       of Python available for download: Python 2 and Python 3. Python 2 is an older version of the language that is still used by some 
       legacy applications, but it is no longer actively developed. For most purposes, you'll want to download Python 3. <br><br>
       Once you're on the downloads page, scroll down until you see the section labeled "Python Releases for Windows/macOS/Linux." Click on the link for the version of Python you 
@@ -144,15 +182,15 @@
     <p>
       If you're using Linux, you can install Python using your distribution's package manager. For example, on Ubuntu or Debian, you can run the following command in the terminal:
     </p>
-    <pre id="code-block-1"><code  style="color: white;">sudo apt-get install python3
+    <br><pre id="code-block-1"><code  style="color: white;">sudo apt-get install python3
     </code><div class="copy-button" onclick="copyCode('code-block-1')"></div></pre>
 
     <h2>Step 3: Verify Your installation</h2>
     <p>
       Once you've installed Python, you can verify that it's working by opening a command prompt (Windows) or terminal (macOS/Linux) and running the following command:
     </p>
-      <pre id="code-block-2"><code  style="color: white;">python --version
-      </code><div class="copy-button" onclick="copyCode('code-block-2')"></div></pre>
+      <br><pre id="code-block-2"><code  style="color: white;">python --version
+      </code><div class="copy-button" onclick="copyCode('code-block-2')"></div></pre><br><bR>
     <p>
       This should print out the version of Python that you just installed. If you see an error message, make sure that you followed the installation instructions correctly and try again.
     </p>
@@ -167,6 +205,7 @@
     <p>Created by <a href="../authors/RangerRhino23">RangerRhino23</a></p>
     <br><br><br>
     <a class="button" href="../Home">Back To Home</a>
+    <div style="margin-top: 40px;"></div>
   <script>
   function copyCode(elementId) {
     var codeBlock = document.getElementById(elementId);
@@ -185,10 +224,5 @@
   }
   
 </script>
-  </body>
-  <footer style="margin-top: 50px; margin-bottom: 20px">
-    <a id="backtotopbtn" class="button" style="background-color: black; color: white; cursor: pointer; padding-left: 20%; padding-right: 20%;">Back to Top</a>
-    <script src="../Scroll.js">
-    </script>
-  </footer>
+</body>
 </html>
