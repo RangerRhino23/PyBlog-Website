@@ -11,6 +11,7 @@
 
       body {
         max-width: 90%;
+        margin-left: 5%;
       }
 
       .img-preset {
@@ -131,44 +132,4 @@
     <br><br>
     <a class="button" href="../Home">Back To Home</a>
 </body>
-<footer style="margin-top: 50px; margin-bottom: 20px">
-  <a id="backtotopbtn" class="button" style="background-color: black; color: white; cursor: pointer; padding-left: 20%; padding-right: 20%;">Back to Top</a>
-    <script src="Scroll.js">
-    </script>
-  <!--Proceedual loading-->
-    <script>
-      function handleIntersection(entries, observer) {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("slide-in");
-            observer.unobserve(entry.target);
-          }
-        });
-      }
-    
-      const gridItems = document.querySelectorAll(".grid-item");
-      const observerOptions = {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.2,
-      };
-    
-      const itemObserver = new IntersectionObserver(handleIntersection, observerOptions);
-    
-      gridItems.forEach((item) => {
-        itemObserver.observe(item);
-      });
-      function toggleElements() {
-  var gridContainer = document.getElementById('gridContainer1');
-  var gridContainer2 = document.getElementById('gridContainer2');
-  if (gridContainer.style.display != 'none') {
-   gridContainer.style.display = 'none';
-   gridContainer2.style.display = 'grid';
-  } else {
-   gridContainer.style.display = 'grid';
-   gridContainer2.style.display = 'none';
-  }
-}
-    
-  </script></footer>
 </html>
