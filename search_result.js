@@ -1,7 +1,7 @@
 // Sample blog post data (replace with your actual data)
 const blogPosts = [
     { title: "Using Sockets For Networking", content: "Socket, Python, Intermediate", link: "Blogs/Using-Sockets-For-Networking"},
-    { title: "The History Of Python", content: "History, Python", link: "Blogs/The-History-Of-Python"},
+    { title: `<img src="Blogs/home-page-images/time.jpg" width=400px><br>The History Of Python`, content: `History, Python`, link: "Blogs/The-History-Of-Python"},
     { title: "Python Introduction", content: "Beginner, Introduction, Python, Helpful", link: "Blogs/Python-Introduction"},
     { title: "Python Fundamentals", content: "Fundamentals, Python, Helpful, Beginner", link: "Blogs/Python-Fundamentals"},
     { title: "Making A Chatbot With Python", content: "Chatbot, AI, Python, Intermediate", link: "Blogs/Making-A-Chatbot-With-Python"},
@@ -34,22 +34,21 @@ const blogPosts = [
   
   function displaySearchResults(posts) {
     if (posts.length === 0) {
-      searchResults.innerHTML = 'No Blogs found with that search. Try using different words.';
+      searchResults.innerHTML = 'No blogs found with that search. Try using different words.';
       return;
     }
   
     posts.forEach(post => {
       const postElement = document.createElement('div');
       const titleElement = document.createElement('h3');
-      const contentElement = document.createElement('p');
+      const contentElement = document.createElement('div');
   
-      // Create a clickable link for the blog title
       const linkElement = document.createElement('a');
       linkElement.href = post.link;
-      linkElement.textContent = post.title;
+      linkElement.innerHTML = post.title; // Use innerHTML for title
   
       titleElement.appendChild(linkElement);
-      contentElement.textContent = post.content;
+      contentElement.innerHTML = post.content;
   
       postElement.appendChild(titleElement);
       postElement.appendChild(contentElement);
