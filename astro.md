@@ -1,1 +1,0 @@
-npm create astro@latest
