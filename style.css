@@ -1,33 +1,32 @@
 :root {
-  --orange: rgba(239, 91, 36, 255);
-  --gray: #333;
+  --orange: rgba(239, 91, 36, 255); /* color: var(--orange) */
+  --gray: #333333;
+}
+
+html {
+  max-width: 10000px;
 }
 
 body {
-  background: linear-gradient(white 0%, var(--orange) 10%, black 90%);
+  background-color: rgba(239, 91, 36, 255);
+  background-image: linear-gradient(white 0%, var(--orange) 10%, black 90%);
   color: white;
-  font-family: Verdana, sans-serif;
+  font-family: 'Verdana', sans-serif;
   text-align: center;
-}
-
-h1, h2 {
-  margin-top: 50px;
 }
 
 h1 {
   color: whitesmoke;
+  margin-top: 50px;
 }
 
 h2 {
   color: white;
-  font-size: 25px;
+  margin-top: 50px;
+  font-size: 25px
 }
 
-.page-view {
-  margin: 0 auto;
-  max-width: 1200px;
-}
-
+/* Button Hover Animation (Menu) */
 .hover-underline-animation {
   display: inline-block;
   position: relative;
@@ -52,6 +51,7 @@ h2 {
   transform-origin: bottom left;
 }
 
+/* Custom Buttons */
 .button-container {
   display: flex;
   justify-content: center;
@@ -59,7 +59,7 @@ h2 {
 }
 
 .button {
-  background: white;
+  background-color: white;
   color: black;
   border: none;
   padding: 10px 20px;
@@ -67,15 +67,15 @@ h2 {
   margin: 10px;
   font-size: 18px;
   border-radius: 20px;
-  box-shadow: 0 0 10px #9b9b9b;
-  transition: background-color 0.3s ease;
+  box-shadow: 0px 0px 10px #9b9b9b;
 }
 
 .button:hover {
-  background: gray;
+  background-color: gray;
   color: white;
 }
 
+/* Header Menu */
 .menu {
   list-style-type: none;
   margin: 0;
@@ -85,11 +85,8 @@ h2 {
   border-radius: 40px;
 }
 
-.menu li {
+.menu li a {
   float: right;
-}
-
-.menu li a, .menu li img {
   display: block;
   color: white;
   text-align: center;
@@ -97,10 +94,16 @@ h2 {
   text-decoration: none;
 }
 
-.menu li a:hover {
-  background-color: #343434;
+.menu li img {
+  float: right;
 }
 
+.menu li a:hover {
+  background-color: rgb(52, 52, 52);
+}
+
+
+/* Search Bar */
 .menu li form {
   display: block;
   color: white;
@@ -132,58 +135,4 @@ h2 {
 
 .menu li form button[type="submit"]:hover {
   background-color: #cc4c1d;
-}
-
-.img-preset, .blog-img {
-  height: 100px;
-  border-radius: 5px;
-  object-fit: cover;
-}
-
-.img-preset {
-  width: 350px;
-}
-
-p {
-  color: white;
-  width: 500px;
-  margin: auto;
-  font-size: larger;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
-}
-
-.grid-item {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.grid-item p {
-  color: black;
-  width: 500px;
-  margin: auto;
-  font-size: larger;
-}
-
-.slide-in {
-  animation: slide-in 0.5s ease forwards;
-}
-
-@keyframes slide-in {
-  from {
-    opacity: 0;
-    transform: translateY(50%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }

@@ -10,146 +10,225 @@
     <meta property="og:description" content="Only the best blogs can be found here">
     <meta property="og:image" content="https://pyblog.ddns.net/icon.png">
     
+    <style>
+      .img-preset {
+        width: 350px;
+        height: 100px;
+        border-radius: 5px;
+        object-fit: cover;
+      }
+    
+      .blog-img {
+        width: auto;
+        height: 100px;
+        border-radius: 5px;
+        object-fit: cover;
+      }
+    
+      p {
+        color: white;
+        width: 500px;
+        margin: auto;
+        font-size: larger;
+      }
+    
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+      }
+    
+      .grid-item {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+    
+      .grid-item p {
+        color: black;
+        width: 500px;
+        margin: auto;
+        font-size: larger;
+      }
+    
+      .slide-in {
+        animation: slide-in 0.5s ease forwards;
+      }
+    
+      @keyframes slide-in {
+        from {
+          opacity: 0;
+          transform: translateY(50%);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+    
   </head>
+  <header>
+    <ul class="menu">
+      <li><img style="margin-left: 6px; margin-right: 6px; margin-top: 5px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="icon.png"></li>
+      <li><a href="#" class="hover-underline-animation">Home</a></li>
+      <li><a href="#about-pyblog" class="hover-underline-animation">About PyBlog</a></li>
+      <li><a href="#fun-blogs" class="hover-underline-animation">Fun Blogs</a></li>
+      <li><a href="#helpful-Blogs" class="hover-underline-animation">Helpful Blogs</a></li>
+      <li><a href="Authors/" class="hover-underline-animation">Authors</a></li>
+      <li>
+        <form action="search.html" method="GET" class="search-bar">
+          <input type="text" name="query" placeholder="&#x1F50E;&#xFE0E; Search..." value="" required>
+          <button type="submit">Search</button>
+        </form>
+      </li>
+  </ul>
+  </header>
+
   <body>
-    <div class="page-view">
-        <header>
-            <ul class="menu">
-              <li><img style="margin-left: 6px; margin-right: 6px; margin-top: 5px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="icon.png"></li>
-              <li><a href="#" class="hover-underline-animation">Home</a></li>
-              <li><a href="#about-pyblog" class="hover-underline-animation">About PyBlog</a></li>
-              <li><a href="#fun-blogs" class="hover-underline-animation">Fun Blogs</a></li>
-              <li><a href="#helpful-Blogs" class="hover-underline-animation">Helpful Blogs</a></li>
-              <li><a href="Authors/" class="hover-underline-animation">Authors</a></li>
-              <li>
-                <form action="search.html" method="GET" class="search-bar">
-                  <input type="text" name="query" placeholder="&#x1F50E;&#xFE0E; Search..." value="" required>
-                  <button type="submit">Search</button>
-                </form>
-              </li>
-          </ul>
-          </header>
-      
-          <br><br><br>
-          <img src="icon.png" class="img-preset"/>
-      
-          <!-- About PyBlog -->
-          <h2 id="about-pyblog">About PyBlog</h2>
-          <div>
-            <p><b>
-              PyBlog is a Python Blog Website created by RangerRhino23 as a fun small programming project. There are many different stories and projects you can read about and create!<br> To get started, click on one of the
-              blogs below!
-            </b></p>
-            <br>
-          </div>
-      
-          <h2 id="fun-blogs">Fun Blogs</h2>
-          <hr size="15" width=100% style="border-radius: 5px;" color="#333333">
-          <br>
-          <!-- Fun Blogs -->
-          <div class="grid-container" id="gridContainer1" style = "display: grid;">
-            <div class="grid-item" onclick="window.location.href='Blogs/Python-Introduction'" style="cursor: pointer;">
-              <img src="Blogs/home-page-images/Python-Introduction.jpg" class="blog-img">
-              <p><b>
-                What is Python?
-              </b></p>
-            </div>
-            <div class="grid-item" onclick="window.location.href='Blogs/Python-Fundamentals'" style="cursor: pointer;">
-              <img src="Blogs/home-page-images/Python-Fundamentals.png" class="blog-img">
-              <p><b>
-                Python Fundamentals
-              </b></p>
-            </div>
-            <div class="grid-item" onclick="window.location.href='Blogs/Desktop-Applications-With-Tkinter'" style="cursor: pointer;">
-              <img src="Blogs/home-page-images/Desktop-Tkinter.jpg" class="blog-img">
-              <p><b>
-                Building Desktop Applications With Tkinter
-              </b></p>
-            </div>
-            <div class="grid-item" onclick="window.location.href='Blogs/Deeper-Exploration-of-Tkinter'" style="cursor: pointer;">
-              <img src="Blogs/home-page-images/Deeper-Exploration-Tkinter.png" class="blog-img">
-              <p><b>
-                Deeper Exploration of Tkinter
-              </b></p>
-            </div>
-            <div class="grid-item" onclick="window.location.href='Blogs/Introduction-Into-Ursina'" style="cursor: pointer;">
-              <img src="Blogs/home-page-images/Introduction-Into-Ursina.png" class="blog-img">
-              <p><b>
-                Introduction Into Ursina Engine
-              </b></p>
-            </div>
-            <div class="grid-item" onclick="window.location.href='Blogs/Making-a-Chatbot-With-Python'" style="cursor: pointer;">
-              <img src="Blogs/home-page-images/Making-Chatbot-With-Python.png" class="blog-img">
-              <p><b>
-                Making a Chatbot With Python
-              </b></p>
-            </div>
-          </div><br>
-          <div class="grid-container" id="gridContainer2" style="display: none;">
-            <div class="grid-item" onclick="window.location.href='Blogs/Machine-Learning-With-Python'" style="cursor: pointer;">
-              <img src="Blogs/home-page-images/Machine-Learning.png" class="blog-img">
-              <p><b>
-                Machine Learning With Python
-              </b></p>
-            </div>
-            <div class="grid-item" onclick="window.location.href='Blogs/Creating-Simulations-With-Python'" style="cursor: pointer;">
-             <img src="Blogs/home-page-images/Creating-Simulations.png" class="blog-img">
-             <p><b>
-              Creating Simulations With Python
-             </b></p>
-           </div>
-           <div class="grid-item" onclick="window.location.href='Blogs/Creating-a-Website-With-Flask'" style="cursor: pointer;">
-            <img src="Blogs/Flask-stuff/Flask.png" class="blog-img">
-            <p><b>
-              Making a website With flask
-            </b></p>
-            </div>
-            <div class="grid-item" onclick="window.location.href='Blogs/Using-Sockets-For-Networking'" style="cursor: pointer;">
-              <img src="Blogs/home-page-images/Sockets.jpg" class="blog-img">
-              <p><b>
-                Using sockets for networking
-              </b></p>
-            </div>
-            <div class="grid-item" onclick="window.location.href='Blogs/The-History-Of-Python'" style="cursor: pointer;">
-              <img src="Blogs/home-page-images/time.jpg" class="blog-img">
-              <p><b>
-                The history of python
-              </b></p>
-            </div>
-            <div class="grid-item" onclick="window.location.href='Blogs/Terminal-Games-With-Python'" style="cursor: pointer;">
-              <img src="Blogs/home-page-images/Terminal-Games.png" class="blog-img">
-              <p><b>
-                Terminal Games With Python
-              </b></p>
-            </div>
-          </div><br>
-          <button onclick="toggleElements()" class="button" style="padding-left: 10%; padding-right: 10%; padding-top: 10px; padding-bottom: 10px; cursor: pointer;">&gt;</button>
-      
-          <h2 id="helpful-Blogs">Helpful Blogs</h2>
-          <hr size="15" width=100% style="border-radius: 5px;" color="#333333">
-          <br>
-          <!-- Helpful Blogs-->
-          <div class="grid-container">
-            <div class="grid-item" onclick="window.location.href='Blogs/Installing-Python'" style="cursor: pointer;">
-              <img src="Blogs/Python-Introduction-Files/python_logo.png" class="blog-img">
-              <p><b>
-                Installing Python
-              </b></p>
-            </div>
-            <div class="grid-item" onclick="window.location.href='Blogs/How-To-Use-VSCode'" style="cursor: pointer;">
-              <img src="Blogs/home-page-images/VS-Code.png" class="blog-img">
-              <p><b>
-                Installing and Using VS Code
-              </b></p>
-            </div>
-          </div>
-          
-          <div style="margin-top:400px;"></div>
-          <footer style="margin-top: 50px; margin-bottom: 20px">
-              <a id="backtotopbtn" class="button" style="background-color: black; color: white; cursor: pointer; padding-left: 20%; padding-right: 20%;">Back to Top</a>
-          </footer>
+    <script>
+      function isMobileDevice() {
+        const userAgent = navigator.userAgent.toLowerCase();
+        const mobileKeywords = ['android', 'webos', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone'];
+    
+        return mobileKeywords.some(keyword => userAgent.includes(keyword));
+      }
+    
+      if (isMobileDevice()) {
+        window.location.replace("https://pyblog.ddns.net/Home-Mobile")
+      } else {
+        ;
+      }
+    
+    </script>
+    <br><br><br>
+    <img src="icon.png" class="img-preset"/>
+
+    <!-- About PyBlog -->
+    <h2 id="about-pyblog">About PyBlog</h2>
+    <div>
+      <p><b>
+        PyBlog is a Python Blog Website created by RangerRhino23 as a fun small programming project. There are many different stories and projects you can read about and create!<br> To get started, click on one of the
+        blogs below!
+      </b></p>
+      <br>
     </div>
+
+    <h2 id="fun-blogs">Fun Blogs</h2>
+    <hr size="15" width=100% style="border-radius: 5px;" color="#333333">
+    <br>
+    <!-- Fun Blogs -->
+    <div class="grid-container" id="gridContainer1" style = "display: grid;">
+      <div class="grid-item" onclick="window.location.href='Blogs/Python-Introduction'" style="cursor: pointer;">
+        <img src="Blogs/home-page-images/Python-Introduction.jpg" class="blog-img">
+        <p><b>
+          What is Python?
+        </b></p>
+      </div>
+      <div class="grid-item" onclick="window.location.href='Blogs/Python-Fundamentals'" style="cursor: pointer;">
+        <img src="Blogs/home-page-images/Python-Fundamentals.png" class="blog-img">
+        <p><b>
+          Python Fundamentals
+        </b></p>
+      </div>
+      <div class="grid-item" onclick="window.location.href='Blogs/Desktop-Applications-With-Tkinter'" style="cursor: pointer;">
+        <img src="Blogs/home-page-images/Desktop-Tkinter.jpg" class="blog-img">
+        <p><b>
+          Building Desktop Applications With Tkinter
+        </b></p>
+      </div>
+      <div class="grid-item" onclick="window.location.href='Blogs/Deeper-Exploration-of-Tkinter'" style="cursor: pointer;">
+        <img src="Blogs/home-page-images/Deeper-Exploration-Tkinter.png" class="blog-img">
+        <p><b>
+          Deeper Exploration of Tkinter
+        </b></p>
+      </div>
+      <div class="grid-item" onclick="window.location.href='Blogs/Introduction-Into-Ursina'" style="cursor: pointer;">
+        <img src="Blogs/home-page-images/Introduction-Into-Ursina.png" class="blog-img">
+        <p><b>
+          Introduction Into Ursina Engine
+        </b></p>
+      </div>
+      <div class="grid-item" onclick="window.location.href='Blogs/Making-a-Chatbot-With-Python'" style="cursor: pointer;">
+        <img src="Blogs/home-page-images/Making-Chatbot-With-Python.png" class="blog-img">
+        <p><b>
+          Making a Chatbot With Python
+        </b></p>
+      </div>
+    </div><br>
+    <div class="grid-container" id="gridContainer2" style="display: none;">
+      <div class="grid-item" onclick="window.location.href='Blogs/Machine-Learning-With-Python'" style="cursor: pointer;">
+        <img src="Blogs/home-page-images/Machine-Learning.png" class="blog-img">
+        <p><b>
+          Machine Learning With Python
+        </b></p>
+      </div>
+      <div class="grid-item" onclick="window.location.href='Blogs/Creating-Simulations-With-Python'" style="cursor: pointer;">
+       <img src="Blogs/home-page-images/Creating-Simulations.png" class="blog-img">
+       <p><b>
+        Creating Simulations With Python
+       </b></p>
+     </div>
+     <div class="grid-item" onclick="window.location.href='Blogs/Creating-a-Website-With-Flask'" style="cursor: pointer;">
+      <img src="Blogs/Flask-stuff/Flask.png" class="blog-img">
+      <p><b>
+        Making a website With flask
+      </b></p>
+      </div>
+      <div class="grid-item" onclick="window.location.href='Blogs/Using-Sockets-For-Networking'" style="cursor: pointer;">
+        <img src="Blogs/home-page-images/Sockets.jpg" class="blog-img">
+        <p><b>
+          Using sockets for networking
+        </b></p>
+      </div>
+      <div class="grid-item" onclick="window.location.href='Blogs/The-History-Of-Python'" style="cursor: pointer;">
+        <img src="Blogs/home-page-images/time.jpg" class="blog-img">
+        <p><b>
+          The history of python
+        </b></p>
+      </div>
+      <div class="grid-item" onclick="window.location.href='Blogs/Terminal-Games-With-Python'" style="cursor: pointer;">
+        <img src="Blogs/home-page-images/Terminal-Games.png" class="blog-img">
+        <p><b>
+          Terminal Games Using Python
+        </b></p>
+      </div>
+    </div><br>
+    <button onclick="toggleElements()" class="button" style="padding-left: 10%; padding-right: 10%; padding-top: 10px; padding-bottom: 10px; cursor: pointer;">&gt;</button>
+
+    <br><br><br><br>
+    <h2 id="helpful-Blogs">Helpful Blogs</h2>
+    <hr size="15" width=100% style="border-radius: 5px;" color="#333333">
+    <br>
+    <!-- Helpful Blogs-->
+    <div class="grid-container">
+      <div class="grid-item" onclick="window.location.href='Blogs/Installing-Python'" style="cursor: pointer;">
+        <img src="Blogs/Python-Introduction-Files/python_logo.png" class="blog-img">
+        <p><b>
+          Installing Python
+        </b></p>
+      </div>
+      <div class="grid-item" onclick="window.location.href='Blogs/How-To-Use-VSCode'" style="cursor: pointer;">
+        <img src="Blogs/home-page-images/VS-Code.png" class="blog-img">
+        <p><b>
+          Installing and Using VS Code
+        </b></p>
+      </div>
+    </div>
+    
+    <div style="margin-top:400px;"></div>
+
   </body>
+  <footer style="margin-top: 50px; margin-bottom: 20px">
+    <a id="backtotopbtn" class="button" style="background-color: black; color: white; cursor: pointer; padding-left: 20%; padding-right: 20%;">Back to Top</a>
     <script src="Scroll.js">
     </script>
   <!--Proceedual loading-->
@@ -176,30 +255,16 @@
         itemObserver.observe(item);
       });
       function toggleElements() {
-        var gridContainer = document.getElementById('gridContainer1');
-        var gridContainer2 = document.getElementById('gridContainer2');
-        if (gridContainer.style.display != 'none') {
-        gridContainer.style.display = 'none';
-        gridContainer2.style.display = 'grid';
-        } else {
-        gridContainer.style.display = 'grid';
-        gridContainer2.style.display = 'none';
-        }
-    }
-
-
-    function isMobileDevice() {
-        const userAgent = navigator.userAgent.toLowerCase();
-        const mobileKeywords = ['android', 'webos', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone'];
-    
-        return mobileKeywords.some(keyword => userAgent.includes(keyword));
-      }
-    
-      if (isMobileDevice()) {
-        window.location.replace("https://pyblog.ddns.net/Home-Mobile")
-      } else {
-        ;
-      }
+  var gridContainer = document.getElementById('gridContainer1');
+  var gridContainer2 = document.getElementById('gridContainer2');
+  if (gridContainer.style.display != 'none') {
+   gridContainer.style.display = 'none';
+   gridContainer2.style.display = 'grid';
+  } else {
+   gridContainer.style.display = 'grid';
+   gridContainer2.style.display = 'none';
+  }
+}
     
   </script>
   </footer>
