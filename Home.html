@@ -201,7 +201,28 @@
           Terminal Games Using Python
         </b></p>
       </div>
+    </div>
+    <div class="grid-container" id="gridContainer3" style="display: none;">
+      <div class="grid-item" onclick="window.location.href='Blogs/New-Blog-2'" style="cursor: pointer;">
+        <img src="sad.png" class="blog-img">
+        <p><b>
+          Blog doesn't exist yet
+        </b></p>
+        </div> 
+      <div class="grid-item" onclick="window.location.href='Blogs/New-Blog-2'" style="cursor: pointer;">
+        <img src="sad.png" class="blog-img">
+        <p><b>
+          Blog doesn't exist yet
+        </b></p>
+        </div> 
+     <div class="grid-item" onclick="window.location.href='Blogs/New-Blog-2'" style="cursor: pointer;">
+      <img src="sad.png" class="blog-img">
+      <p><b>
+        Blog doesn't exist yet
+      </b></p>
+      </div> 
     </div><br>
+    <button onclick="toggleElementsBack()" class="button" style="padding-left: 10%; padding-right: 10%; padding-top: 10px; padding-bottom: 10px; cursor: pointer;">&lt;</button>
     <button onclick="toggleElements()" class="button" style="padding-left: 10%; padding-right: 10%; padding-top: 10px; padding-bottom: 10px; cursor: pointer;">&gt;</button>
 
     <br><br><br><br>
@@ -233,6 +254,9 @@
     </script>
   <!--Proceedual loading-->
     <script>
+      let grid1 = "true"
+      let grid2 = "false"
+      let grid3 = "false"
       function handleIntersection(entries, observer) {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -255,17 +279,47 @@
         itemObserver.observe(item);
       });
       function toggleElements() {
-  var gridContainer = document.getElementById('gridContainer1');
-  var gridContainer2 = document.getElementById('gridContainer2');
-  if (gridContainer.style.display != 'none') {
+        var gridContainer = document.getElementById('gridContainer1');
+        var gridContainer2 = document.getElementById('gridContainer2');
+        var gridContainer3 = document.getElementById('gridContainer3');
+  if (grid1 === "true") {
    gridContainer.style.display = 'none';
    gridContainer2.style.display = 'grid';
-  } else {
-   gridContainer.style.display = 'grid';
+   grid2 = "true"
+   grid1 = "false"
+  } else if (grid2 === "true") {
    gridContainer2.style.display = 'none';
+   gridContainer3.style.display = 'grid';
+   grid2 = "false"
+   grid3 = "true"
+  } else if (grid3 === "true") {
+    gridContainer.style.display = 'grid';
+    gridContainer3.style.display = 'none';
+    grid3 = "false"
+    grid1 = "true"
   }
 }
-    
+function toggleElementsBack() {
+  var gridContainer = document.getElementById('gridContainer1');
+  var gridContainer2 = document.getElementById('gridContainer2');
+  var gridContainer3 = document.getElementById('gridContainer3');
+  if (grid1 === "true") {
+   gridContainer.style.display = 'none';
+   gridContainer3.style.display = 'grid';
+   grid3 = "true"
+   grid1 = "false"
+  }else if (grid2 === "true") {
+    gridContainer2.style.display = 'none';
+    gridContainer.style.display = 'grid';
+    grid1 = "true"
+    grid2 = "false"
+  }else if (grid3 === "true") {
+    gridContainer3.style.display = 'none';
+    gridContainer2.style.display = 'grid';
+    grid3 = "false"
+    grid2 = "true"
+  }
+}
   </script>
   </footer>
 </html>
