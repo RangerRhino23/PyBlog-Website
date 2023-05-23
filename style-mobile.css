@@ -100,14 +100,6 @@ h2 {
     border-top-right-radius: 30px;
 }
 
-#side-menu.unactive {
-  top: 75px;
-	left: -75%;
-	height: 300px;
-	transition: all 0.3s ease-in-out;
-	z-index: 999;
-}
-
 #menu-toggle {
 	background-color: #333;
 	color: #fff;
@@ -138,6 +130,78 @@ h2 {
 .menu-item:hover {
 	background-color: #555;
     border-bottom-right-radius: 30px;
+}
+
+/* Search Button */
+
+#search-toggle {
+	background-color: #333;
+	color: #fff;
+	padding: 10px;
+  float: right;
+  margin-top: 5px;
+  margin-right: 5px;
+	cursor: pointer;
+	z-index: 1000;
+}
+
+#search-toggle:hover {
+	background-color: #444;
+}
+
+/* Search Bar */
+
+.search-item form {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.search-item form input[type="text"] {
+  margin-bottom: 10px;
+  padding: 20px;
+  width: 92%;
+  margin-left: -10px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.search-item form button[type="submit"] {
+  padding: 5px 20px;
+  background-color: var(--orange);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.search-item form button[type="submit"]:hover {
+  background-color: #cc4c1d;
+}
+
+/*Search Slide Menu */
+
+#search-menu {
+	background-color: var(--gray);
+	color: #fff;
+	width: 100%;
+	position: fixed;
+	top: 100%;
+  left: 0;
+	height: 100vh;
+	transition: all 0.3s ease-in-out;
+	z-index: 999;
+}
+
+#search-menu.active {
+	top: 75px;
+}
+
+body.overflow-hidden {
+  overflow: hidden;
 }
 
 /* Paragraph */

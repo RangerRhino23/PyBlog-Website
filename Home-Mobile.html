@@ -91,6 +91,7 @@
 		
 		menuToggle.addEventListener("click", function() {
 			sideMenu.classList.toggle("active");
+      document.body.classList.toggle('overflow-hidden');
 		});
 	</script>
   <script>
@@ -100,6 +101,7 @@
 		AboutPyblogToggle.addEventListener("click", function() {
 			sideMenu.classList.toggle("active");
       window.location.href = '#about-pyblog';
+      document.body.classList.toggle('overflow-hidden');
 		});
 	</script>
   <script>
@@ -109,10 +111,39 @@
 		FunBlogsToggle.addEventListener("click", function() {
 			sideMenu.classList.toggle("active");
       window.location.href = '#fun-blogs';
+      document.body.classList.toggle('overflow-hidden');
 		});
 	</script>
-  <p style="float: center; display: inline;">PyBlog</p>
-  <a href=""><img style="float: right; margin-right: 16px; margin-top: 12px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="icon.png"></a>
+  <script>
+		var FunBlogsToggle = document.getElementById("helpful-blogs-button");
+		var sideMenu = document.getElementById("side-menu");
+		
+		FunBlogsToggle.addEventListener("click", function() {
+			sideMenu.classList.toggle("active");
+      window.location.href = '#helpful-blogs';
+      document.body.classList.toggle('overflow-hidden');
+		});
+	</script>
+  <!--<p style="display: inline; justify-self: center;">PyBlog</p>-->
+  <a href=""><img style="float: center; margin-right: 16px; margin-top: 12px;width:180px;height:40px; border-radius:10px;object-fit: cover" src="icon.png"></a>
+  <div id="search-menu">
+		<div class="search-item">
+      <form action="search-mobile.html" method="GET">
+        <input type="text" name="query" placeholder="&#x1F50E;&#xFE0E; Search..." value="" required><br>
+        <button type="submit">Search</button>
+      </form>
+    </div>
+	</div>
+  <div id="search-toggle" style="font-size: x-large">&#x1F50E;&#xFE0E;</div>
+  <script>
+		var searchToggle = document.getElementById("search-toggle");
+		var searchMenu = document.getElementById("search-menu");
+		
+		searchToggle.addEventListener("click", function() {
+			searchMenu.classList.toggle("active");
+      document.body.classList.toggle('overflow-hidden');
+		});
+	</script>
   </header>
 <body>
   <script>
@@ -130,11 +161,6 @@
     }
   
   </script>
-
-  <!-- MAIN STUFF-->
-  <br><br>
-  <img src="icon.png" class="img-preset"/>
-
   <!-- About PyBlog -->
   <h2 id="about-pyblog">About PyBlog</h2>
     <p class="paragraph">
