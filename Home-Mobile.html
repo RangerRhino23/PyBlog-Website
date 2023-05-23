@@ -252,8 +252,10 @@
         Terminal Games With Python
       </b></p>
     </div>
-  </div><br>
-  <button onclick="toggleElements()" class="button" style="padding: 10px; padding-left: 20%; padding-right: 20%; cursor: pointer;">&gt;</button>
+  </div>
+  <p id="tableNumber">1/3</p><br>
+  <button onclick="toggleElementsBack()" class="button" style="padding-left: 10%; padding-right: 10%; padding-top: 10px; padding-bottom: 10px; cursor: pointer;">&lt;</button>
+  <button onclick="toggleElements()" class="button" style="padding-left: 10%; padding-right: 10%; padding-top: 10px; padding-bottom: 10px; cursor: pointer;">&gt;</button>
 
   <br><br><br><br>
     <h2 id="helpful-blogs">Helpful Blogs</h2>
@@ -280,42 +282,83 @@
 </body>
 <footer style="margin-top: 50px; margin-bottom: 20px">
   <a id="backtotopbtn" class="button" style="background-color: black; color: white; cursor: pointer; padding-left: 20%; padding-right: 20%;">Back to Top</a>
-    <script src="Scroll.js">
-    </script>
-  <!--Proceedual loading-->
-    <script>
-      function handleIntersection(entries, observer) {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("slide-in");
-            observer.unobserve(entry.target);
-          }
+    <script src="Scroll.js"></script>
+      <!--Proceedual loading-->
+      <script>
+        let grid1 = "true"
+        let grid2 = "false"
+        let grid3 = "false"
+        function handleIntersection(entries, observer) {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("slide-in");
+              observer.unobserve(entry.target);
+            }
+          });
+        }
+      
+        const gridItems = document.querySelectorAll(".grid-item");
+        const observerOptions = {
+          root: null,
+          rootMargin: "0px",
+          threshold: 0.2,
+        };
+      
+        const itemObserver = new IntersectionObserver(handleIntersection, observerOptions);
+      
+        gridItems.forEach((item) => {
+          itemObserver.observe(item);
         });
-      }
-    
-      const gridItems = document.querySelectorAll(".grid-item");
-      const observerOptions = {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.2,
-      };
-    
-      const itemObserver = new IntersectionObserver(handleIntersection, observerOptions);
-    
-      gridItems.forEach((item) => {
-        itemObserver.observe(item);
-      });
-      function toggleElements() {
-  var gridContainer = document.getElementById('gridContainer1');
-  var gridContainer2 = document.getElementById('gridContainer2');
-  if (gridContainer.style.display != 'none') {
-   gridContainer.style.display = 'none';
-   gridContainer2.style.display = 'grid';
-  } else {
-   gridContainer.style.display = 'grid';
-   gridContainer2.style.display = 'none';
+        function toggleElements() {
+          var gridContainer = document.getElementById('gridContainer1');
+          var gridContainer2 = document.getElementById('gridContainer2');
+          var gridContainer3 = document.getElementById('gridContainer3');
+          var textElement = document.getElementById("tableNumber");
+    if (grid1 === "true") {
+     gridContainer.style.display = 'none';
+     gridContainer2.style.display = 'grid';
+     grid2 = "true";
+     grid1 = "false";
+     textElement.textContent = "2/3";
+    } else if (grid2 === "true") {
+     gridContainer2.style.display = 'none';
+     gridContainer3.style.display = 'grid';
+     grid2 = "false";
+     grid3 = "true";
+     textElement.textContent = "3/3";
+    } else if (grid3 === "true") {
+      gridContainer.style.display = 'grid';
+      gridContainer3.style.display = 'none';
+      grid3 = "false";
+      grid1 = "true";
+      textElement.textContent = "1/3";
+    }
   }
-}
-    
-  </script></footer>
+  function toggleElementsBack() {
+    var gridContainer = document.getElementById('gridContainer1');
+    var gridContainer2 = document.getElementById('gridContainer2');
+    var gridContainer3 = document.getElementById('gridContainer3');
+    var textElement = document.getElementById("tableNumber");
+  
+    if (grid1 === "true") {
+     gridContainer.style.display = 'none';
+     gridContainer3.style.display = 'grid';
+     grid3 = "true";
+     grid1 = "false";
+     textElement.textContent = "3/3";
+    }else if (grid3 === "true") {
+      gridContainer3.style.display = 'none';
+      gridContainer2.style.display = 'grid';
+      grid3 = "false";
+      grid2 = "true";
+      textElement.textContent = "2/3";
+    }else if (grid2 === "true") {
+      gridContainer2.style.display = 'none';
+      gridContainer.style.display = 'grid';
+      grid1 = "true";
+      grid2 = "false";
+      textElement.textContent = "1/3";
+    }
+  }
+    </script></footer>
 </html>
