@@ -3,10 +3,6 @@
   --gray: #333333;
 }
 
-html {
-  max-width: 10000px;
-}
-
 body {
   background-color: rgba(239, 91, 36, 255);
   background-image: linear-gradient(white 0%, var(--orange) 10%, black 90%);
