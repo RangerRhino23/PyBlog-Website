@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Terminal Games With Python | PyBlog</title>
+    <link rel="stylesheet" type="text/css" href="../style.css" media="screen" />
+    <link rel="icon" type="image/x-icon" href="../icon_rounded.png">    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4348852660214307"
+     crossorigin="anonymous"></script>
+    <style>
+      .img-preset {
+        width: auto;
+        height: auto;
+        border-radius: 5px;
+        object-fit: cover;
+        scale: 0.95;
+      }
+
+      p {
+            color: whitesmoke;
+            width: 500px;
+            margin: auto;
+            font-size: larger;
+        }
+
+        pre {
+            background-color: #000000;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 0;
+            width: auto;
+            text-align: left;
+            display: inline-block;
+        }
+
+        code {
+            display: block;
+            font-size: 14px;
+            line-height: 1.5;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            color: #333;
+        }
+        .copy-button {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #383838;
+            background-image: url("../copy.png");
+            color: #fff;
+            background-size: 36px;
+            background-position: center;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .copy-button:before {
+            font-family: "FontAwesome";
+            font-size: 20px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .copy-button:hover:before {
+            content: "Copy code";
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            color: #fff;
+            top: -30px;
+            left: -10px;
+            white-space: nowrap;
+        }
+        .copy-button.clicked:before {
+            content: "Copied code";
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            color: #fff;
+            top: -30px;
+            left: -10px;
+            white-space: nowrap;
+        }
+    </style>
+  </head>
+  <header>
+    <ul class="menu">
+      <li><img style="margin-left: 6px; margin-right: 6px; margin-top: 5px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="../icon.png"></li>
+      <li><a href="../Home" class="hover-underline-animation">Home</a></li>
+      <li>
+        <form action="../search.html" method="GET" class="search-bar">
+          <input type="text" name="query" placeholder="&#x1F50E;&#xFE0E; Search..." value="" required>
+          <button type="submit">Search</button>
+        </form>
+      </li>
+  </ul>
+  </header>
+  <body>
+
+    <script>
+      function isMobileDevice() {
+        const userAgent = navigator.userAgent.toLowerCase();
+        const mobileKeywords = ['android', 'webos', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone'];
+    
+        return mobileKeywords.some(keyword => userAgent.includes(keyword));
+      }
+    
+      if (isMobileDevice()) {
+        window.location.replace("https://pyblog.ddns.net/Blogs/Terminal-Games-With-Python-Mobile")
+      } else {
+        ;
+      }
+    </script>
+    <br><br>
+    <img src="home-page-images/Terminal-Games.png" class="img-preset">
+    <br><br>
+    <h1>Terminal Games With Python</h1>
+    <h3>Difficulty: Beginner</h3>
+
+    <h2>Introduction</h2>
+    <p>
+      In the realm of programming, games have always been an exciting and engaging way to learn 
+      and practice new concepts. While graphical games are visually appealing, terminal games hold 
+      their own charm, providing a unique experience for developers and users alike. In this blog, 
+      we will dive into the fascinating world of terminal games and demonstrate how Python can be 
+      leveraged to create simple yet entertaining gaming experiences.
+    </p>
+
+    <h2>Why Terminal Games?</h2>
+    <p>
+      Terminal games, as the name suggests, are games that run directly in the terminal or command line interface. 
+      They possess several advantages over graphical games, making them an appealing choice for both developers and players:<br>
+      1. Simplicity: Terminal games are often easier to develop since they do not require complex graphical rendering or user interfaces. 
+      They rely on text-based characters and ASCII art, allowing developers to focus on the game logic itself.<br>
+      2. Portability: Terminal games can run on almost any computer with a command line interface, irrespective of the operating 
+      system or hardware specifications. This makes them highly accessible and easy to share.<br>
+      3.Retro Appeal: Terminal games evoke a sense of nostalgia, reminiscent of classic games from the early days of computing. 
+      They provide a unique retro gaming experience that many players find enjoyable.<br>
+    </p>
+
+    <h2>Creating a Simple Terminal Game - "Guess The Number"</h2>
+    <p>
+      Let's explore a simple example of a terminal game using Python: "Guess the Number." 
+      In this game, the computer generates a random number, and the player has to guess it within a limited number of attempts.
+    </p>
+    <p>Step 1: Import necessary libraries:</p>
+    <br><br><pre><code id="code-block-1" style="color: white;">import random
+        </code><div class="copy-button" onclick="copyCode('code-block-1')"></div></pre><br><br>
+      
+    <p>Step 2: Write Game Logic Funcion:</p>
+    <br><br><pre><code id="code-block-2" style="color: white;">def game():
+    attempts = 0
+    number = random.randint(1, 100)
+    while True:
+        guess = int(input("Enter your guess (1-100): "))
+        attempts += 1
+
+        if guess < number:
+            print("Too low!")
+        elif guess > number:
+            print("Too high!")
+        else:
+            print(f"Congratulations! You guessed the number in {attempts} attempts!")
+            break
+
+        if attempts == 5:
+            print(f"Game over! The number was {number}.")
+            break
+    </code><div class="copy-button" onclick="copyCode('code-block-2')"></div></pre><br><br>
+
+    <p>Step 3: Run the Game:</p>
+    <br><br><pre><code id="code-block-4" style="color: white;">while True:
+    print("Welcome to Guess the Number!")
+    print("I'm thinking of a number between 1 and 100.")
+    print("Can you guess it?")
+    game()
+    </code><div class="copy-button" onclick="copyCode('code-block-4')"></div></pre><br><br>
+
+    <h2>Conclusion</h2>
+    <p>
+      Terminal games offer a unique way to unleash your creativity as a developer and engage players 
+      through a nostalgic, text-based gaming experience. Python, with its simplicity and robust 
+      libraries, provides an excellent platform for creating these games. Whether you're a beginner 
+      exploring game development or a seasoned programmer seeking a fun coding challenge, terminal 
+      games using Python can be a rewarding and entertaining endeavor. So, get your imagination running 
+      and start building your own terminal games today!
+    </p>
+    
+
+
+    <br><br>
+    <p>Created by <a href="../authors/RangerRhino23">RangerRhino23</a></p>
+    <br><br><br>
+    <a class="button" href="../Home">Back To Home</a>
+    <div style="margin-top:30px;"></div>
+  <script>
+  function copyCode(elementId) {
+    var codeBlock = document.getElementById(elementId);
+    var range = document.createRange();
+    range.selectNode(codeBlock);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();
+    
+    var button = document.querySelector('[onclick="copyCode(\'' + elementId + '\')"]');
+    button.classList.add('clicked');
+    setTimeout(function() {
+      button.classList.remove('clicked');
+    }, 2000);
+  }
+  
+</script>
+  </body>
+  <footer style="margin-top: 50px; margin-bottom: 20px">
+    <a id="backtotopbtn" class="button" style="background-color: black; color: white; cursor: pointer; padding-left: 20%; padding-right: 20%;">Back to Top</a>
+    <script src="../Scroll.js">
+    </script>
+  </footer>
+</html>

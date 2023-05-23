@@ -21,7 +21,7 @@ Potential Blogs:
 
 * Introduction to pyweek and gamejams
 
-* Text-based (terminal) games
+* Text-based (terminal) games - DONE
 
 * Taptapir (Because its like python)
 
