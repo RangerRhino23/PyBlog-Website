@@ -13,6 +13,7 @@ const blogPosts = [
     { title: `<img src="Blogs/home-page-images/Deeper-Exploration-Tkinter.png" width=400px><br>Deeper Exploration of Tkinter`, content: `Beginner, Desktop Apps, Tkinter, Python`, link: `Blogs/Deeper-Exploration-of-Tkinter`},
     { title: `<img src="Blogs/home-page-images/Creating-Simulations.png" width=400px><br>Creating Simulations With Python`, content: `Python, Intermediate, Simulations`, link: `Blogs/Creating-Simulations-With-Python`},
     { title: `<img src="Blogs/Flask-stuff/Flask.png" width=400px style="background-color:white;"><br>Creating A Website With Flask`, content: `Flask, Intermediate, Website, Python`, link: `Blogs/Creating-A-Website-With-Flask`},
+    { title: `<img src="Blogs/home-page-images/Terminal-Games.png" width=400px style="background-color:white;"><br>Terminal Games With Python`, content: `Terminal, Beginner, Python`, link: `Blogs/Terminal-Games-With-Python`},
   ];
   
   const searchResults = document.getElementById('searchResults');
