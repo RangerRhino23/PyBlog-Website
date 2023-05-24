@@ -7,8 +7,6 @@
     <meta property="og:title" content="A pyblog blog">
     <meta property="og:description" content="Only the best blogs can be found here">
     <meta property="og:image" content="https://pyblog.ddns.net/icon.png">
-    <!-- untag this when blog complete! <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4348852660214307"
-    crossorigin="anonymous"></script>-->
     <style>
       .img-preset {
         width: auto;
@@ -44,6 +42,12 @@
             word-wrap: break-word;
             color: #333;
         }
+        .file-tag {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    }   
         .copy-button {
             display: inline-block;
             width: 40px;
@@ -97,24 +101,66 @@
           <input type="text" name="query" placeholder="&#x1F50E;&#xFE0E; Search..." value="" required>
           <button type="submit">Search</button>
         </form>
-      </li>
+      </li>  
     </ul>
   </header>
   <body>
     <br><br>
     <!--Optional image placement-->
     <!--<img src="home-page-images\Introduction-Into-Ursina.png" class="img-preset">-->
-    <h1>Title</h1>
+    <h1>Installing and using modules in python</h1>
     <p>
-      Paragraph
+      Grab some popcorn because this one is gonna be a long one!<br><br>Modules are a key part of python that keep it running. Most modules are
+      created by the python comunnity which can range from making text a different
+      color to fully functional 3D game engines such as panda3D and the <a href="https://www.ursinaengine.org/" style="color: salmon;">ursina engine</a>.
+    </p><br>
+    <h2>Types of modules</h2>
+    <p>
+        There are loads of modules you can use, like aforementioned, ursina for example but 
+        the main modules that almost everyone know are: Django, Flask, Colorama, Pygame and various sub-modules
+        (pillow, psd etc.). There are also modules that are built-in to python like
+        json, pickle, turtle and tkinter. In this blog we will cover a few of the modules stated above.
     </p>
+    <h2>Built-in modules</h2>
+    <p>
+        We will quickly cover the basics of these built-in modules:
+        <br>&bullet; Turtle<br>
+        &bullet; Json<br>
+        &bullet; Tkinter
+        <h3>Turtle</h3>
+        Using turtle is fairly simple, it is a module to draw shapes
+        using a GUI, it comes with some really awesome functions like changing
+        the size of the screen and or turtle, hiding the turtle and the main one, drawing.
+        There are loads of python scripts out there that create loads of different
+        images such as crew-mates from among us and characters from various TV shows.
+        To ensure that you have the turtle you should run the script:
+    </p><br>
 
-    <pre><code id="code-block-1" style="color: white;">CODE
-    </code><div class="copy-button" onclick="copyCode('code-block-1')"></div></pre>
-
-
+    <pre><code id="code-block-1" style="color: white;">pip install turtle
+    </code>       <div class="copy-button" onclick="copyCode('code-block-1')"></div></pre>
+<br><br>
+    <p>
+        And it should fail because the module is already installed but
+        if it does download then you didn't have it and now you do! You can
+        create whatever you want 😳. Below is a quick script you can play to see 
+        what turtle looks like!
+    </p><br>
+    <button href="Installing-And-Using-Them-Stuff/Turtle.py">Download</button> - Turtle.py
+    <h3>Json</h3>
+    <p>
+      Json is one of the most useful modules. It can be used to store
+      data, catergorise data and edit data with ease aswell as being its own Data interchange format
+      and is very easy to learn how to type in at and its a lot easier to
+      code the data in aswell!
+      Below is an example of loading the name of someone from the "data.json" file
+      and then applying it to the python script.
+    </p><br>
+    <pre><div class="file-tag">json.py</div><code id="code-block-2" style="color: white;">import json
+with open("data.json", "r") as f:
+    name = json.load(f)
+print(name)
+    </code>                <div class="copy-button" onclick="copyCode('code-block-2')"></div></pre>
     <br><br><br>
-    <p>Created by <a href="../authors/RangerRhino23">RangerRhino23</a></p>
     <p>Created by <a href="../authors/ItsBailey" style="color: salmon; text-decoration: none;">ItsBailey</a></p>
     <br><br><br><br><br><br><br><br><br>
     <a class="button" href="../Home">Back To Home</a>

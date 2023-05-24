@@ -11,7 +11,7 @@ Potential Blogs:
 
 * How to setup Visual Studio Code - DONE
 
-* Installing modules and using them correctly.
+* Installing modules and using them correctly. - Bailey Working on
 
 * simple python logic, for loops, while loops etc. - DONE
 
@@ -25,7 +25,7 @@ Potential Blogs:
 
 * Taptapir (Because its like python)
 
-* Intermediate python logic, for x in range (x, 1, 5), while True: etc.
+* Intermediate python logic, for x in range(x, 1, 5), while True: etc.
 
 * Our views on python (team effort)
 
