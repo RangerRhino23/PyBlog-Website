@@ -9,7 +9,6 @@ header {
     color: var(--gray);
 }
 
-
 body {
   background-color: rgba(239, 91, 36, 255);
   background-image: linear-gradient(var(--gray) 0px 75px, white 75px 71px, var(--orange) 10%, black 90%);
@@ -30,6 +29,11 @@ h2 {
   color: white;
   margin-top: 50px;
   font-size: 25px
+}
+
+.pageNumber {
+  display: inline;
+  margin-bottom:20px;
 }
 
 /* Button Hover Animation (Menu) */
