@@ -14,7 +14,7 @@ const blogPosts = [
     { title: `<img src="Blogs/home-page-images/Creating-Simulations.webp" width=90%><br>Creating Simulations With Python`, content: `Python, Intermediate, Simulations`, link: `Blogs/Creating-Simulations-With-Python-Mobile`},
     { title: `<img src="Blogs/Flask-stuff/Flask.webp" width=90% style="background-color:white;"><br>Creating A Website With Flask`, content: `Flask, Intermediate, Website, Python`, link: `Blogs/Creating-A-Website-With-Flask-Mobile`},
     { title: `<img src="Blogs/home-page-images/Terminal-Games.webp" width=400px style="background-color:white;"><br>Terminal Games With Python`, content: `Terminal, Beginner, Python`, link: `Blogs/Terminal-Games-With-Python-Mobile`},
-    { title: `<img src="Blogs/home-page-images/Terminal-Games.webp" width=400px style="background-color:white;"><br>Types Of Modules And How To-Use Them`, content: `Cheesy, Modules, Python`, link: `Blogs/Types-Of-Modules-And-How-To-Use-Them`},
+    { title: `<img src="Blogs/home-page-images/Modules.webp" width=400px style="background-color:white;"><br>Types Of Modules And How To-Use Them`, content: `Cheesy, Modules, Python`, link: `Blogs/Types-Of-Modules-And-How-To-Use-Them`},
   ];
   
   const searchResults = document.getElementById('searchResults');
