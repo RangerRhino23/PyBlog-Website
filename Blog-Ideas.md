@@ -11,7 +11,7 @@ Potential Blogs:
 
 * How to setup Visual Studio Code - DONE
 
-* Installing modules and using them correctly. - Bailey Working on
+* Installing modules and using them correctly. - DONE
 
 * simple python logic, for loops, while loops etc. - DONE
 
@@ -35,4 +35,4 @@ Potential Blogs:
 
 * The history of python - DONE
 
-Total blogs completed: 11
+Total blogs completed: 12
