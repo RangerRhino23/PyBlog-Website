@@ -35,4 +35,10 @@ Potential Blogs:
 
 * The history of python - DONE
 
+Video Ideas:
+
+*Ursina Games
+
+
+
 Total blogs completed: 12
