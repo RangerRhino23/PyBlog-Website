@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desktop Applications With Tkinter | PyBlog</title>
+    <link rel="stylesheet" type="text/css" href="../style-mobile.css" media="screen" />
+    <link rel="icon" type="image/x-icon" href="../icon.png">  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4348852660214307"
+     crossorigin="anonymous"></script>
+    <style>
+
+      .img-preset {
+        width: 340px;
+        height: auto;
+        border-radius: 5px;
+        object-fit: cover;
+      }
+
+      p {
+            color: whitesmoke;
+            width: 75%;
+            margin: auto;
+            font-size: larger;
+        }
+      
+      a {
+            width: 75%;
+            word-wrap: break-word;
+            margin: auto;
+        }
+    
+      .slide-in {
+        animation: slide-in 0.5s ease forwards;
+      }
+    
+      @keyframes slide-in {
+        from {
+          opacity: 0;
+          transform: translateY(50%);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      pre {
+            background-color: #000000;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 0;
+            width: auto;
+            text-align: left;
+            display: inline-block;
+        }
+
+        code {
+            display: block;
+            font-size: 14px;
+            line-height: 1.5;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            color: #333;
+        }
+        .copy-button {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #383838;
+            background-image: url("../copy.webp");
+            color: #fff;
+            background-size: 36px;
+            background-position: center;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .copy-button:before {
+            font-family: "FontAwesome";
+            font-size: 20px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .copy-button:hover:before {
+            content: "Copy code";
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            color: #fff;
+            top: -30px;
+            left: -10px;
+            white-space: nowrap;
+        }
+        .copy-button.clicked:before {
+            content: "Copied code";
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            color: #fff;
+            top: -30px;
+            left: -10px;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<header>
+  <div id="side-menu" style="height: 120px;">
+		<div class="menu-item"><a href="../Home-Mobile">Home</a></div>
+    <div class="menu-item"><a href="../Authors/ItsBailey">Author</a></div>
+	</div>
+	<div id="menu-toggle" style="font-size: x-large">&#9776;</div>
+	<script>
+		var menuToggle = document.getElementById("menu-toggle");
+		var sideMenu = document.getElementById("side-menu");
+		
+		menuToggle.addEventListener("click", function() {
+			sideMenu.classList.toggle("active");
+		});
+	</script>
+  <p style="float: center; display: inline;">PyBlog</p>
+  <a href=""><img style="float: right; margin-right: 16px; margin-top: 12px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="../icon.png"></a>
+  </header>
+<body>
+  <script>
+    function isMobileDevice() {
+      const userAgent = navigator.userAgent.toLowerCase();
+      const mobileKeywords = ['android', 'webos', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone'];
+  
+      return mobileKeywords.some(keyword => userAgent.includes(keyword));
+    }
+  
+    if (isMobileDevice()) {
+      ;
+    } else {
+      window.location.replace("https://pyblog.ddns.net/Blogs/Making-A-Chatbot-With-Python")
+    }
+  </script>
+  <br><br>
+  <h1 class="paragraph">Chatbots: How to make them in python</h1>
+  <h3>Difficulty: Intermediate</h3>
+
+
+  <h2>What is a chatbot?</h2>
+  <p>A chatbot is an artificial intelligence (AI) program designed to interact with users through conversation. It can simulate human-like conversations and provide automated responses based on predefined rules or machine learning algorithms.</p>
+
+  <h2>Creating a chatbot with OpenAI in Python</h2>
+  <p>To create a chatbot using OpenAI in Python, we'll be using the OpenAI API, specifically the GPT-3.5 model. Follow the steps below:</p>
+  <br>
+      <li>Install the OpenAI Python package by running the following command in your terminal:</li><br>
+      <pre><code id="code-block-1" style="color: white;">pip install openai</code>
+      <div class="copy-button" onclick="copyCode('code-block-1')"></div></pre><br><br>
+      <li>Import the OpenAI library in your Python script:</li><br>
+      <pre><code id="code-block-2" style="color: white;">import openai</code>
+  <div class="copy-button" onclick="copyCode('code-block-2')"></div></pre><br><br>
+      <li>Set up your OpenAI API credentials by providing your API key:</li><br>
+      <pre><code id="code-block-3" style="color: white;">openai.api_key = 'YOUR_API_KEY'</code>
+             <div class="copy-button" onclick="copyCode('code-block-3')"></div></pre>
+             <br><br>You can find your openAI key <a href="https://platform.openai.com/account/api-keys">here</a>
+             it should look like this:<br><br> 
+             <img class="center" src="Making-a-chatbot-stuff/API_keys.webp" width="500px"><br> 
+             You may have to create a new API key which you can do by clicking "Create new secret key"
+             <br><br><br><li>Define a function to interact with the chatbot. Here's a simple example:</li>
+             <br><pre><code id="code-block-4" style="color: white;">def chat_with_bot(message):
+  response = openai.Completion.create(
+      engine='text-davinci-003',
+      prompt=message,
+      max_tokens=50,
+      temperature=0.7,
+      n=1,
+      stop=None,
+  )
+  return response.choices[0].text.strip()
+
+                  <div class="copy-button" onclick="copyCode('code-block-4')"></div></code></pre><br><br>
+      <li>Call the chatbot function and provide a user message to get a response:</li><br>
+      <pre><code id="code-block-5" style="color: white;">while True:
+  user_message = input("Enter input: ")
+  bot_response = chat_with_bot(user_message)
+  print(bot_response)</code>
+                      <div class="copy-button" onclick="copyCode('code-block-5')"></div></pre>
+  
+  <h2>What the code should look like</h2>
+  <p>
+      Now that we have covered all the code you need to use to get started using your chatbot in python you can make sure you've got
+      all the correct code by comparing or copying this code:
+  </p><br>
+  <pre><code id="code-block-6" style="color: white;">import openai
+
+openai.api_key = 'YOUR_API_KEY'
+
+def chat_with_bot(message):
+  response = openai.Completion.create(
+      engine='text-davinci-003',
+      prompt=message,
+      max_tokens=50,
+      temperature=0.7,
+      n=1,
+      stop=None,
+  )
+  return response.choices[0].text.strip()
+
+                          
+while True:
+  user_message = input("Enter input: ")
+  bot_response = chat_with_bot(user_message)
+  print(bot_response)
+
+                   <div class="copy-button" onclick="copyCode('code-block-6')"></div></code></pre>
+
+  <h1>Final words:</h1>
+  <p>
+      By following these steps, you'll be able to create a basic chatbot using the OpenAI GPT-3.5 model.
+      Feel free to experiment with different prompt messages, parameters, and models to improve the chatbot's performance.
+      And thats all from me, make sure to check out the other blogs on this site and have a blessed day.
+  </p><br>
+  <p>Created by <a href="../authors/ItsBailey">ItsBailey</a></p>
+  <br><br><br>
+  <a class="button" href="../Home">Back To Home</a>
+  <div style="margin-top:30px;"></div>
+  <script>
+  function copyCode(elementId) {
+    var codeBlock = document.getElementById(elementId);
+    var range = document.createRange();
+    range.selectNode(codeBlock);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();
+    
+    var button = document.querySelector('[onclick="copyCode(\'' + elementId + '\')"]');
+    button.classList.add('clicked');
+    setTimeout(function() {
+      button.classList.remove('clicked');
+    }, 2000);
+  }
+  
+</script>
+</body>
+</html>

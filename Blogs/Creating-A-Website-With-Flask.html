@@ -100,6 +100,20 @@
   </ul>
   </header>
   <body>
+    <script>
+      function isMobileDevice() {
+        const userAgent = navigator.userAgent.toLowerCase();
+        const mobileKeywords = ['android', 'webos', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone'];
+    
+        return mobileKeywords.some(keyword => userAgent.includes(keyword));
+      }
+    
+      if (isMobileDevice()) {
+        window.location.replace("https://pyblog.ddns.net/Blogs/Creating-A-Website-With-Flask-Mobile")
+      } else {
+        ;
+      }
+    </script>
     <br><br>
     <!--Optional image placement-->
     <img src="Flask-stuff/Flask.webp" style="zoom:0.6;" class="img-preset">

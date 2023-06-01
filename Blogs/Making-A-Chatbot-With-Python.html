@@ -124,6 +124,20 @@
   </ul>
   </header>
   <body>
+    <script>
+      function isMobileDevice() {
+        const userAgent = navigator.userAgent.toLowerCase();
+        const mobileKeywords = ['android', 'webos', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone'];
+    
+        return mobileKeywords.some(keyword => userAgent.includes(keyword));
+      }
+    
+      if (isMobileDevice()) {
+        window.location.replace("https://pyblog.ddns.net/Blogs/Making-A-Chatbot-With-Python-Mobile")
+      } else {
+        ;
+      }
+    </script>
     <br><br>
     <h1 class="paragraph">Chatbots: How to make them in python</h1>
     <h3>Difficulty: Intermediate</h3>

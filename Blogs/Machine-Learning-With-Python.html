@@ -119,7 +119,20 @@
   </ul>
   </header>
   <body>
-
+    <script>
+      function isMobileDevice() {
+        const userAgent = navigator.userAgent.toLowerCase();
+        const mobileKeywords = ['android', 'webos', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone'];
+    
+        return mobileKeywords.some(keyword => userAgent.includes(keyword));
+      }
+    
+      if (isMobileDevice()) {
+        window.location.replace("https://pyblog.ddns.net/Blogs/Machine-Learning-With-Python-Mobile")
+      } else {
+        ;
+      }
+    </script>
     <br><br>
     <img src="home-page-images/Machine-Learning.webp" style="width: 30%;">
     <h1>Machine Learning With Python</h1>
