@@ -1,27 +1,12 @@
 Potential Blogs:
-* Web Development with Flask - DONE
 
-* How to build a chatbot using Python - DONE
-
-* Introduction to Ursina - Techinally DONE
-
-    Building a simple game in Ursina - DONE
-
-    Building (game of your choice)
-
-* How to setup Visual Studio Code - DONE
-
-* Installing modules and using them correctly. - DONE
-
-* simple python logic, for loops, while loops etc. - DONE
-
-* Making a chatroom with sockets/networking - DONE
+* Ursina Stuff:
+    * Ursina Game Building (game of your choice)
+    * Deeper ursina exploration (using panda3D)
 
 * Making a game with pygame
 
 * Introduction to pyweek and gamejams
-
-* Text-based (terminal) games - DONE
 
 * Taptapir (Because its like python)
 
@@ -31,14 +16,5 @@ Potential Blogs:
 
 * Web development with django
 
-* Deeper ursina exploration (using panda3D)
 
-* The history of python - DONE
-
-Video Ideas:
-
-*Ursina Games
-
-
-
-Total blogs completed: 12
+Total blogs completed: 16

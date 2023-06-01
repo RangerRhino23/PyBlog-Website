@@ -1,5 +1,6 @@
 // Sample blog post data (replace with your actual data)
 const blogPosts = [
+    { title: `<img src="Blogs/home-page-images/Minecraft-Ursina.webp" width=400px><br>Creating Minecraft In Ursina`, content: `Intermediate, Ursina, Python, Game, Minecraft`, link: `Blogs/Creating-Minecraft-In-Ursina`},
     { title: `<img src="Blogs/home-page-images/Sockets.webp" width=400px><br>Using Sockets For Networking`, content: `Socket, Python, Intermediate`, link: `Blogs/Using-Sockets-For-Networking`},
     { title: `<img src="Blogs/home-page-images/time.webp" width=400px><br>The History Of Python`, content: `History, Python`, link: `Blogs/The-History-Of-Python`},
     { title: `<img src="Blogs/home-page-images/Python-Introduction.webp" width=400px><br>Python Introduction`, content: `Beginner, Introduction, Python, Helpful`, link: `Blogs/Python-Introduction`},
