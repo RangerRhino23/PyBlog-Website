@@ -48,7 +48,7 @@ const blogPosts = [
   
       const linkElement = document.createElement('a');
       linkElement.href = post.link;
-      linkElement.innerHTML = post.title; // Use innerHTML for title
+      linkElement.innerHTML = post.title;
   
       titleElement.appendChild(linkElement);
       contentElement.innerHTML = post.content;
