@@ -137,24 +137,106 @@
     if (isMobileDevice()) {
       ;
     } else {
-      window.location.replace("https://pyblog.ddns.net/Blogs/Template")
+      window.location.replace("https://pyblog.ddns.net/Blogs/Creating-Minecraft-In-Ursina")
     }
   </script>
   <br><br>
   <!--Optional image placement-->
-  <!--<img src="home-page-images\Introduction-Into-Ursina.webp" class="img-preset">-->
-  <h1>Title</h1>
+  <img src="home-page-images\Minecraft-Ursina.webp" class="img-preset">
+  <h1>Creating A Minecraft Clone In Ursina</h1>
+  <h3>Difficulty: Intermediate</h3>
+
+  <h2>Introduction</h2>
   <p>
-    Paragraph
+    Creating games in Ursina is very simple and fun. While you can go creating simple 2D games like a Cookie Clicker or Platformer game, creating 3D Games are much
+    more fun but also more challenging. In this blog we will create a Minecraft Clone and learn more about using Ursina to create games!
   </p>
 
-  <pre><code id="code-block-1" style="color: white;">CODE
+  <h2>Setting Up Project Folder</h2>
+  <p>
+    The first thing when creating any Ursina game is creating a project folder. In this blog I am assuming you have already installed Python and have a decent
+    knowledge about Python. If you don't click <a href="Installing-Python">here</a> for a Python Installation guide and <a href="Python-Introduction.html">here</a> 
+    for a Python Introduction. To create a project folder, navigate to the place you store all of your project files. Create a new folder and name it what ever you
+    want. I would recommend naming it "Minecraft-Clone" or something close to that. After you create your project folder, open that folder in your desired editor or IDE.
+  </p>
+  
+  <h2>Importing required modules</h2>
+  <p>
+    To create a Ursina game, you will need to import ursina. If you are wanting to create a first person 3D game, you will need to install ursina's first person controller.
+    To import the required stuff and creating a Ursina window, write the following code in a new python file:
+  </p>
+
+  <br><br>
+  <pre><code id="code-block-1" style="color: white;">from ursina import *
+from ursina.prefabs.first_person_controller import FirstPesronController
+
+app = Ursina()
   </code><div class="copy-button" onclick="copyCode('code-block-1')"></div></pre>
+
+  <h2>Creating a Voxel Class</h2>
+  <p>
+    When creating a Minecraft Clone, you will need to create multiple blocks that you can interact with. Instead of creating a block with all the required properties, you can
+    create a class that defines all of these qualities in a preset that you can call when ever you want to create a new block or voxel. In the python file, add the following code:
+  </p>
+
+  <br><br>
+  <pre><code id="code-block-2" style="color: white;">class Voxel(Button):
+def __init__(self, position=(0,0,0)):
+  super().__init__(parent=scene,
+      position=position,
+      model='cube',
+      origin_y=.5,
+      texture='white_cube',
+      color=color.color(0, 0, random.uniform(.9, 1.0)),
+      highlight_color=color.lime,
+  )
+  </code><div class="copy-button" onclick="copyCode('code-block-2')"></div></pre>
+
+  <h2>Creating the environment</h2>
+  <p>
+    After creating a voxel class, you can create the envrionment that the player can interact with. In the python file, add the following code:
+  </p>
+
+  <br><br>
+  <pre><code id="code-block-3" style="color: white;">for z in range(8):
+  for x in range(8):
+      voxel = Voxel(position=(x,0,z))
+  </code><div class="copy-button" onclick="copyCode('code-block-3')"></div></pre>
+
+  <h2>Creating the input function</h2>
+  <p>
+    After creating the voxel class and creating the environment, we need to write the code that allows the player to interact with the environment; Creating/Destroying the environment.
+    In the file, add the following code:
+  </p>
+
+  <br><br>
+  <pre><code id="code-block-4" style="color: white;">def input(key):
+  if key == 'left mouse down':
+      hit_info = raycast(camera.world_position, camera.forward, distance=5)
+      if hit_info.hit:
+          Voxel(position=hit_info.entity.position + hit_info.normal)
+  if key == 'right mouse down' and mouse.hovered_entity:
+      destroy(mouse.hovered_entity)
+  if key == 'q':
+      application.quit()
+
+
+player = FirstPersonController()
+app.run()
+  </code><div class="copy-button" onclick="copyCode('code-block-4')"></div></pre> 
+  <p>
+    Thats it! That is all the code required to create a Minecraft Clone in Ursina!
+  </p>
+
+  <h2>Conclusion</h2>
+  <p>
+    In this blog, we created a 3D voxel game using Ursina. To learn more about Ursina, try looking at other Ursina blogs <a href="https://pyblog.ddns.net/search.html?query=ursina">here</a>
+  </p>
+
 
 
   <br><br><br>
   <p>Created by <a href="../authors/RangerRhino23">RangerRhino23</a></p>
-  <p>Created by <a href="../authors/ItsBailey" style="color: salmon; text-decoration: none;">ItsBailey</a></p>
   <br><br><br><br><br><br><br><br><br>
   <a class="button" href="../Home">Back To Home</a>
   <div style="margin-top:30px;"></div>
