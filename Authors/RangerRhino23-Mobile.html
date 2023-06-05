@@ -1,70 +1,181 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RangerRhino23 | PyBlog</title>
-    <link rel="stylesheet" type="text/css" href="../style.css" media="screen" />
-    <link rel="icon" type="image/x-icon" href="../icon.png">
+    <title>Desktop Applications With Tkinter | PyBlog</title>
+    <link rel="stylesheet" type="text/css" href="../style-mobile.css" media="screen" />
+    <link rel="icon" type="image/x-icon" href="../icon.png">  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4348852660214307"
+     crossorigin="anonymous"></script>
     <style>
+
       .img-preset {
-        width: 250px;
-        height: 350px;
+        width: 340px;
+        height: auto;
         border-radius: 5px;
         object-fit: cover;
       }
 
-      .paragraph {
+      p {
             color: whitesmoke;
-            width: 500px;
+            width: 75%;
             margin: auto;
             font-size: larger;
         }
+      
+      a {
+            width: 75%;
+            word-wrap: break-word;
+            margin: auto;
+        }
+    
+      .slide-in {
+        animation: slide-in 0.5s ease forwards;
+      }
+    
+      @keyframes slide-in {
+        from {
+          opacity: 0;
+          transform: translateY(50%);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      pre {
+            background-color: #000000;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 0;
+            width: auto;
+            text-align: left;
+            display: inline-block;
+        }
+
+        code {
+            display: block;
+            font-size: 14px;
+            line-height: 1.5;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            color: #333;
+        }
+        .copy-button {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #383838;
+            background-image: url("../copy.webp");
+            color: #fff;
+            background-size: 36px;
+            background-position: center;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .copy-button:before {
+            font-family: "FontAwesome";
+            font-size: 20px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .copy-button:hover:before {
+            content: "Copy code";
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            color: #fff;
+            top: -30px;
+            left: -10px;
+            white-space: nowrap;
+        }
+        .copy-button.clicked:before {
+            content: "Copied code";
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            color: #fff;
+            top: -30px;
+            left: -10px;
+            white-space: nowrap;
+        }
     </style>
-  </head>
-  <header>
-    <ul class="menu">
-      <li><img id="enter-hunt" style="margin-left: 6px; margin-right: 6px; margin-top: 5px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="../icon.png"></li>
-      <li><a href="../Home">Home</a></li>
-  </ul>
+</head>
+<header>
+  <div id="side-menu" style="height: 120px;">
+		<div class="menu-item"><a href="../Home-Mobile">Home</a></div>
+    <div class="menu-item"><a href="../Authors/ItsbaileyX">Author</a></div>
+	</div>
+	<div id="menu-toggle" style="font-size: x-large">&#9776;</div>
+	<script>
+		var menuToggle = document.getElementById("menu-toggle");
+		var sideMenu = document.getElementById("side-menu");
+		
+		menuToggle.addEventListener("click", function() {
+			sideMenu.classList.toggle("active");
+		});
+	</script>
+  <p style="float: center; display: inline;">PyBlog</p>
+  <a href=""><img style="float: right; margin-right: 16px; margin-top: 12px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="../icon.png"></a>
   </header>
-  <body>
-    <h1>RangerRhino23</h1>
+<body>
+  <script>
+    function isMobileDevice() {
+      const userAgent = navigator.userAgent.toLowerCase();
+      const mobileKeywords = ['android', 'webos', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone'];
+  
+      return mobileKeywords.some(keyword => userAgent.includes(keyword));
+    }
+  
+    if (isMobileDevice()) {
+      ;
+    } else {
+      window.location.replace("https://pyblog.ddns.net/Blogs/Template")
+    }
+  </script>
+  <br><br>
+  <!--Optional image placement-->
+  <!--<img src="home-page-images\Introduction-Into-Ursina.webp" class="img-preset">-->
+  <h1>Title</h1>
+  <p>
+    Paragraph
+  </p>
 
-    <!--ABOUT MYSELF-->
-    <h2 id="about-myself">About Myself</h2>
-    <div class="paragraph">
-      <p>
-        Hello! My name is Ryan Dahlke but many know me online as RangerRhino23. I am a Content Creator as well as a Computer Programming Developer.
-        I enjoy programming in Python as well as HTML, CSS, and Javascript. I enjoy participating in different Python Game Jams
-        as well as working on different projects with other Python Developers. I also sometimes make Minecraft content with friends on youtube.
-        Outside of my online life, I am involved in a few different groups including Boy Scouts, Order of the Arrow, and different school sports. Here are a just
-        a few pictures of different activities I participate in outside of programming and content creation.
-      </p>
-    </div>
+  <pre><code id="code-block-1" style="color: white;">CODE
+  </code><div class="copy-button" onclick="copyCode('code-block-1')"></div></pre>
 
-    <!-- Website Plug -->
-    <h2>Visit My Website!</h2>
-    <p>
-      If you are interested in learning more about me, visit <a href="https://RangerRhino23.ddns.net/home" target="_blank">my website!</a>
-    </p>
 
-    <!--CONTACT ME-->
-    <h2 id="contact-me">Contact Me</h2>
-    <div class="paragraph">
-      <p>
-        If you have any questions or feeback of any projects or would like to collaborate with me on any projects, feel free to contact me using one of my socials! I can't link my
-        Discord account so here it is: RangerRhino#4484
-      </p>
-    </div>
-    <a class="button" style="background-color: black; color: white" href="mailto:RangerRhino23@outlook.com" target="_blank">Email Me!</a>
-    <a class="button" style="background-color: black; color: white" href="https://github.com/RangerRhino23" target="_blank">Github</a>
-    <a class="button" style="background-color: black; color: white" href="https://youtube.com/@RangerRhino23" target="_blank">YouTube</a>
-  </body>
-  <footer style="margin-top: 50px; margin-bottom: 20px">
-    <a id="backtotopbtn" class="button" style="background-color: black; color: white; cursor: pointer;">Back to Top</a>
-    <script src="../Scroll.js">
-    </script>
-  </footer>
+  <br><br><br>
+  <p>Created by <a href="../authors/RangerRhino23">RangerRhino23</a></p>
+  <p>Created by <a href="../authors/ItsbaileyX" style="color: salmon; text-decoration: none;">ItsbaileyX</a></p>
+  <br><br><br><br><br><br><br><br><br>
+  <a class="button" href="../Home">Back To Home</a>
+  <div style="margin-top:30px;"></div>
+  <script>
+  function copyCode(elementId) {
+    var codeBlock = document.getElementById(elementId);
+    var range = document.createRange();
+    range.selectNode(codeBlock);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();
+    
+    var button = document.querySelector('[onclick="copyCode(\'' + elementId + '\')"]');
+    button.classList.add('clicked');
+    setTimeout(function() {
+      button.classList.remove('clicked');
+    }, 2000);
+  }
+  
+</script>
+</body>
 </html>
