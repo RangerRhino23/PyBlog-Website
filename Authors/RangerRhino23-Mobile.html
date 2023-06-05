@@ -127,55 +127,36 @@
   <a href=""><img style="float: right; margin-right: 16px; margin-top: 12px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="../icon.png"></a>
   </header>
 <body>
-  <script>
-    function isMobileDevice() {
-      const userAgent = navigator.userAgent.toLowerCase();
-      const mobileKeywords = ['android', 'webos', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone'];
-  
-      return mobileKeywords.some(keyword => userAgent.includes(keyword));
-    }
-  
-    if (isMobileDevice()) {
-      ;
-    } else {
-      window.location.replace("https://pyblog.ddns.net/Blogs/Template")
-    }
-  </script>
-  <br><br>
-  <!--Optional image placement-->
-  <!--<img src="home-page-images\Introduction-Into-Ursina.webp" class="img-preset">-->
-  <h1>Title</h1>
-  <p>
-    Paragraph
-  </p>
+    <h1>RangerRhino23</h1>
 
-  <pre><code id="code-block-1" style="color: white;">CODE
-  </code><div class="copy-button" onclick="copyCode('code-block-1')"></div></pre>
+    <!--ABOUT MYSELF-->
+    <h2 id="about-myself">About Myself</h2>
+    <div class="paragraph">
+      <p>
+        Hello! My name is Ryan Dahlke but many know me online as RangerRhino23. I am a Content Creator as well as a Computer Programming Developer.
+        I enjoy programming in Python as well as HTML, CSS, and Javascript. I enjoy participating in different Python Game Jams
+        as well as working on different projects with other Python Developers. I also sometimes make Minecraft content with friends on youtube.
+        Outside of my online life, I am involved in a few different groups including Boy Scouts, Order of the Arrow, and different school sports. Here are a just
+        a few pictures of different activities I participate in outside of programming and content creation.
+      </p>
+    </div>
 
+    <!-- Website Plug -->
+    <h2>Visit My Website!</h2>
+    <p>
+      If you are interested in learning more about me, visit <a href="https://RangerRhino23.ddns.net/home" target="_blank">my website!</a>
+    </p>
 
-  <br><br><br>
-  <p>Created by <a href="../authors/RangerRhino23">RangerRhino23</a></p>
-  <p>Created by <a href="../authors/ItsbaileyX" style="color: salmon; text-decoration: none;">ItsbaileyX</a></p>
-  <br><br><br><br><br><br><br><br><br>
-  <a class="button" href="../Home">Back To Home</a>
-  <div style="margin-top:30px;"></div>
-  <script>
-  function copyCode(elementId) {
-    var codeBlock = document.getElementById(elementId);
-    var range = document.createRange();
-    range.selectNode(codeBlock);
-    window.getSelection().removeAllRanges();
-    window.getSelection().addRange(range);
-    document.execCommand("copy");
-    window.getSelection().removeAllRanges();
-    
-    var button = document.querySelector('[onclick="copyCode(\'' + elementId + '\')"]');
-    button.classList.add('clicked');
-    setTimeout(function() {
-      button.classList.remove('clicked');
-    }, 2000);
-  }
-  
-</script>
-</body>
+    <!--CONTACT ME-->
+    <h2 id="contact-me">Contact Me</h2>
+    <div class="paragraph">
+      <p>
+        If you have any questions or feeback of any projects or would like to collaborate with me on any projects, feel free to contact me using one of my socials! I can't link my
+        Discord account so here it is: RangerRhino#4484
+      </p>
+    </div>
+    <a class="button" style="background-color: black; color: white" href="mailto:RangerRhino23@outlook.com" target="_blank">Email Me!</a>
+    <a class="button" style="background-color: black; color: white" href="https://github.com/RangerRhino23" target="_blank">Github</a>
+    <a class="button" style="background-color: black; color: white" href="https://youtube.com/@RangerRhino23" target="_blank">YouTube</a>
+  </body>
 </html>
