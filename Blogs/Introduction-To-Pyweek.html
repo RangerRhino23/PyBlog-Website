@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deeper Exploration of Tkinter | PyBlog</title>
+    <title>Intro to pyweek | PyBlog</title>
     <link rel="stylesheet" type="text/css" href="../style.css" media="screen" />
-    <link rel="icon" type="image/x-icon" href="../icon_rounded.webp">    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4348852660214307"
-     crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="../icon_rounded.webp">
+    <meta property="og:title" content="What is pyweek?">
+    <meta property="og:description" content="Pyblog where only the best python blogs are found">
+    <meta property="og:image" content="https://pyblog.ddns.net/icon.png">
+    <!-- untag this when blog complete! <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4348852660214307"
+    crossorigin="anonymous"></script>-->
     <style>
       .img-preset {
-        width: 250px;
-        height: 350px;
+        width: auto;
+        height: auto;
         border-radius: 5px;
         object-fit: cover;
+        scale: 0.95;
       }
 
       p {
@@ -22,6 +27,7 @@
             margin: auto;
             font-size: larger;
         }
+
         pre {
             background-color: #000000;
             border: 1px solid #ccc;
@@ -83,44 +89,21 @@
             left: -10px;
             white-space: nowrap;
         }
-        table {
-            background-color: #909090;
-            border-collapse: collapse;
-            width: auto;
-            display: inline-block;
-            margin-top: 20px;
-        }
-
-            th, td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #565656;
-        }
-
-            th {
-            background-color: #333;
-            color: #ffffff;
-        }
-        td:not(:first-child) {
-            border-left: 1px solid #565656;
-        }
     </style>
   </head>
   <header>
     <ul class="menu">
       <li><img style="margin-left: 6px; margin-right: 6px; margin-top: 5px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="../icon.png"></li>
       <li><a href="../Home" class="hover-underline-animation">Home</a></li>
-      <li><a href="../Blogs/Desktop-Applications-With-Tkinter.html" class="hover-underline-animation">Previous blog</a></li>
       <li>
         <form action="../search.html" method="GET" class="search-bar">
           <input type="text" name="query" placeholder="&#x1F50E;&#xFE0E; Search..." value="" required>
           <button type="submit">Search</button>
         </form>
       </li>
-  </ul>
+    </ul>
   </header>
   <body>
-
     <script>
       function isMobileDevice() {
         const userAgent = navigator.userAgent.toLowerCase();
@@ -130,94 +113,38 @@
       }
     
       if (isMobileDevice()) {
-        window.location.replace("https://pyblog.ddns.net/Blogs/Deeper-Exploration-of-Tkinter-Mobile")
+        window.location.replace("https://pyblog.ddns.net/Blogs/Template-Mobile")
       } else {
         ;
       }
     </script>
     <br><br>
-    <h1>A Deeper Exploration of Tkinter</h1>
-    <h3>Difficulty: Beginner</h3>
-
-
-    <h2>Quick recap.</h2>
+    <!--Optional image placement-->
+    <!--<img src="home-page-images\Introduction-Into-Ursina.webp" class="img-preset">-->
+    <h1>An introduction to pyweek</h1>
     <p>
-        From what we saw in <a href="../Blogs/Desktop-Applications-With-Tkinter.html">this blog</a>
-        you would've created a label, a button and a function for the button when clicked.<br>
-        In this blog we go over so better functions for placement. 
-    </p>
-    <h2>Using .grid</h2>
-    <p>Using grid can allow you to more accuractly place buttons and
-        labels. Using the grid function is fairly simple and takes only 2 required args 
-        (arguments) which are "column" and "row" which you can infer what they do.
-        <br><br><pre><code id="code-block-1" style="color: white;">import tkinter as tk
+      First let's start off by explaining what pyweek is.<br>Pyweek
+      is a bi-annual (twice a year) event that is held by the current
+      developers/maintainers of python, pyweek allows users to create 
+      a game based of the winning catergory that the contenders choose.
+      There are usually 5 catergories that the contenders can pick from. In pyweek35,
+      the pyweek myself and RangerRhino took part in, the choices were as follows:<br><br>
+      &bullet;In the shadows<br>
+      &bullet;Las Vegas Nights<br>
+      &bullet;Mass-produced<br>
+      &bullet;Left, right, down<br>
+      &bullet;Re-entry <br><br></p>
+      <h3>Mine and RangerRhino's entry</h3>
+      <p>
+      and after casting out votes and waiting for the voting to end the
+      victorious catergory was In the shadows which lead to us making Echoes in the Dark
+      which lead to us getting 2.85/4 and scoring quite well.</p>
+    
 
-def button_click():
-    print("Button clicked!")
-
-root = tk.Tk()
-
-label = tk.Label(root, text="Hello, world!")
-label.grid(column=0,row=0)
-
-button = tk.Button(root,text="Click me!", command=button_click)
-button.grid(column=0,row=1)
-
-root.mainloop()
-
-</code><div class="copy-button" onclick="copyCode('code-block-1')"></div></pre>
-    </p><p><br>
-    this code will do the exact same as the code which is in the
-    previous blog but uses a grid system which can make putting buttons and
-    labels, like aforementioned, more accuractly
-    </p>
-    <h2>
-        Changing Label Text
-    </h2>
-    <p>
-        You can change the text on a label using the .config
-        function, this can also allow you to change the column and or row
-        on which the label is placed on
-    </p><br><pre><code id="code-block-2" style="color: white;">def button_click():
-    label.config(text="You've changed me!")</code>
-    <div class="copy-button" onclick="copyCode('code-block-2')"></div></pre>
-    <p><br>
-        Here we have modified the "button_click()" function so when the button is clicked
-        its changes the text of the label to "You've changed me". 
-    </p>
-    <h2>What we've covered:</h2>
-    <p>
-        <table>
-            <thead>
-              <tr>
-                <th>Function</th>
-                <th>Functionality</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>.row</td>
-                <td>Can be used to place labels on a grid</td>
-              </tr>
-              <tr>
-                <td>.config</td>
-                <td>Can be used to change things like the text of a label</td>
-              </tr>
-            </tbody>
-          </table>
-          
-    </p>
-    <h2>
-        In Conclusion:
-    </h2>
-    <p>
-        We've learnt quite a few essential functions that are apart of tkinter, using grid and config to change the
-        position and text of a label and now you have a better understanding of how to 
-        create applications with tkinter.
-    </p>
-    <p>Created by <a href="../authors/ItsbaileyX">ItsbaileyX</a></p>
     <br><br><br>
-
+    <p>Created by <a href="../authors/ItsbaileyX" style="color: salmon; text-decoration: none;">ItsbaileyX</a></p>
+    <br><br><br><br><br><br><br><br><br>
+    <a class="button" href="../Home">Back To Home</a>
 <script>
   function copyCode(elementId) {
     var codeBlock = document.getElementById(elementId);
@@ -236,10 +163,9 @@ root.mainloop()
   }
   
 </script>
-</body>
+  </body>
   <footer style="margin-top: 50px; margin-bottom: 20px">
     <a id="backtotopbtn" class="button" style="background-color: black; color: white; cursor: pointer; padding-left: 20%; padding-right: 20%;">Back to Top</a>
-    :P
     <script src="../Scroll.js">
     </script>
   </footer>
