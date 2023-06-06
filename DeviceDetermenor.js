@@ -43,7 +43,7 @@ if (isMobileDevice()) {
   var div4 = document.createElement('div');
   div4.id = 'menu-toggle';
   div4.style.fontSize = 'x-large';
-  div4.textContent = '\u{9776}';
+  div4.textContent = '☰';
   
   var script = document.createElement('script');
   script.textContent = `
