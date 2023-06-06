@@ -13,10 +13,10 @@ if (isMobileDevice()) {
   stylesheet.href = '../style-mobile.css';
   const style = document.createElement('style');
   style.textContent = "@import url('CSS/mobile.css')";
-  const favHomeImages/icon = document.createElement('link');
-  favHomeImages/icon.rel = 'HomeImages/icon';
-  favHomeImages/icon.type = 'image/x-HomeImages/icon';
-  favHomeImages/icon.href = '../HomeImages/icon.png';
+  const favicon = document.createElement('link');
+  favicon.rel = 'HomeImages/icon';
+  favicon.type = 'image/x-HomeImages/icon';
+  favicon.href = '../HomeImages/icon.png';
   document.head.appendChild(stylesheet);
   document.head.appendChild(style);
   document.head.appendChild(favHomeImages/icon);
