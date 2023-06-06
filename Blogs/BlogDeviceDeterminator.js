@@ -14,12 +14,12 @@ if (isMobileDevice()) {
   const style = document.createElement('style');
   style.textContent = "@import url('CSS/mobile.css')";
   const favicon = document.createElement('link');
-  favicon.rel = 'HomeImages/icon';
-  favicon.type = 'image/x-HomeImages/icon';
+  favicon.rel = 'icon';
+  favicon.type = 'image/x-icon';
   favicon.href = '../HomeImages/icon.png';
   document.head.appendChild(stylesheet);
   document.head.appendChild(style);
-  document.head.appendChild(favHomeImages/icon);
+  document.head.appendChild(favicon);
   var div1 = document.createElement('div');
   div1.id = 'side-menu';
   div1.style.height = '120px';
@@ -87,7 +87,10 @@ if (isMobileDevice()) {
   stylesheet.type = 'text/css';
   stylesheet.href = '../style.css';
   stylesheet.media = 'screen'
-  const link = document.createElement('link');
+  const favicon = document.createElement('link');
+  favicon.rel = 'icon';
+  favicon.type = 'image/x-icon';
+  favicon.href = '../HomeImages/icon.png';
   const style = document.createElement('style');
   style.textContent = `@import url('CSS/desktop.css');`;
 
@@ -142,7 +145,7 @@ if (isMobileDevice()) {
   // Get the header element and append the created ul element to it
   var header = document.getElementsByTagName('header')[0];
   header.appendChild(ul);
-
+  document.head.appendChild(favicon);
   document.head.appendChild(style);
   document.head.appendChild(stylesheet);
 }
