@@ -145,20 +145,16 @@ function handleFormSubmit(e) {
   const query = e.target.querySelector("input[name='query']").value;
 
   displaySearchResults(query);
-
-  if (e.target.id === "search-menu") {
-    toggleMobileSearch();
-  }
-
 }
+
 function toggleMobileSearch() {
   const mobileSearchForm = document.getElementById("search-menu");
   mobileSearchForm.classList.toggle("visible");
 }
 
-const searchFormDesktop = document.querySelector(".search-bar");
+const searchFormDesktop = document.querySelector(".desktop .search-bar");
 searchFormDesktop.addEventListener("submit", handleFormSubmit);
 
-const mobileSearchForm = document.querySelector("#search-menu");
-mobileSearchForm.addEventListener("submit", handleFormSubmit);
+const searchFormMobile = document.querySelector("#mobile-search-form");
+searchFormMobile.addEventListener("submit", handleFormSubmit);
 displaySearchResults('');
