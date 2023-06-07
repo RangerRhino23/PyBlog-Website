@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="style.css" media="screen and (min-width: 769px)" />
+  <link rel="stylesheet" type="text/css" href="style-mobile.css" media="screen and (max-width: 768px)" />
   <link rel="HomeImages/icon" type="image/x-HomeImages/icon" href="HomeImages/icon.png">
   <meta property="og:title" content="Search for blogs">
   <meta property="og:description" content="Use this page to search for various blogs that can be found on the website.">
@@ -30,7 +31,7 @@
     }
 
     .results div {
-      text-align: left; 
+      text-align: left;
       margin-bottom: 40px;
       padding: 10px;
       border-radius: 20px;
@@ -50,29 +51,73 @@
     .results a:hover {
       text-decoration: underline;
     }
+    #search-menu.visible {
+      display: block;
+    }
+    .hidden {
+      display: none;
+    }
   </style>
 </head>
 <header>
-  <ul class="menu">
-    <li><img style="margin-left: 6px; margin-right: 6px; margin-top: 5px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="HomeImages/icon.png"></li>
-    <li><a href="Home" class="hover-underline-animation">Home</a></li>
-    <li><a href="Authors/" class="hover-underline-animation">Authors</a></li>
-    <li>
-      <form action="search.html" method="GET" class="search-bar">
-        <input type="text" name="query" placeholder="&#x1F50E;&#xFE0E; Search..." value="" required>
-        <button type="submit">Search</button>
-      </form>
-    </li>
-</ul>
+  <div id="desktop-header" class="desktop">
+    <ul class="menu">
+      <li><img style="margin-left: 6px; margin-right: 6px; margin-top: 5px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="HomeImages/icon.png"></li>
+      <li><a href="Home" class="hover-underline-animation">Home</a></li>
+      <li><a href="Authors/" class="hover-underline-animation">Authors</a></li>
+      <li>
+        <form action="search.html" method="GET" class="search-bar">
+          <input type="text" name="query" placeholder="&#x1F50E;&#xFE0E; Search..." value="" required>
+          <button type="submit">Search</button>
+        </form>
+      </li>
+    </ul>
+  </div>
+  <div id="mobile-header" class="mobile">
+    <div id="side-menu" style="height: 120px;">
+      <div class="menu-item"><a href="">Home</a></div>
+      <div class="menu-item"><a href="Authors/">Authors</a></div>
+    </div>
+    <div id="menu-toggle" style="font-size: x-large">&#9776;</div>
+    <script>
+      var menuToggle = document.getElementById("menu-toggle");
+      var sideMenu = document.getElementById("side-menu");
+
+      menuToggle.addEventListener("click", function() {
+        sideMenu.classList.toggle("active");
+        document.body.classList.toggle('overflow-hidden');
+      });
+    </script>
+    <a href=""><img style="float: center; margin-right: 16px; margin-top: 12px;width:180px;height:40px; border-radius:10px;object-fit: cover" src="HomeImages/icon.png"></a>
+<form class="search-bar">
+  <input type="text" id="search-input-desktop" name="query" />
+  <button id="search-icon">Search</button>
+</form>
+
+<form id="search-menu">
+  <input type="text" id="search-input-mobile" name="query" />
+  <button id="search-icon">Search</button>
+</form>
+    <div id="search-toggle" style="font-size: x-large">&#x1F50E;&#xFE0E;</div>
+    <script>
+      var searchToggle = document.getElementById("search-toggle");
+      var searchMenu = document.getElementById("search-menu");
+
+      searchToggle.addEventListener("click", function() {
+        searchMenu.classList.toggle("active");
+        document.body.classList.toggle('overflow-hidden');
+      });
+    </script>
+  </div>
 </header>
 <body>
-  <h1>Search Results</h1>
-  <br>
   <div class="result-container">
-    <div id="searchResults" class="results"></div>
+    <div class="results">
+      <h2 style="text-align:center;" id="egg">Search Results</h2>
+      <div id="search-results"></div>
+    </div>
   </div>
-
-  <div style="margin-top:35%;"></div>
   <script src="javascript/search_result.js"></script>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 </html>

@@ -10,7 +10,9 @@ body {
   font-family: 'Verdana', sans-serif;
   text-align: center;
 }
-
+.mobile {
+  display: none;
+}
 h1 {
   color: whitesmoke;
   margin-top: 50px;
