@@ -7,110 +7,16 @@
     <title>Home | PyBlog</title>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4348852660214307"
     crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
     <link rel="HomeImages/icon" type="image/x-HomeImages/icon" href="HomeImages/icon.png">
     <meta property="og:title" content="Homepage of pyblog">
     <meta property="og:description" content="Only the best blogs can be found here">
     <meta property="og:image" content="https://pyblog.ddns.net/HomeImages/icon.png">
     
-    <style>
-      .img-preset {
-        width: 350px;
-        height: 100px;
-        border-radius: 5px;
-        object-fit: cover;
-      }
-    
-      .blog-img {
-        width: auto;
-        height: 100px;
-        border-radius: 5px;
-        object-fit: cover;
-      }
-    
-      p {
-        color: white;
-        width: 500px;
-        margin: auto;
-        font-size: larger;
-      }
-    
-      .grid-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-      }
-    
-      .grid-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 20px;
-      }
-    
-      .grid-item {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-        opacity: 0;
-        transition: opacity 0.3s ease;
-      }
-    
-      .grid-item p {
-        color: black;
-        width: 500px;
-        margin: auto;
-        font-size: larger;
-      }
-    
-      .slide-in {
-        animation: slide-in 0.5s ease forwards;
-      }
-    
-      @keyframes slide-in {
-        from {
-          opacity: 0;
-          transform: translateY(50%);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    </style>
-    
   </head>
   <header>
-    <ul class="menu">
-      <li><img style="margin-left: 6px; margin-right: 6px; margin-top: 5px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="HomeImages/icon.png"></li>
-      <li><a href="#" class="hover-underline-animation">Home</a></li>
-      <li><a href="#about-pyblog" class="hover-underline-animation">About PyBlog</a></li>
-      <li><a href="#fun-blogs" class="hover-underline-animation">Fun Blogs</a></li>
-      <li><a href="#helpful-Blogs" class="hover-underline-animation">Helpful Blogs</a></li>
-      <li><a href="Authors/" class="hover-underline-animation">Authors</a></li>
-      <li>
-        <form action="search.html" method="GET" class="search-bar">
-          <input type="text" name="query" placeholder="&#x1F50E;&#xFE0E; Search..." value="" required>
-          <button type="submit">Search</button>
-        </form>
-      </li>
-  </ul>
   </header>
-
   <body>
-    <script>
-      function isMobileDevice() {
-        const userAgent = navigator.userAgent.toLowerCase();
-        const mobileKeywords = ['android', 'webos', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone'];
-    
-        return mobileKeywords.some(keyword => userAgent.includes(keyword));
-      }
-    
-      if (isMobileDevice()) {
-        window.location.replace("https://pyblog.ddns.net/Home-Mobile")
-      } else {
-        ;
-      }
-    
+    <script src="javascript/HomeDeviceDeterminator.js">
     </script>
     <br><br><br>
     <img src="HomeImages/icon.png" class="img-preset"/>
@@ -219,7 +125,7 @@
         </b></p>
       </div>
     </div><br>
-    <p id="tableNumber">1/3</p><br>
+    <p id="tableNumber" class="pageNumber">1/3</p><br>
     <button onclick="toggleElementsBack()" class="button" style="padding-left: 10%; padding-right: 10%; padding-top: 10px; padding-bottom: 10px; cursor: pointer;">&lt;</button>
     <button onclick="toggleElements()" class="button" style="padding-left: 10%; padding-right: 10%; padding-top: 10px; padding-bottom: 10px; cursor: pointer;">&gt;</button>
 
