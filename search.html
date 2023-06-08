@@ -89,9 +89,9 @@
       });
     </script>
     <a href=""><img style="float: center; margin-right: 16px; margin-top: 12px;width:180px;height:40px; border-radius:10px;object-fit: cover" src="HomeImages/icon.png"></a>
-<div id="search-menu"><div class="search-item">
-<form action="search.html" method="GET" class="search-bar" id="mobile-search-form">
-  <input type="text" name="query" placeholder="&#x1F50E;&#xFE0E; Search..." required>
+<div id="search-menu" class><div class="search-item">
+<form action="search.html" method="GET" class="search-bar" >
+  <input type="text" name="query" placeholder="&#x1F50E;&#xFE0E; Search..." required id="mobile-search-form">
   <button type="submit">Search</button>
 </form></div></div>
     <div id="search-toggle" style="font-size: x-large">&#x1F50E;&#xFE0E;</div>
@@ -100,6 +100,7 @@
       var searchMenu = document.getElementById("search-menu");
       
       searchToggle.addEventListener("click", function() {
+        console.log("Search button clicked");
         searchMenu.classList.toggle("active");
         document.body.classList.toggle('overflow-hidden');
       });

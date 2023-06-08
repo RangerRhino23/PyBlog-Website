@@ -145,16 +145,22 @@ function handleFormSubmit(e) {
   const query = e.target.querySelector("input[name='query']").value;
 
   displaySearchResults(query);
-}
+  if (e.target.id === "search-menu") {
+    toggleMobileSearch();
+  }
 
+}
 function toggleMobileSearch() {
+  console.log("Search button clicked");
   const mobileSearchForm = document.getElementById("search-menu");
-  mobileSearchForm.classList.toggle("visible");
+  mobileSearchForm.classList.toggle("active");
+  console.log("Search button clicked"); // Add this line for debugging purposes
+
 }
 
-const searchFormDesktop = document.querySelector(".desktop .search-bar");
+const searchFormDesktop = document.querySelector(".search-bar");
 searchFormDesktop.addEventListener("submit", handleFormSubmit);
 
-const searchFormMobile = document.querySelector("#mobile-search-form");
-searchFormMobile.addEventListener("submit", handleFormSubmit);
+const mobileSearchForm = document.querySelector("#search-menu");
+mobileSearchForm.addEventListener("submit", handleFormSubmit);
 displaySearchResults('');

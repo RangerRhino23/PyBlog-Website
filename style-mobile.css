@@ -191,19 +191,19 @@ h2 {
 /*Search Slide Menu */
 
 #search-menu {
-	background-color: var(--gray);
-	color: #fff;
-	width: 100%;
-	position: fixed;
-	top: 100%;
+  background-color: var(--gray);
+  color: #fff;
+  width: 100%;
+  position: fixed;
+  top: 100%;
   left: 0;
-	height: 100vh;
-	transition: all 0.3s ease-in-out;
-	z-index: 999;
+  height: 100vh;
+  transition: all 0.3s ease-in-out;
+  z-index: 999;
 }
 
 #search-menu.active {
-	top: 75px;
+  top: 75px;
 }
 
 body.overflow-hidden {
