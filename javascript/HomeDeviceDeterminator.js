@@ -141,7 +141,7 @@ function isMobileDevice() {
   menuList.classList.add("menu");
 
   var menuItems = [
-    '<li><img style="margin-left: 6px; margin-right: 6px; margin-top: 5px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="HomeImages/icon.png"></li>',
+    '<li><img style="margin-left: 6px; margin-right: 6px; margin-top: 5px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="HomeImages/icon.png" alt="Icon"></li>',
     '<li><a href="#" class="hover-underline-animation">Home</a></li>',
     '<li><a href="#about-pyblog" class="hover-underline-animation">About PyBlog</a></li>',
     '<li><a href="#fun-blogs" class="hover-underline-animation">Fun Blogs</a></li>',

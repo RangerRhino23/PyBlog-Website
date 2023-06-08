@@ -71,6 +71,7 @@ if (isMobileDevice()) {
   img.style.borderRadius = '100px';
   img.style.objectFit = 'cover';
   img.src = '../HomeImages/icon.png';
+  img.alt = 'An image';
   a3.appendChild(img);
 
   // Get the header element and append the created elements to it
@@ -109,6 +110,7 @@ if (isMobileDevice()) {
   img.style.borderRadius = '100px';
   img.style.objectFit = 'cover';
   img.src = '../HomeImages/icon.png';
+  img.alt = 'An image'
   li1.appendChild(img);
   ul.appendChild(li1);
 
