@@ -7,7 +7,7 @@
 
   p {
     color: white;
-    width: 500px;
+    max-width: 60%;
     margin: auto;
     font-size: larger;
   }
