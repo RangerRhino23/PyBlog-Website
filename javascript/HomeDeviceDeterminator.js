@@ -1,19 +1,30 @@
-function isMobileDevice() {
+  //new code
+  function isMobileDevice() {
     const userAgent = navigator.userAgent.toLowerCase();
     const mobileKeywords = ['android', 'webos', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone'];
   
     return mobileKeywords.some(keyword => userAgent.includes(keyword));
   }
   
-  if (isMobileDevice()) {
-    console.log("Is mobile")
+  function checkScreenWidth() {
+    const mobileView = window.matchMedia("(max-width: 768px)");
+    const desktopView = window.matchMedia("(min-width: 769px)");
+  
+    if (mobileView.matches || isMobileDevice()) {
+      loadMobileView();
+    } else if (desktopView.matches) {
+      loadDesktopView();
+    }
+  }
+  
+  function loadMobileView() {
+    // Clear the existing elements
+    if (document.querySelector("header")) {
+      document.querySelector("header").remove();
+    }
+  
     const style = document.createElement('style');
     style.textContent = "@import url('HomeCSS/HomeMobile.css')";
-    const stylesheet = document.createElement('link');
-    stylesheet.rel = 'stylesheet';
-    stylesheet.type = 'text/css';
-    stylesheet.href = 'style-mobile.css';
-    document.head.appendChild(stylesheet);
     document.head.appendChild(style);
 
     var header = document.createElement("header");
@@ -125,15 +136,17 @@ function isMobileDevice() {
     header.appendChild(script5);
     
     document.body.prepend(header);
-  } else {
+  }
+  
+  function loadDesktopView() {
+    // Clear the existing elements
+    if (document.querySelector("header")) {
+      document.querySelector("header").remove();
+    }
+  
     const style = document.createElement('style');
     style.textContent = "@import url('HomeCSS/HomeDesktop.css')";
-    const stylesheet = document.createElement('link');
-    stylesheet.rel = 'stylesheet';
-    stylesheet.type = 'text/css';
-    stylesheet.href = 'style.css';
     document.head.appendChild(style);
-    document.head.appendChild(stylesheet);
   // Create header element
   var header = document.createElement("header");
 
@@ -168,5 +181,16 @@ function isMobileDevice() {
 
   // Append header to the document body
   document.body.prepend(header);
-  }
+  };
   
+  window.addEventListener("DOMContentLoaded", checkScreenWidth);
+  
+  const mediaQueryList = window.matchMedia("(max-width: 768px)");
+  
+  mediaQueryList.addEventListener("change", (e) => {
+    if (e.matches) {
+      loadMobileView();
+    } else {
+      loadDesktopView();
+    }
+  });
