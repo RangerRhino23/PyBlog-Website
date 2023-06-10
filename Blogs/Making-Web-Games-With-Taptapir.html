@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Making Web Games With Taptapir | PyBlog</title>
+    <!--<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4348852660214307"
+     crossorigin="anonymous"></script>-->
+</head>
+<header>
+  <script src="BlogDeviceDeterminator.js">
+    </script>
+  </header>
+<body>
+
+  <br><br>
+  <!--Optional image placement-->
+  <img src="home-page-images/Web-Games-Taptapir.webp" style="zoom:0.6;" class="img-preset" alt="Taptapir">
+  <h1>Making Web Games with Tapair.</h1><br>
+  <h3>Difficulty: Beginner</h3>
+
+
+  <h2>Introduction</h2>
+  <p>
+    There are many different ways to create a working game on the web. You could use a website like Scratch that uses code blocks to
+    create the game or you could code one using text coding like JavaScript. Although there are many different ways, 
+    Taptapir is in my opinion one of the easier ones to learn and has tons of built in features that make creating games so much easier.
+    <br><br>
+    In this blog post, we will take a closer look at Taptapir and explore some of its features. 
+    We will also provide some examples of Taptapir code and discuss its potential applications.
+  </p>
+
+  <h2>What is Taptapir?</h2>
+  <p>
+    Taptapir is a new programming language created by Pokepetter. 
+    It is a compiled language that runs in the browser and transpiles into JavaScript. 
+    Taptapir is a statically typed language with indentation-sensitive syntax, meaning that the 
+    indentation of your code determines the structure of your program. This makes Taptapir code 
+    more readable and easier to write. Taptapir is also significantly faster than Python, making 
+    it a good choice for performance-critical applications.
+    <br><br>
+    The super useful thing about Taptapir is that its coded in a syntax like Python. It uses syntax
+    like Ursina which is a game engine for Python also created by Pokepetter.
+  </p>
+
+  <h2>Getting Started</h2>
+  <p>
+    To get started with Taptapir, first create a project folder. This is where all the code for your game will be stored.
+    Inside of your project folder, create a new file called <i>game.html</i>. Once you have that file created, open that folder in your IDE or editor of choice.
+  </p>
+
+  <h2>Installing required Taptapir Files</h2>
+  <p>
+    Unlike Urisna and Python, Taptapir can't be installed using pip. To install Taptapir, you will have to download its required sorce code from github. To do this,
+    open a command terminal in your project folder. In the terminal, run the following command:
+  </p>
+  <br><pre><code id="code-block-1" style="color: white;">git clone https://github.com/pokepetter/taptapir.git --depth=1
+  </code><div class="copy-button" onclick="copyCode('code-block-1')"></div></pre><br><br>
+  <p>
+    This should create a folder inside of your project folder called "taptapir".
+  </p>
+
+  <h2>Creating a blank scene</h2>
+  <p>
+    Now that you've installed taptapir, you can start to create your web game. In the html file you created earlier, put the following code:
+  </p>
+  <br><pre><code id="code-block-2" style="color: white;">
+  </code><div class="copy-button" onclick="copyCode('code-block-2')"></div></pre><br><br>
+
+  <br><br><br>
+  <p>Created by <a href="../authors/RangerRhino23">RangerRhino23</a></p>
+  <br><br><br>
+  <a class="button" href="../Home">Back To Home</a>
+  <div style="margin-top:30px;"></div>
+  <script>
+  function copyCode(elementId) {
+    var codeBlock = document.getElementById(elementId);
+    var range = document.createRange();
+    range.selectNode(codeBlock);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();
+    
+    var button = document.querySelector('[onclick="copyCode(\'' + elementId + '\')"]');
+    button.classList.add('clicked');
+    setTimeout(function() {
+      button.classList.remove('clicked');
+    }, 2000);
+  }
+  
+</script>
+</body>
+</html>
