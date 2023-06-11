@@ -95,6 +95,12 @@ const blogs = [
     imgSrc: 'Blogs/home-page-images/Modules.webp',
     link: 'Blogs/Types-Of-Modules-And-How-To-Use-Them',
   },
+  {
+    title: 'Making Web Games With Taptapir',
+    content: 'Beginner, Web Games, Taptapir, Python',
+    imgSrc: 'Blogs/home-page-images/Web-Games-Taptapir.webp',
+    link: 'Blogs/Making-Web-Games-With-Taptapir',
+  },
 ];
 
 const searchResultsContainer = document.getElementById('search-results');
