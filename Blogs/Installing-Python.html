@@ -5,115 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Installing Python | PyBlog</title>
-    <link rel="stylesheet" type="text/css" href="../style.css" media="screen" />
     <link rel="icon" type="image/x-icon" href="../HomeImages/icon_rounded.webp">    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4348852660214307"
      crossorigin="anonymous"></script>
-    <style>
-      .img-preset {
-        width: auto;
-        height: auto;
-        border-radius: 5px;
-        object-fit: cover;
-        scale: 0.95;
-      }
-
-      p {
-            color: whitesmoke;
-            width: 500px;
-            margin: auto;
-            font-size: larger;
-        }
-
-        pre {
-            background-color: #000000;
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin: 0;
-            width: auto;
-            text-align: left;
-            display: inline-block;
-        }
-
-        code {
-            display: block;
-            font-size: 14px;
-            line-height: 1.5;
-            overflow-x: auto;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            color: #333;
-        }
-        .copy-button {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: #383838;
-            background-image: url("../HomeImages/copy.webp");
-            color: #fff;
-            background-size: 36px;
-            background-position: center;
-            text-align: center;
-            line-height: 40px;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .copy-button:before {
-            font-family: "FontAwesome";
-            font-size: 20px;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-        }
-
-        .copy-button:hover:before {
-            content: "Copy code";
-            font-family: Arial, sans-serif;
-            font-size: 12px;
-            color: #fff;
-            top: -30px;
-            left: -10px;
-            white-space: nowrap;
-        }
-        .copy-button.clicked:before {
-            content: "Copied code";
-            font-family: Arial, sans-serif;
-            font-size: 12px;
-            color: #fff;
-            top: -30px;
-            left: -10px;
-            white-space: nowrap;
-        }
-    </style>
+     <link rel="stylesheet" type="text/css" href="../style.css" media="screen and (min-width: 769px)" />
+     <link rel="stylesheet" type="text/css" href="../style-mobile.css" media="screen and (max-width: 768px)" />
+     <link rel="stylesheet" type="text/css" href="CSS/desktop.css" media="screen and (min-width: 769px)" />
+     <link rel="stylesheet" type="text/css" href="CSS/mobile.css" media="screen and (max-width: 768px)" />
   </head>
   <header>
-    <ul class="menu">
-      <li><img style="margin-left: 6px; margin-right: 6px; margin-top: 5px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="../HomeImages/icon.png" alt="Icon"></li>
-      <li><a href="../Home" class="hover-underline-animation">Home</a></li>
-      <li>
-        <form action="../search.html" method="GET" class="search-bar">
-          <input type="text" name="query" placeholder="&#x1F50E;&#xFE0E; Search..." value="" required>
-          <button type="submit">Search</button>
-        </form>
-      </li>
-  </ul>
   </header>
   <body>
-
-    <script>
-      function isMobileDevice() {
-        const userAgent = navigator.userAgent.toLowerCase();
-        const mobileKeywords = ['android', 'webos', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone'];
-    
-        return mobileKeywords.some(keyword => userAgent.includes(keyword));
-      }
-    
-      if (isMobileDevice()) {
-        window.location.replace("https://pyblog.ddns.net/Blogs/Installing-Python-Mobile")
-      } else {
-        ;
-      }
+    <script src="BlogDeviceDeterminatorV2.js">
     </script>
     <br><br>
     <img src="Python-Introduction-Files\python_logo.webp" class="img-preset">
