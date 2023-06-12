@@ -101,7 +101,7 @@
     searchMenu.id = "search-menu";
     searchMenu.innerHTML = `
         <div class="search-item">
-        <form action="search-mobile.html" method="GET">
+        <form action="search.html" method="GET">
             <input type="text" name="query" placeholder="&#x1F50E;&#xFE0E; Search..." value="" required><br>
             <button type="submit">Search</button>
         </form>
