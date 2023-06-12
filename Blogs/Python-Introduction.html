@@ -5,53 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Python Introduction | PyBlog</title>
-    <link rel="stylesheet" type="text/css" href="../style.css" media="screen" />
     <link rel="icon" type="image/x-icon" href="../HomeImages/icon_rounded.webp">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4348852660214307"
     crossorigin="anonymous"></script>
-    <style>
-      .img-preset {
-        width: 340px;
-        height: 100px;
-        border-radius: 5px;
-        object-fit: cover;
-      }
-
-      p {
-            color: whitesmoke;
-            width: 500px;
-            margin: auto;
-            font-size: larger;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="../style.css" media="screen and (min-width: 769px)" />
+    <link rel="stylesheet" type="text/css" href="../style-mobile.css" media="screen and (max-width: 768px)" />
+    <link rel="stylesheet" type="text/css" href="CSS/desktop.css" media="screen and (min-width: 769px)" />
+    <link rel="stylesheet" type="text/css" href="CSS/mobile.css" media="screen and (max-width: 768px)" />
   </head>
   <header>
-    <ul class="menu">
-      <li><img style="margin-left: 6px; margin-right: 6px; margin-top: 5px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="../HomeImages/icon.png" alt="Icon"></li>
-      <li><a href="../Home" class="hover-underline-animation">Home</a></li>
-      <li>
-        <form action="../search.html" method="GET" class="search-bar">
-          <input type="text" name="query" placeholder="&#x1F50E;&#xFE0E; Search..." value="" required>
-          <button type="submit">Search</button>
-        </form>
-      </li>
-  </ul>
   </header>
   <body>
-    <script>
-      function isMobileDevice() {
-        const userAgent = navigator.userAgent.toLowerCase();
-        const mobileKeywords = ['android', 'webos', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone'];
-    
-        return mobileKeywords.some(keyword => userAgent.includes(keyword));
-      }
-    
-      if (isMobileDevice()) {
-        window.location.replace("https://pyblog.ddns.net/Blogs/Python-Introduction-Mobile")
-      } else {
-        ;
-      }
-    
+    <script src="BlogDeviceDeterminatorV2.js">
     </script>
     <br><br>
     <img src="Python-Introduction-Files/python_logo.webp" class="img-preset">
