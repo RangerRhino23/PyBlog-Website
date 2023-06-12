@@ -8,8 +8,6 @@ Potential Blogs:
 
 * Introduction to pyweek and gamejams
 
-* Taptapir (Because its like python)
-
 * Intermediate python logic, for x in range(x, 1, 5), while True: etc.
 
 * Our views on python (team effort)
@@ -17,4 +15,4 @@ Potential Blogs:
 * Web development with django
 
 
-Total blogs completed: 16
+Total blogs completed: 19
