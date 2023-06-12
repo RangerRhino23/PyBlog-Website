@@ -38,7 +38,7 @@
   <h2>What is Taptapir?</h2>
   <p>
     Taptapir is a new programming language created by Pokepetter. 
-    It is a compiled language that runs in the browser and transpiles into JavaScript. 
+    It is a language that runs in the browser and transpiles into JavaScript. 
     Taptapir is a statically typed language with indentation-sensitive syntax, meaning that the 
     indentation of your code determines the structure of your program. This makes Taptapir code 
     more readable and easier to write. Taptapir is also significantly faster than Python, making 
@@ -69,8 +69,45 @@
   <p>
     Now that you've installed taptapir, you can start to create your web game. In the html file you created earlier, put the following code:
   </p>
-  <br><pre><code id="code-block-2" style="color: white;">
+  <br><pre><code id="code-block-2" style="color: white;">&lt;html&gt;&lt;title&gt;title&lt;/title&gt;&lt;body&gt;
+&lt;script src="taptapir/taptapir.js"&gt;&lt;/script&gt;
+&lt;script type="text/sunsnake"&gt;
+# code here
+&lt;/script&gt;&lt;script src="taptapir/sunsnake_compiler.js"&gt;&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
   </code><div class="copy-button" onclick="copyCode('code-block-2')"></div></pre><br><br>
+  <p>
+    This creates a blank green window that you will be able to put different Entities and Buttons into.
+    The creator, Pokepetter has created a documentation page that you can look through to help you. you can
+    access that page <a href="https://pokepetter.github.io/taptapir/docs/documentation.html" target="_blank">here</a>.
+  </p>
+
+  <h2>Creating a simple clicker</h2>
+  <p>
+    A simple starter project to create in Taptapir is a clicker. These are simple but also fun to make. Try making it yourself
+    but if your stuck at all, feel free to use code from this example:
+  </p>
+  <br><pre><code id="code-block-3" style="color: white;">&lt;html&gt;&lt;title&gt;title&lt;/title&gt;&lt;body&gt;
+&lt;script src="taptapir/taptapir.js"&gt;&lt;/script&gt;
+&lt;script type="text/sunsnake"&gt;
+set_background_color('#fff')
+set_window_color('#fff')
+score = 0
+text = Text(text='00', text_origin=[0,0], scale=1, y=.2, text_size=8)
+b = Button(text='Click me!', color=hsv(160,1,.6), scale=[.3,.15], text_color=color.white)
+b.on_click = def():
+    score += 1
+    text.text = `${score}`
+    b.scale = [e*1.25 for e in [.3,.15]]
+    b.animate('scale_x', .3, duration=.1)
+    b.animate('scale_y', .15, duration=.1)
+&lt;/script&gt;&lt;script src="taptapir/sunsnake_compiler.js"&gt;&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
+      </code><div class="copy-button" onclick="copyCode('code-block-3')"></div></pre><br><br>
+
+  <h2>Conclusion</h2>
+  <p>
+    Taptapir is a very simple way to create web games while using Python syntax. If you want to see more
+    Taptapir projects, search for them at the top of the screen! 
+  </p>
 
   <br><br><br>
   <p>Created by <a href="../authors/RangerRhino23">RangerRhino23</a></p>
