@@ -52,6 +52,7 @@
   
       menuToggle.addEventListener("click", function() {
         sideMenu.classList.toggle("active");
+        document.body.classList.toggle('overflow-hidden');
       });
     `;
   

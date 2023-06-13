@@ -3,91 +3,91 @@ const blogs = [
     title: 'Creating Minecraft In Ursina',
     content: 'Intermediate, Ursina, Python, Game, Minecraft',
     imgSrc: 'Blogs/home-page-images/Minecraft-Ursina.webp',
-    link: 'Blogs/Creating-Minecraft-In-Ursina-Mobile',
+    link: 'Blogs/Creating-Minecraft-In-Ursina',
   },
   {
     title: 'Using Sockets For Networking',
     content: 'Socket, Python, Intermediate',
     imgSrc: 'Blogs/home-page-images/Sockets.webp',
-    link: 'Blogs/Using-Sockets-For-Networking-Mobile',
+    link: 'Blogs/Using-Sockets-For-Networking',
   },
   {
     title: 'The History Of Python',
     content: 'History, Python',
     imgSrc: 'Blogs/home-page-images/time.webp',
-    link: 'Blogs/The-History-Of-Python-Mobile',
+    link: 'Blogs/The-History-Of-Python',
   },
   {
     title: 'Python Introduction',
     content: 'Beginner, Introduction, Python, Helpful',
     imgSrc: 'Blogs/home-page-images/Python-Introduction.webp',
-    link: 'Blogs/Python-Introduction-Mobile',
+    link: 'Blogs/Python-Introduction',
   },
   {
     title: 'Python Fundamentals',
     content: 'Fundamentals, Python, Helpful, Beginner',
     imgSrc: 'Blogs/home-page-images/Python-Fundamentals.webp',
-    link: 'Blogs/Python-Fundamentals-Mobile',
+    link: 'Blogs/Python-Fundamentals',
   },
   {
     title: 'Making A Chatbot With Python',
     content: 'Chatbot, AI, Python, Intermediate',
     imgSrc: 'Blogs/home-page-images/Making-Chatbot-With-Python.webp',
-    link: 'Blogs/Making-A-Chatbot-With-Python-Mobile',
+    link: 'Blogs/Making-A-Chatbot-With-Python',
   },
   {
     title: 'Machine Learning With Python',
     content: 'Machine Learning, Python, Advanced, AI',
     imgSrc: 'Blogs/home-page-images/Machine-Learning.webp',
-    link: 'Blogs/Machine-Learning-With-Python-Mobile',
+    link: 'Blogs/Machine-Learning-With-Python',
   },
   {
     title: 'Introduction Into Ursina',
     content: 'Ursina, Introduction, Beginner, Python, Game Development',
     imgSrc: 'Blogs/home-page-images/Introduction-Into-Ursina.webp',
-    link: 'Blogs/Introduction-Into-Ursina-Mobile',
+    link: 'Blogs/Introduction-Into-Ursina',
   },
   {
     title: 'Installing Python',
     content: 'Python, Beginner, Helpful',
     imgSrc: 'Blogs/Python-Introduction-Files/python_logo.webp',
-    link: 'Blogs/Installing-Python-Mobile',
+    link: 'Blogs/Installing-Python',
   },
   {
     title: 'How To Use VS Code',
     content: 'Beginner, Visual Studio Code, How To, Helpful',
     imgSrc: 'Blogs/home-page-images/VS-Code.webp',
-    link: 'Blogs/How-To-Use-VSCode-Mobile',
+    link: 'Blogs/How-To-Use-VSCode',
   },
   {
     title: 'Desktop Applications With Tkinter',
     content: 'Desktop Apps, Tkinter, Python, Beginner',
     imgSrc: 'Blogs/home-page-images/Desktop-Tkinter.webp',
-    link: 'Blogs/Desktop-Applications-With-Tkinter-Mobile',
+    link: 'Blogs/Desktop-Applications-With-Tkinter',
   },
   {
     title: 'Deeper Exploration of Tkinter',
     content: 'Beginner, Desktop Apps, Tkinter, Python',
     imgSrc: 'Blogs/home-page-images/Deeper-Exploration-Tkinter.webp',
-    link: 'Blogs/Deeper-Exploration-of-Tkinter-Mobile',
+    link: 'Blogs/Deeper-Exploration-of-Tkinter',
   },
   {
     title: 'Creating Simulations With Python',
     content: 'Python, Intermediate, Simulations',
     imgSrc: 'Blogs/home-page-images/Creating-Simulations.webp',
-    link: 'Blogs/Creating-Simulations-With-Python-Mobile',
+    link: 'Blogs/Creating-Simulations-With-Python',
   },
   {
     title: 'Creating A Website With Flask',
     content: 'Flask, Intermediate, Website, Python',
     imgSrc: 'Blogs/Flask-stuff/Flask.webp',
-    link: 'Blogs/Creating-A-Website-With-Flask-Mobile',
+    link: 'Blogs/Creating-A-Website-With-Flask',
   },
   {
     title: 'Terminal Games With Python',
     content: 'Terminal, Beginner, Python',
     imgSrc: 'Blogs/home-page-images/Terminal-Games.webp',
-    link: 'Blogs/Terminal-Games-With-Python-Mobile',
+    link: 'Blogs/Terminal-Games-With-Python',
   },
   {
     title: 'Types Of Modules And How To-Use Them',
@@ -156,6 +156,7 @@ function toggleMobileSearch(e) {
   e.preventDefault();
   const query = e.target.querySelector("input[name='query']").value;
   mobileSearchForm.classList.toggle("active");
+  document.body.classList.toggle('overflow-hidden');
   displaySearchResults(query);
 }
 
@@ -165,3 +166,11 @@ searchFormDesktop.addEventListener("submit", handleFormSubmit);
 const mobileSearchForm = document.querySelector("#search-menu");
 mobileSearchForm.addEventListener("submit", toggleMobileSearch);
 displaySearchResults('');
+
+window.addEventListener('load', () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const query = urlParams.get('query');
+  if (query) {
+    displaySearchResults(query);
+  }
+});
