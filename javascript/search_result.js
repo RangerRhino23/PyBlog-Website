@@ -91,7 +91,7 @@ const blogs = [
   },
   {
     title: 'Types Of Modules And How To-Use Them',
-    content: 'Cheesy, Modules, Python',
+    content: 'User-defined Modules, Built-in modules, Python',
     imgSrc: 'Blogs/home-page-images/Modules.webp',
     link: 'Blogs/Types-Of-Modules-And-How-To-Use-Them',
   },
