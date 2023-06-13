@@ -1,6 +1,6 @@
   function checkScreenWidth() {
-    const mobileView = window.matchMedia("(max-width: 768px)");
-    const desktopView = window.matchMedia("(min-width: 769px)");
+    const mobileView = window.matchMedia("(max-width: 1200px)");
+    const desktopView = window.matchMedia("(min-width: 1201px)");
   
     if (mobileView.matches) {
       loadMobileView();
