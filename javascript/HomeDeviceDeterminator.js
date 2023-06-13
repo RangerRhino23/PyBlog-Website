@@ -32,7 +32,7 @@
     var sideMenu = document.createElement("div");
     sideMenu.id = "side-menu";
     sideMenu.innerHTML = `
-        <div class="menu-item"><a href="">Home</a></div>
+        <div class="menu-item"><a href="../Home">Home</a></div>
         <div class="menu-item"><a id="about-pyblog-button">About Pyblog</a></div>
         <div class="menu-item"><a id="fun-blogs-button">Fun Blogs</a></div>
         <div class="menu-item"><a id="helpful-blogs-button">Helpful Blogs</a></div>
@@ -155,11 +155,11 @@
 
   var menuItems = [
     '<li><img style="margin-left: 6px; margin-right: 6px; margin-top: 5px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="HomeImages/icon.png" alt="Icon"></li>',
-    '<li><a href="#" class="hover-underline-animation">Home</a></li>',
+    '<li><a href="../Home" class="hover-underline-animation">Home</a></li>',
     '<li><a href="#about-pyblog" class="hover-underline-animation">About PyBlog</a></li>',
     '<li><a href="#fun-blogs" class="hover-underline-animation">Fun Blogs</a></li>',
     '<li><a href="#helpful-blogs" class="hover-underline-animation">Helpful Blogs</a></li>',
-    '<li><a href="Authors/" class="hover-underline-animation">Authors</a></li>',
+    '<li><a href="../Authors/" class="hover-underline-animation">Authors</a></li>',
     `
     <li>
       <form action="search.html" method="GET" class="search-bar">
