@@ -63,57 +63,34 @@
         }
     </style>
     <script>
-      const lowercasePaths = [
-        '/home',
-        '/blogs',
-        '/blogs/creating-a-website-with-flask',
-        '/authors/itsbaileyx',
-        '/authors/',
-        '/authors/rangerrhino23',
-        '/blogs/deeper-exploration-of-tkinter',
-        '/blogs/desktop-applications-with-tkinter',
-        '/blogs/installing-python',
-        '/blogs/introduction-into-ursina',
-        '/blogs/making-a-chatbot-with-python',
-        '/blogs/python-introduction',
-        '/blogs/machine-learning-with-python',
-        '/blogs/using-sockets-for-networking',
-        '/blogs/using-sockets-for-networking-2',
-        '/blogs/the-history-of-python',
-        '/blogs/types-of-modules-and-how-to-use-them',
-        '/blogs/creating-minecraft-in-ursina',
-        '/blogs/python-fundamentals'
-      ];
-    
-      const uppercasePaths = [
-        '/Home',
-        '/Blogs',
-        '/Blogs/Creating-A-Website-With-Flask',
-        '/Authors/ItsbaileyX',
-        '/Authors/',
-        '/Authors/RangerRhino23',
-        '/Blogs/Deeper-Exploration-of-Tkinter',
-        '/Blogs/Installing-Python',
-        '/Blogs/Introduction-Into-Ursina',
-        '/Blogs/Making-A-Chatbot-With-Python',
-        '/Blogs/Python-Introduction',
-        '/Blogs/Machine-Learning-With-Python',
-        '/Blogs/Using-Sockets-For-Networking',
-        '/Blogs/Using-Sockets-For-Networking-2',
-        '/Blogs/The-History-Of-Python',
-        '/Blogs/Types-Of-Modules-And-Using-Them',
-        '/Blogs/Creating-Minecraft-In-Ursina',
-        '/Blogs/Python-Fundamentals'
-      ];
-    
+      const paths = {
+        '/home': '/Home',
+        '/blogs': '/Blogs',
+        '/blogs/creating-a-website-with-flask': '/Blogs/Creating-A-Website-With-Flask',
+        '/authors/itsbaileyx': '/Authors/ItsbaileyX',
+        '/authors/': '/Authors/',
+        '/authors/rangerrhino23': '/Authors/RangerRhino23',
+        '/blogs/deeper-exploration-of-tkinter': '/Blogs/Deeper-Exploration-of-Tkinter',
+        '/blogs/installing-python': '/Blogs/Installing-Python',
+        '/blogs/introduction-into-ursina': '/Blogs/Introduction-Into-Ursina',
+        '/blogs/making-a-chatbot-with-python': '/Blogs/Making-A-Chatbot-With-Python',
+        '/blogs/python-introduction': '/Blogs/Python-Introduction',
+        '/blogs/machine-learning-with-python': '/Blogs/Machine-Learning-With-Python',
+        '/blogs/using-sockets-for-networking': '/Blogs/Using-Sockets-For-Networking',
+        '/blogs/using-sockets-for-networking-2': '/Blogs/Using-Sockets-For-Networking-2',
+        '/blogs/the-history-of-python': '/Blogs/The-History-Of-Python',
+        '/blogs/types-of-modules-and-how-to-use-them': '/Blogs/Types-Of-Modules-And-Using-Them',
+        '/blogs/creating-minecraft-in-ursina': '/Blogs/Creating-Minecraft-In-Ursina',
+        '/blogs/python-fundamentals': '/Blogs/Python-Fundamentals'
+      };
+      
       const currentPage = window.location.pathname.toLowerCase();
-    
-      const index = lowercasePaths.indexOf(currentPage);
-    
-      if (index !== -1) {
-        const redirectPath = uppercasePaths[index];
+      
+      if (paths.hasOwnProperty(currentPage)) {
+        const redirectPath = paths[currentPage];
         window.location.replace(redirectPath);
       }
+      
     </script>
     
     
