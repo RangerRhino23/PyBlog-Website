@@ -131,7 +131,8 @@ function displaySearchResults(query) {
       const link = document.createElement('a');
 
       img.src = blog.imgSrc;
-      img.style.width = '90%';
+      img.style.width = '80%';
+      img.style.maxWidth = '500px';
       link.href = blog.link;
       link.textContent = blog.title;
       title.appendChild(link);
