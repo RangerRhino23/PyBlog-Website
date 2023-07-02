@@ -36,7 +36,7 @@
         <div class="menu-item"><a id="about-pyblog-button">About Pyblog</a></div>
         <div class="menu-item"><a id="fun-blogs-button">Fun Blogs</a></div>
         <div class="menu-item"><a id="helpful-blogs-button">Helpful Blogs</a></div>
-        <div class="menu-item"><a href="Authors/">Authors</a></div>
+        <div class="menu-item"><a href="../Authors/">Authors</a></div>
     `;
     
     var menuToggle = document.createElement("div");
