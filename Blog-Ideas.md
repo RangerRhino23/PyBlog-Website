@@ -6,7 +6,7 @@ Potential Blogs:
 
 * Making a game with pygame
 
-* Introduction to pyweek and gamejams
+* Introduction to pyweek and gamejams *DONE
 
 * Intermediate python logic, for x in range(x, 1, 5), while True: etc.
 
