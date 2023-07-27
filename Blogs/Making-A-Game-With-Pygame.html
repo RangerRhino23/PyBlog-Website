@@ -23,31 +23,15 @@
   <body>
 <script>
 // Add the date here and not in the html tag!
-const date = [0o2,27,2023]
-</script>
+const date = ["02","27","2023"]
+</script><script src="loading.js"></script>
     <br><br>
     <!--Optional image placement-->
     <!--<img src="home-page-images\Introduction-Into-Ursina.webp" class="img-preset">-->
     <h1>Making a game with pygame</h1>
     <h3>Difficulty: Intermediate</h3>
     <h3 id="Date"></h3>
-<script>
-let dateTag = document.getElementById("Date")
-fetch('https://ipinfo.io?token=f5ea3d083b1327')
-  .then(response => response.json())
-  .then(data => {
-    const country = data.country;
-    console.log(country)
-    if (country == "US"){
-        dateTag.innerHTML = date[0]+'/'+date[1]+'/'+date[2]
-    } else {
-        dateTag.innerHTML = date[1]+'/'+date[0]+'/'+date[2]
-    }
-})
-  .catch(error => {
-    console.error("Error fetching geolocation data:", error);
-  });
-</script>
+<script src="date.js"></script>
     <p>
       Paragraph
     </p>
