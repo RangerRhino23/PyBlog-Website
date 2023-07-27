@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template | PyBlog</title>
+    <link rel="icon" type="image/x-icon" href="../HomeImages/icon_rounded.webp">
+    <meta property="og:title" content="A pyblog blog">
+    <meta property="og:description" content="Only the best blogs can be found here">
+    <meta property="og:image" content="https://pyblog.ddns.net/HomeImages/icon.png">
+    <!-- untag this when blog complete! <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4348852660214307"
+    crossorigin="anonymous"></script>-->
+    <link rel="stylesheet" type="text/css" href="../style.css" media="screen and (min-width: 769px)" />
+    <link rel="stylesheet" type="text/css" href="../style-mobile.css" media="screen and (max-width: 768px)" />
+    <link rel="stylesheet" type="text/css" href="CSS/desktop.css" media="screen and (min-width: 769px)" />
+    <link rel="stylesheet" type="text/css" href="CSS/mobile.css" media="screen and (max-width: 768px)" />
+  </head>
+  <header>
+    <script src="BlogDeviceDeterminatorV2.js">
+    </script>
+  </header>
+  <body>
+<script>
+// Add the date here and not in the html tag!
+const date = [0o2,27,2023]
+</script>
+    <br><br>
+    <!--Optional image placement-->
+    <!--<img src="home-page-images\Introduction-Into-Ursina.webp" class="img-preset">-->
+    <h1>Making a game with pygame</h1>
+    <h3>Difficulty: Intermediate</h3>
+    <h3 id="Date"></h3>
+<script>
+let dateTag = document.getElementById("Date")
+fetch('https://ipinfo.io?token=f5ea3d083b1327')
+  .then(response => response.json())
+  .then(data => {
+    const country = data.country;
+    console.log(country)
+    if (country == "US"){
+        dateTag.innerHTML = date[0]+'/'+date[1]+'/'+date[2]
+    } else {
+        dateTag.innerHTML = date[1]+'/'+date[0]+'/'+date[2]
+    }
+})
+  .catch(error => {
+    console.error("Error fetching geolocation data:", error);
+  });
+</script>
+    <p>
+      Paragraph
+    </p>
+
+    <pre><code id="code-block-1" style="color: white;">CODE
+    </code><div class="copy-button" onclick="copyCode('code-block-1')"></div></pre>
+
+
+    <br><br><br>
+    <p>Created by <a href="../authors/ItsbaileyX" style="color: salmon; text-decoration: none;">ItsbaileyX</a></p>
+    <br><br><br><br><br><br><br><br><br>
+    <a class="button" href="../Home">Back To Home</a>
+<script>
+
+  function copyCode(elementId) {
+    var codeBlock = document.getElementById(elementId);
+    var range = document.createRange();
+    range.selectNode(codeBlock);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();
+    
+    var button = document.querySelector('[onclick="copyCode(\'' + elementId + '\')"]');
+    button.classList.add('clicked');
+    setTimeout(function() {
+      button.classList.remove('clicked');
+    }, 2000);
+  }
+  
+</script>
+  </body>
+  <footer style="margin-top: 50px; margin-bottom: 20px">
+    <a id="backtotopbtn" class="button" style="background-color: black; color: white; cursor: pointer; padding-left: 20%; padding-right: 20%;">Back to Top</a>
+    <script src="../javascript/Scroll.js">
+    </script>
+  </footer>
+</html>

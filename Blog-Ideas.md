@@ -4,7 +4,7 @@ Potential Blogs:
     * Ursina Game Building (game of your choice)
     * Deeper ursina exploration (using panda3D)
 
-* Making a game with pygame
+* Making a game with pygame *DONE
 
 * Introduction to pyweek and gamejams *DONE
 
