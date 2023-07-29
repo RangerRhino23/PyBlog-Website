@@ -122,7 +122,7 @@
   
     var li3 = document.createElement('li');
     var form = document.createElement('form');
-    form.action = '../search.html';
+    form.action = '../Search';
     form.method = 'GET';
     form.className = 'search-bar';
   
