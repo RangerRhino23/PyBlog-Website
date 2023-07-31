@@ -1,114 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>404 | PyBlog</title>
-    <link rel="HomeImages/icon" type="image/x-HomeImages/icon" href="HomeImages/HomeImages/icon_rounded.webp">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | PyBlog</title>
+    <link rel="icon" type="image/x-icon" href="HomeImages/icon.png">
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen and (min-width: 1200px)" />
+    <link rel="stylesheet" type="text/css" href="style-mobile.css" media="screen and (max-width: 1201px)" />
     <style>
-      body {
-            background-color: #f2f2f2;
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-            line-height: 1.5;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 50px;
             text-align: center;
         }
-        h1 {
+        .container h1 {
             font-size: 48px;
             margin-bottom: 20px;
         }
-        p {
+        .container p {
             font-size: 24px;
             margin-bottom: 30px;
         }
-        a {
-            color: #333;
+        .container a {
+            color: gray;
             text-decoration: none;
-            border-bottom: 2px solid #333;
+            border-bottom: 2px solid #666;
             padding-bottom: 2px;
         }
-        a:hover {
-            border-bottom-color: #666;
-        }
-
-        .menu {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-          overflow: hidden;
-          background-color: #555;
-          border-radius: 40px;
-        }
-
-        .menu li {
-          float: left;
-        }
-
-        .menu li a {
-          display: block;
-          color: white;
-          text-align: center;
-          padding: 14px 16px;
-          text-decoration: none;
-        }
-
-        .menu li a:hover {
-          background-color: #444;
+        .container a:hover {
+            border-bottom-color: #333;
         }
     </style>
     <script>
-      const paths = {
-        '/home': '/Home',
-        '/blogs': '/Blogs',
-        '/blogs/creating-a-website-with-flask': '/Blogs/Creating-A-Website-With-Flask',
-        '/authors/itsbaileyx': '/Authors/ItsbaileyX',
-        '/authors/': '/Authors/',
-        '/authors/rangerrhino23': '/Authors/RangerRhino23',
-        '/blogs/deeper-exploration-of-tkinter': '/Blogs/Deeper-Exploration-of-Tkinter',
-        '/blogs/installing-python': '/Blogs/Installing-Python',
-        '/blogs/introduction-into-ursina': '/Blogs/Introduction-Into-Ursina',
-        '/blogs/making-a-chatbot-with-python': '/Blogs/Making-A-Chatbot-With-Python',
-        '/blogs/python-introduction': '/Blogs/Python-Introduction',
-        '/blogs/machine-learning-with-python': '/Blogs/Machine-Learning-With-Python',
-        '/blogs/using-sockets-for-networking': '/Blogs/Using-Sockets-For-Networking',
-        '/blogs/using-sockets-for-networking-2': '/Blogs/Using-Sockets-For-Networking-2',
-        '/blogs/the-history-of-python': '/Blogs/The-History-Of-Python',
-        '/blogs/types-of-modules-and-how-to-use-them': '/Blogs/Types-Of-Modules-And-Using-Them',
-        '/blogs/creating-minecraft-in-ursina': '/Blogs/Creating-Minecraft-In-Ursina',
-        '/blogs/python-fundamentals': '/Blogs/Python-Fundamentals'
-      };
-      
-      const currentPage = window.location.pathname.toLowerCase();
-      
-      if (paths.hasOwnProperty(currentPage)) {
-        const redirectPath = paths[currentPage];
-        window.location.replace(redirectPath);
-      }
-      
+        const paths = {
+          '/home': '/Home',
+          '/blogs': '/Blogs',
+          '/blogs/creating-a-website-with-flask': '/Blogs/Creating-A-Website-With-Flask',
+          '/authors/itsbaileyx': '/Authors/ItsbaileyX',
+          '/authors/': '/Authors/',
+          '/authors/rangerrhino23': '/Authors/RangerRhino23',
+          '/blogs/deeper-exploration-of-tkinter': '/Blogs/Deeper-Exploration-of-Tkinter',
+          '/blogs/installing-python': '/Blogs/Installing-Python',
+          '/blogs/introduction-into-ursina': '/Blogs/Introduction-Into-Ursina',
+          '/blogs/making-a-chatbot-with-python': '/Blogs/Making-A-Chatbot-With-Python',
+          '/blogs/python-introduction': '/Blogs/Python-Introduction',
+          '/blogs/machine-learning-with-python': '/Blogs/Machine-Learning-With-Python',
+          '/blogs/using-sockets-for-networking': '/Blogs/Using-Sockets-For-Networking',
+          '/blogs/using-sockets-for-networking-2': '/Blogs/Using-Sockets-For-Networking-2',
+          '/blogs/the-history-of-python': '/Blogs/The-History-Of-Python',
+          '/blogs/types-of-modules-and-how-to-use-them': '/Blogs/Types-Of-Modules-And-Using-Them',
+          '/blogs/creating-minecraft-in-ursina': '/Blogs/Creating-Minecraft-In-Ursina',
+          '/blogs/python-fundamentals': '/Blogs/Python-Fundamentals'
+        };
+        
+        const currentPage = window.location.pathname.toLowerCase();
+        
+        if (paths.hasOwnProperty(currentPage)) {
+          const redirectPath = paths[currentPage];
+          window.location.replace(redirectPath);
+        }
+        
     </script>
-    
-    
   </head>
-<header>
-  <ul class="menu">
-    <li><img style="margin-left: 6px; margin-right: 6px; margin-top: 5px;width:40px;height:40px; border-radius:100px;object-fit: cover" src="../HomeImages/icon.png" alt="just an image"></li>
-    <li><a href="/Home" class="hover-underline-animation">Home</a></li>
-    <li><a href="/About-Authors" class="hover-underline-animation">Authors</a></li>
-    <li>
-      <form action="Search" method="GET" class="search-bar">
-        <input type="text" name="query" placeholder="&#x1F50E;&#xFE0E; Search..." value="" required>
-        <button type="submit">Search</button>
-      </form>
-    </li>
-</ul>
-</header>
-<body>
+  <header>
+  </header>
+  <body style="min-height: 100vh;">
+    <script src="javascript/404DeviceDeterminator.js"></script>
+    <script src="javascript/search_result.js"></script>
+    <br><br><br>
     <div class="container">
         <h1>404 Page Not Found</h1>
         <p>The page you are looking for does not exist.</p>
@@ -121,5 +82,6 @@
           <a href="mailto:RangerRhino23@outlook.com">RangerRhino - email</a>
         </p>
     </div>
-</body>
+
+  </body>
 </html>
